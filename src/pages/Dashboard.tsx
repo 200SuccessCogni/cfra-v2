@@ -413,7 +413,7 @@ function Dashboard() {
                                 >
                                     <Chip
                                         size="small"
-                                        icon={<ThumbUpOutlinedIcon />}
+                                        // icon={<ThumbUpOutlinedIcon />}
                                         label={
                                             <Box
                                                 display="flex"
@@ -492,7 +492,7 @@ function Dashboard() {
                                     <Chip
                                         key={e.name}
                                         size="small"
-                                        icon={<ThumbDownOffAltOutlinedIcon />}
+                                        // icon={<ThumbDownOffAltOutlinedIcon />}
                                         label={
                                             <Box
                                                 display="flex"

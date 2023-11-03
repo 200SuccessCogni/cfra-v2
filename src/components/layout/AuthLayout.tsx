@@ -191,38 +191,41 @@ export default function SideNav(props: Props) {
                     component="main"
                     sx={{
                         flexGrow: 1,
-                        p: 3,
-                        height: "calc(100vh - 69px)",
-                        marginTop: loader ? "65px" : "65px",
-                        overflowY: "auto",
-                        overflowX: "hidden",
-                        // backgroundColor: "secondary.main",
-                        position: "relative",
                     }}
                 >
                     {!!loader && (
                         <LinearProgress
                             sx={{
-                                mt: -3,
-                                mx: -3,
-                                mb: 3,
+                                mt: "64px",
+                                // mx: -3,
+                                // mb: 3,
                                 height: "3px",
                                 color: "primary.dark",
                             }}
                         ></LinearProgress>
                     )}
-
-                    {props.children}
                     <Box
                         sx={{
-                            background: "#eef2f5",
-                            border: "none",
-                            position: "absolute",
-                            top: "1rem",
-                            right: "1rem",
+                            p: 3,
+                            height: "calc(100vh - 69px)",
+                            marginTop: loader ? "0px" : "65px",
+                            overflowY: "auto",
+                            overflowX: "hidden",
+                            position: "relative",
                         }}
                     >
-                        <GlobalDateSelect />
+                        {props.children}
+                        <Box
+                            sx={{
+                                background: "#eef2f5",
+                                border: "none",
+                                position: "absolute",
+                                top: "1rem",
+                                right: "1rem",
+                            }}
+                        >
+                            <GlobalDateSelect />
+                        </Box>
                     </Box>
                 </Box>
             </Box>

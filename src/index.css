@@ -51,6 +51,7 @@ a:hover {
 
 button {
     text-transform: none !important;
+    box-shadow: none !important;
 }
 
 kbd {

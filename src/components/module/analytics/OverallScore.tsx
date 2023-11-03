@@ -11,10 +11,10 @@ import MuiAccordionDetails from "@mui/material/AccordionDetails";
 
 import { OverallScoreType } from "../types/analytics";
 import { camelCaseToTitleCase } from "../../../services/shared.service";
-import LinearProgressWithLabel from "../../../components/core/linearProgressWithLabel";
 import { alpha, useTheme } from "@mui/material/styles";
 
 import AppPrompt from "../../app/AppPrompt";
+import LinerarProgressTwoWay from "../../core/linerarProgressTwoWay";
 
 const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -93,6 +93,7 @@ function OverallScore(props: OverallScoreType) {
                                         py: 1,
                                         display: "flex",
                                         justifyContent: "space-between",
+                                        alignItems: "center",
                                         borderRadius: 2,
                                         width: "100%",
                                     }}
@@ -105,7 +106,14 @@ function OverallScore(props: OverallScoreType) {
                                             {camelCaseToTitleCase(e.label)}
                                         </Typography>
                                     </Box>
-                                    <LinearProgressWithLabel count={e.value} />
+                                    <Box flexBasis="70%">
+                                        <LinerarProgressTwoWay
+                                            value={e.value * 10}
+                                        />
+                                    </Box>
+                                    <Typography sx={{ px: 2 }}>
+                                        {e.value}
+                                    </Typography>
                                 </Box>
                             </AccordionSummary>
                             <AccordionDetails>

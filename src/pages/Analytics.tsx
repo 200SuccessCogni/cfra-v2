@@ -126,8 +126,7 @@ function Dashboard() {
     }, [user, selectedLocation]);
 
     useEffect(() => {
-        setPositiveInsights(insights.filter((e: InsightType) => e.score > 0));
-        setNegativeInsights(insights.filter((e: InsightType) => e.score <= 0));
+        categoriesInsights(insights);
     }, [insights]);
 
     const handleDelete = (index: number) => {
@@ -136,6 +135,17 @@ function Dashboard() {
                 (e) => e.label !== appliedDateSet[index].label
             )
         );
+    };
+
+    const categoriesInsights = (insightsData: InsightType[]) => {
+        let posIn = insightsData.filter((e: InsightType) => e.score > 0);
+        if (posIn.length)
+            posIn = posIn.sort((a, b) => (a.count < b.count ? 1 : -1));
+        let negIn = insightsData.filter((e: InsightType) => e.score <= 0);
+        if (negIn.length)
+            negIn = negIn.sort((a, b) => (a.count < b.count ? 1 : -1));
+        setPositiveInsights(posIn);
+        setNegativeInsights(negIn);
     };
 
     const onFilterApply = (data: any) => {
@@ -166,14 +176,11 @@ function Dashboard() {
                                 ? Math.floor(e.avgScore)
                                 : Math.floor(e.avgScore * 10),
                     }));
+                    // store in state
                     setInsights(insights);
 
-                    setPositiveInsights(
-                        insights.filter((e: InsightType) => e.score > 0)
-                    );
-                    setNegativeInsights(
-                        insights.filter((e: InsightType) => e.score <= 0)
-                    );
+                    // categories insights
+                    categoriesInsights(insights);
 
                     setLowPerfAment(
                         insights
@@ -250,7 +257,7 @@ function Dashboard() {
                                                     0,
                                                     0,
                                                     0,
-                                                    150
+                                                    120
                                                 );
                                             // More config for your gradient
                                             bgGrd.addColorStop(0, dynamicColor);
@@ -516,9 +523,9 @@ function Dashboard() {
                                                 <Chip
                                                     key={e.label}
                                                     size="small"
-                                                    icon={
-                                                        <ThumbUpOutlinedIcon />
-                                                    }
+                                                    // icon={
+                                                    //     <ThumbUpOutlinedIcon />
+                                                    // }
                                                     label={
                                                         <Box
                                                             display="flex"
@@ -595,9 +602,9 @@ function Dashboard() {
                                                 <Chip
                                                     key={e.label}
                                                     size="small"
-                                                    icon={
-                                                        <ThumbDownOffAltOutlinedIcon />
-                                                    }
+                                                    // icon={
+                                                    //     <ThumbDownOffAltOutlinedIcon />
+                                                    // }
                                                     label={
                                                         <Box
                                                             display="flex"
@@ -689,7 +696,7 @@ function Dashboard() {
                                             selectedLocation?.locationName}
                                     </Typography>
                                 </Box>
-                                <Box textAlign="right">
+                                <Box textAlign="right" width="60%">
                                     <Typography
                                         variant="caption"
                                         color="text.primary"
@@ -703,6 +710,7 @@ function Dashboard() {
                                         sx={{
                                             display: "flex",
                                             justifyContent: "flex-end",
+                                            flexWrap: "wrap",
                                             width: "100%",
                                             "& > * ": {
                                                 ml: 1,
@@ -714,21 +722,21 @@ function Dashboard() {
                                             gutterBottom
                                             // color="error"
                                         >
-                                            ** -10-0 Low performer.{" "}
+                                            ** -10 to -1 Low performer.{" "}
                                         </Typography>
                                         <Typography
                                             variant="caption"
                                             gutterBottom
                                             // color="warning"
                                         >
-                                            ** 0-4 Satisfactory.{" "}
+                                            ** 0 to 4 Satisfactory.{" "}
                                         </Typography>
                                         <Typography
                                             variant="caption"
                                             // sx={{ color: "blue" }}
                                             gutterBottom
                                         >
-                                            ** 5-7 Good.{" "}
+                                            ** 5 to 7 Good.{" "}
                                         </Typography>
                                         <Typography
                                             variant="caption"
@@ -870,6 +878,8 @@ function Dashboard() {
                                     "& > * ": {
                                         ml: 1,
                                     },
+                                    flexBasis: "60%",
+                                    flexWrap: "wrap",
                                 }}
                             >
                                 <Typography
@@ -877,21 +887,21 @@ function Dashboard() {
                                     gutterBottom
                                     // color="error"
                                 >
-                                    ** -10-0 Low performer.{" "}
+                                    ** -10 to -1 Low performer.{" "}
                                 </Typography>
                                 <Typography
                                     variant="caption"
                                     gutterBottom
                                     // color="warning"
                                 >
-                                    ** 0-4 Satisfactory.{" "}
+                                    ** 0 to 4 Satisfactory.{" "}
                                 </Typography>
                                 <Typography
                                     variant="caption"
                                     // sx={{ color: "blue" }}
                                     gutterBottom
                                 >
-                                    ** 5-7 Good.{" "}
+                                    ** 5 to 7 Good.{" "}
                                 </Typography>
                                 <Typography
                                     variant="caption"
