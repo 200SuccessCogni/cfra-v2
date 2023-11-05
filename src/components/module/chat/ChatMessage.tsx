@@ -20,7 +20,7 @@ export default function ChatMessage(props: IChatMessage) {
                 <Box className={styles[isSender ? "my-message" : "another-message"]}>
                     <Typography
                         variant="body2"
-                        fontWeight={500}
+                        fontWeight={400}
                         className={styles.message}
                     >
                         {message}
