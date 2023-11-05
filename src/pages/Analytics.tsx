@@ -13,6 +13,7 @@ import {
     Tooltip,
     Chip,
     Button,
+    Popover,
 } from "@mui/material";
 import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
@@ -27,6 +28,7 @@ import AppPrompt from "../components/app/AppPrompt";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import PlaceIcon from "@mui/icons-material/Place";
 import InsightFilterModal from "../components/modals/InsightFilterModal";
+import ChatBot from "../components/module/chat";
 
 const initChartDataSet = [
     {
@@ -111,6 +113,16 @@ function Dashboard() {
     const [negativeInsights, setNegativeInsights] = useState<InsightType[]>([]);
     const [showFiler, setShowFilter] = useState(false);
     const [isFilterApplied, setIsAppliedFilter] = useState(false);
+
+    const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+
+    const openChatBot = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const closeChatBot = () => {
+        setAnchorEl(null);
+    };
 
     useEffect(() => {
         if (
@@ -981,6 +993,20 @@ function Dashboard() {
                     </Box>
                 </Grid>
             </Grid>
+
+            <Popover
+                id={!!anchorEl ? 'simple-popover' : undefined}
+                open={!!anchorEl}
+                anchorEl={anchorEl}
+                onClose={closeChatBot}
+                anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                }}
+            >
+                <ChatBot closeHandler={closeChatBot} />
+            </Popover>
+
             <Box
                 sx={{
                     position: "sticky",
@@ -988,24 +1014,24 @@ function Dashboard() {
                     right: 0,
                 }}
             >
-                {!showFullPrompt && (
-                    <Box display="flex" justifyContent="flex-end">
-                        <Tooltip title="Get more insights">
-                            <Fab
-                                variant="extended"
-                                color="primary"
-                                onClick={() => setShowFullPrompt(true)}
-                            >
-                                <AutoFixHighIcon />
-                            </Fab>
-                        </Tooltip>
-                    </Box>
-                )}
+                {/* {!showFullPrompt && ( */}
+                <Box display="flex" justifyContent="flex-end">
+                    <Tooltip title="Get more insights">
+                        <Fab
+                            variant="extended"
+                            color="primary"
+                            onClick={openChatBot}
+                        >
+                            <AutoFixHighIcon />
+                        </Fab>
+                    </Tooltip>
+                </Box>
+                {/* )} */}
             </Box>
             <InsightFilterModal
                 show={showFiler}
                 entities={insights && insights}
-                onSelect={(data) => {
+                onSelect={(data: any) => {
                     setInsights(data);
                     setIsAppliedFilter(true);
                 }}
@@ -1017,62 +1043,62 @@ function Dashboard() {
 
 export default Dashboard;
 
-// const AnalyticsChart = ({ dataSet }: { dataSet: any[] }) => {
-//     const [chartData, setChartData] = useState({
-//         labels: ["26/06", "27/06", "28/06", "29/06", "30/06", "01/07", "02/07"],
-//         datasets: dataSet,
-//     });
+/*const AnalyticsChart = ({ dataSet }: { dataSet: any[] }) => {
+    const [chartData, setChartData] = useState({
+        labels: ["26/06", "27/06", "28/06", "29/06", "30/06", "01/07", "02/07"],
+        datasets: dataSet,
+    });
 
-//     useEffect(() => {
-//         setChartData({
-//             labels: [
-//                 "26/06",
-//                 "27/06",
-//                 "28/06",
-//                 "29/06",
-//                 "30/06",
-//                 "01/07",
-//                 "02/07",
-//             ],
-//             datasets: dataSet,
-//         });
-//     }, [dataSet]);
+    useEffect(() => {
+        setChartData({
+            labels: [
+                "26/06",
+                "27/06",
+                "28/06",
+                "29/06",
+                "30/06",
+                "01/07",
+                "02/07",
+            ],
+            datasets: dataSet,
+        });
+    }, [dataSet]);
 
-//     const options = {
-//         responsive: true,
-//         scales: {
-//             x: {
-//                 grid: {
-//                     display: false,
-//                 },
-//             },
-//             y: {
-//                 ticks: {
-//                     display: false,
-//                 },
-//             },
-//         },
-//         plugins: {
-//             legend: {
-//                 position: "bottom",
-//                 display: false,
-//             },
-//             title: {
-//                 display: true,
-//                 // text: "Review Sources",
-//             },
-//             tooltip: {
-//                 enabled: true,
-//                 position: "nearest",
-//             },
-//             chartAreaBorder: {
-//                 borderColor: "red",
-//                 borderWidth: 2,
-//                 borderDash: [5, 5],
-//                 borderDashOffset: 2,
-//             },
-//         },
-//     };
+    const options = {
+        responsive: true,
+        scales: {
+            x: {
+                grid: {
+                    display: false,
+                },
+            },
+            y: {
+                ticks: {
+                    display: false,
+                },
+            },
+        },
+        plugins: {
+            legend: {
+                position: "bottom",
+                display: false,
+            },
+            title: {
+                display: true,
+                // text: "Review Sources",
+            },
+            tooltip: {
+                enabled: true,
+                position: "nearest",
+            },
+            chartAreaBorder: {
+                borderColor: "red",
+                borderWidth: 2,
+                borderDash: [5, 5],
+                borderDashOffset: 2,
+            },
+        },
+    };
 
-//     return <LineChart chartData={chartData} options={options} />;
-// };
+    return <LineChart chartData={chartData} options={options} />;
+};*/

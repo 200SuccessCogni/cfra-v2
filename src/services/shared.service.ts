@@ -15,3 +15,9 @@ export function randomColor() {
     }
     return color;
 }
+
+// export function formatToHrMm(date: Date) {
+//     const hrs = date.getHours();
+//     const currHrs = date.getHours();
+//     if (currHrs)
+// }
