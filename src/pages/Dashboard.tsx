@@ -301,9 +301,9 @@ function Dashboard() {
                         {!!allReviews.length &&
                             allReviews
                                 .slice(0, 5)
-                                .map((r: any) => (
+                                .map((r: any, i: number) => (
                                     <ReviewItem
-                                        key={r.id}
+                                        key={i}
                                         {...r}
                                         date={r.date.split("T")[0]}
                                         listView="false"
@@ -405,12 +405,12 @@ function Dashboard() {
                             >
                                 Positive insights
                             </Typography>
-                            {positiveInsights.map((e: InsightType) => (
+                            {positiveInsights.map((e: InsightType, i: number) => (
                                 <Tooltip
                                     title={`${camelCaseToTitleCase(
                                         e.name
                                     )} appears ${e.count} times.`}
-                                    key={e.name}
+                                    key={i}
                                 >
                                     <Chip
                                         size="small"
@@ -483,12 +483,12 @@ function Dashboard() {
                             >
                                 Negative insights
                             </Typography>
-                            {negativeInsights.map((e: InsightType) => (
+                            {negativeInsights.map((e: InsightType, i: number) => (
                                 <Tooltip
                                     title={`${camelCaseToTitleCase(
                                         e.name
                                     )} appears ${e.count} times.`}
-                                    key={e.name}
+                                    key={i}
                                 >
                                     <Chip
                                         key={e.name}

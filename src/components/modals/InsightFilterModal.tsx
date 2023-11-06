@@ -73,6 +73,7 @@ function InsightFilterModal(props: IRecModal) {
                     <FormGroup>
                         {list.map((e: any, i: number) => (
                             <FormControlLabel
+                                key={i}
                                 control={
                                     <Checkbox
                                         onChange={() => onCheckBoxClick(i)}

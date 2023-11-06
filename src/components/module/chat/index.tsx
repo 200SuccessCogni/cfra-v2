@@ -59,8 +59,8 @@ export default function ChatBot({
 
     useEffect(() => {
         const url = `ws://3.14.42.49/ws/customdata`;
-        // const url = `ws://ec2-3-14-42-49.us-east-2.compute.amazonaws.com/ws/customdata`;
-        const ws = new WebSocket(url);
+        // const url = `ws://https://4b61-84-17-35-112.ngrok.io/ws/customdata`;
+        const ws = new WebSocket(url, );
 
         ws.onopen = () => {
             ws.send("Connect");
