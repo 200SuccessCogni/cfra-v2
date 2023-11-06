@@ -131,12 +131,10 @@ function Dashboard() {
             user?.business?.businessId &&
             selectedLocation
         ) {
-            console.log("");
-
-            // getInsightsAndAnalytics(
-            //     user?.business?.businessId,
-            //     selectedLocation.id
-            // );
+            getInsightsAndAnalytics(
+                user?.business?.businessId,
+                selectedLocation.id
+            );
         }
     }, [user, selectedLocation]);
 
