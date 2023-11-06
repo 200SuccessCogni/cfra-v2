@@ -270,7 +270,9 @@ function Dashboard() {
                                                     0,
                                                     0,
                                                     0,
-                                                    120
+                                                    theme.breakpoints.up("lg")
+                                                        ? 200
+                                                        : 120
                                                 );
                                             // More config for your gradient
                                             bgGrd.addColorStop(0, dynamicColor);
@@ -315,7 +317,7 @@ function Dashboard() {
             <Typography variant="h5" fontWeight={500}>
                 Insights & Analytics
             </Typography>
-            <Grid container spacing={3} sx={{ mt: 0, height: "100%" }}>
+            <Grid container spacing={3} sx={{ mt: 0, height: "auto" }}>
                 <Grid item xs={12} md={9}>
                     {/* <Container
                         sx={{
