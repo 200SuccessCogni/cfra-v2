@@ -130,11 +130,14 @@ function Dashboard() {
             user?.business &&
             user?.business?.businessId &&
             selectedLocation
-        )
-            getInsightsAndAnalytics(
-                user?.business?.businessId,
-                selectedLocation.id
-            );
+        ) {
+            console.log("");
+
+            // getInsightsAndAnalytics(
+            //     user?.business?.businessId,
+            //     selectedLocation.id
+            // );
+        }
     }, [user, selectedLocation]);
 
     useEffect(() => {
@@ -314,7 +317,7 @@ function Dashboard() {
             <Typography variant="h5" fontWeight={500}>
                 Insights & Analytics
             </Typography>
-            <Grid container spacing={3} sx={{ mt: 0 }}>
+            <Grid container spacing={3} sx={{ mt: 0, height: "100%" }}>
                 <Grid item xs={12} md={9}>
                     {/* <Container
                         sx={{
@@ -995,10 +998,10 @@ function Dashboard() {
             </Grid>
 
             <Popover
-                id={!!anchorEl ? 'simple-popover' : undefined}
+                id={anchorEl ? "simple-popover" : undefined}
                 open={!!anchorEl}
                 anchorEl={anchorEl}
-                onClose={closeChatBot}
+                // onClose={closeChatBot}
                 anchorOrigin={{
                     vertical: "top",
                     horizontal: "left",
