@@ -15,6 +15,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/system";
 import { camelCaseToTitleCase } from "../../../services/shared.service";
 import ChatMessage from "./ChatMessage";
+import useChatScroll from "../../../hooks/useChatScroll";
 
 const ChatContainer = styled("div")({
     display: "flex",
@@ -34,7 +35,11 @@ const ChatHeader = styled("header")({
     background: "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
 });
 
-export default function ChatBot({closeHandler}: {closeHandler: () => void}) {
+export default function ChatBot({
+    closeHandler,
+}: {
+    closeHandler: () => void;
+}) {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState<MessageType[]>([
         {
@@ -44,6 +49,7 @@ export default function ChatBot({closeHandler}: {closeHandler: () => void}) {
         },
     ]);
     const [websckt, setWebsckt] = useState<WebSocket | null>(null);
+    const ref = useChatScroll(messages);
 
     useEffect(() => {
         const url = `ws://localhost:8000/ws/customdata`;
@@ -107,7 +113,7 @@ export default function ChatBot({closeHandler}: {closeHandler: () => void}) {
                     </IconButton>
                 </ChatHeader>
                 <Box className={styles["chat-container"]}>
-                    <Box className={styles.chat}>
+                    <Box className={styles.chat} ref={ref}>
                         {!!messages.length &&
                             messages.map((value, index) => {
                                 if (value.user.isSender) {
@@ -130,10 +136,7 @@ export default function ChatBot({closeHandler}: {closeHandler: () => void}) {
                             })}
                     </Box>
                     <Box className={styles["input-chat-container"]}>
-                        <FormControl
-                            size="small"
-                            fullWidth
-                        >
+                        <FormControl size="small" fullWidth>
                             <InputLabel htmlFor="outlined-adornment-prompt">
                                 Your prompt
                             </InputLabel>
@@ -141,7 +144,9 @@ export default function ChatBot({closeHandler}: {closeHandler: () => void}) {
                                 id="outlined-adornment-prompt"
                                 size="small"
                                 value={message}
-                                onChange={(e: any) => setMessage(e.target.value)}
+                                onChange={(e: any) =>
+                                    setMessage(e.target.value)
+                                }
                                 onKeyDown={(e: any) => {
                                     if (e.keyCode === 13 && !e.shiftKey) {
                                         // keyCode 13 is for Enter key

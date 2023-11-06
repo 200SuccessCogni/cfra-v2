@@ -29,6 +29,7 @@ import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import PlaceIcon from "@mui/icons-material/Place";
 import InsightFilterModal from "../components/modals/InsightFilterModal";
 import ChatBot from "../components/module/chat";
+import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 
 const initChartDataSet = [
     {
@@ -1025,7 +1026,7 @@ function Dashboard() {
                             color="primary"
                             onClick={openChatBot}
                         >
-                            <AutoFixHighIcon />
+                            <ChatRoundedIcon />
                         </Fab>
                     </Tooltip>
                 </Box>
