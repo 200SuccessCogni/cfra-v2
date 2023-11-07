@@ -13,11 +13,14 @@ import {
 const sourceList = [
     { name: "Local", isChecked: true, value: "local" },
     { name: "Google", isChecked: true, value: "google" },
-    { name: "Booking.com", isChecked: true, value: "booking" },
+    { name: "Facebook", isChecked: true, value: "facebook" },
+    { name: "Uber Eats", isChecked: true, value: "uber-eats" },
+    { name: "Zomato", isChecked: true, value: "zomato" },
     { name: "TripAdvisor", isChecked: true, value: "tripadvisor" },
-    { name: "MakeMyTrip", isChecked: true, value: "make myt rip" },
-    { name: "Trivago", isChecked: true, value: "trivago" },
-    { name: "Go Ibibo", isChecked: true, value: "go ibibo" },
+    // { name: "Booking.com", isChecked: true, value: "booking" },
+    // { name: "MakeMyTrip", isChecked: true, value: "make myt rip" },
+    // { name: "Trivago", isChecked: true, value: "trivago" },
+    // { name: "Go Ibibo", isChecked: true, value: "go ibibo" },
 ];
 
 const ratingsLables = [
