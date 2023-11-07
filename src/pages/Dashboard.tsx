@@ -126,6 +126,14 @@ function Dashboard() {
         },
         []
     );
+
+    const resetAllCount = () => {
+        setPosReview(0);
+        setNegReview(0);
+        setNeuReview(0);
+        setMixReview(0);
+    }
+
     const getInsightsAndAnalytics = async (
         businessId = "65227a4fd7a294d9ee6f18a6",
         locationId = "65227ab4d7a294d9ee6f18db"
@@ -157,6 +165,8 @@ function Dashboard() {
                 }
 
                 if (res.data.categories && res.data.categories.length) {
+                    resetAllCount(); 
+                    
                     res.data.categories.map((e: any) => {
                         switch (e._id) {
                             case "negative":

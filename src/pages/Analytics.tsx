@@ -132,16 +132,27 @@ function Dashboard() {
             user?.business?.businessId &&
             selectedLocation
         ) {
+            // reset 
+            resetInights();
+            setChartsData([]);
+
+
             getInsightsAndAnalytics(
                 user?.business?.businessId,
                 selectedLocation.id
             );
         }
     }, [user, selectedLocation]);
+    
 
     useEffect(() => {
         categoriesInsights(insights);
     }, [insights]);
+
+    const resetInights = () => {
+        setPositiveInsights([]);
+        setNegativeInsights([]);
+    }
 
     const handleDelete = (index: number) => {
         setAppliedDateSet(
@@ -196,7 +207,7 @@ function Dashboard() {
                     // categories insights
                     categoriesInsights(insights);
 
-                    setLowPerfAment(
+                    /*setLowPerfAment(
                         insights
                             .filter((e: any) => e.score < 0)
                             .reduce((a: any, b: any) => {
@@ -210,7 +221,7 @@ function Dashboard() {
                             .reduce((a: any, b: any) => {
                                 return a.value > b.value ? a : b;
                             })
-                    );
+                    );*/
                 }
 
                 if (res.data.analytics && res.data.analytics.length) {
