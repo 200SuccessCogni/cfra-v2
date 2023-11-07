@@ -29,7 +29,7 @@ import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import PlaceIcon from "@mui/icons-material/Place";
 import InsightFilterModal from "../components/modals/InsightFilterModal";
 import ChatBot from "../components/module/chat";
-import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
+import ChatRoundedIcon from "@mui/icons-material/ChatRounded";
 
 const initChartDataSet = [
     {
@@ -132,10 +132,9 @@ function Dashboard() {
             user?.business?.businessId &&
             selectedLocation
         ) {
-            // reset 
+            // reset
             resetInights();
             setChartsData([]);
-
 
             getInsightsAndAnalytics(
                 user?.business?.businessId,
@@ -143,7 +142,6 @@ function Dashboard() {
             );
         }
     }, [user, selectedLocation]);
-    
 
     useEffect(() => {
         categoriesInsights(insights);
@@ -152,7 +150,7 @@ function Dashboard() {
     const resetInights = () => {
         setPositiveInsights([]);
         setNegativeInsights([]);
-    }
+    };
 
     const handleDelete = (index: number) => {
         setAppliedDateSet(
@@ -224,7 +222,11 @@ function Dashboard() {
                     );*/
                 }
 
-                if (res.data.analytics && res.data.analytics.length) {
+                if (
+                    res.data.analytics &&
+                    res.data.analytics.length &&
+                    insights.length
+                ) {
                     const data = res.data.analytics.map((e: any) => ({
                         entityName: e.entityScores.entityName,
                         date: dayjs(e.entityScores.date.split("T")),

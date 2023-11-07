@@ -7,6 +7,7 @@ import { camelCaseToTitleCase } from "../../../services/shared.service";
 function AnalyticsChart(props: AnalyticsChartType) {
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         // fill: true,
         scales: {
             x: {
