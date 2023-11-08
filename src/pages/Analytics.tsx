@@ -610,12 +610,6 @@ function Dashboard() {
                                                 <Chip
                                                     key={e.label}
                                                     size="small"
-                                                    onClick={() =>
-                                                        getInsightSumm(
-                                                            e.label,
-                                                            e.descArr
-                                                        )
-                                                    }
                                                     // icon={
                                                     //     <ThumbUpOutlinedIcon />
                                                     // }
@@ -695,12 +689,6 @@ function Dashboard() {
                                                 <Chip
                                                     key={e.label}
                                                     size="small"
-                                                    onClick={() =>
-                                                        getInsightSumm(
-                                                            e.label,
-                                                            e.descArr
-                                                        )
-                                                    }
                                                     // icon={
                                                     //     <ThumbDownOffAltOutlinedIcon />
                                                     // }
