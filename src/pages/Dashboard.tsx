@@ -139,10 +139,10 @@ function Dashboard() {
         locationId = "65227ab4d7a294d9ee6f18db"
     ) => {
         setLoader(true);
+        // const url = `/review/getCategories?businessId=${businessId}&locationId=${locationId}`;
+        const url = `/review/getinsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
         try {
-            const res = await GET(
-                `/review/getCategories?businessId=${businessId}&locationId=${locationId}`
-            );
+            const res = await GET(url);
             if (res && res.status === 200) {
                 if (res.data.insights && res.data.insights.length) {
                     const insightsData = res.data.insights.map((e: any) => ({

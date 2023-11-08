@@ -231,10 +231,10 @@ function Dashboard() {
         locationId: string
     ) => {
         setLoader(true);
+        // const url = `/review/getInsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
+        const url = `/review/getSummarizedInsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
         try {
-            const res = await GET(
-                `/review/getInsightAnalytics?businessId=${businessId}&locationId=${locationId}`
-            );
+            const res = await GET(url);
             if (res && res.status === 200) {
                 const insightsRes = res.data.insights;
                 const insights = buildInsightData(insightsRes);
