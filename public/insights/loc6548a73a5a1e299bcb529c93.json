@@ -1,0 +1,190 @@
+{
+    "categories": [
+        {
+            "_id": "negative",
+            "count": 1
+        }
+    ],
+    "sources": {
+        "0": {
+            "_id": "local",
+            "count": 1
+        }
+    },
+    "insights": [
+        {
+            "_id": "stored",
+            "count": 1,
+            "avgScore": -0.6808,
+            "avgMagnitude": 0,
+            "descArr": [
+                "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!"
+            ],
+            "summary": "The customer expresses a negative experience at Balham's McDonalds, criticizing the food stored for too long, surly staff, noisy children, and overall awful experience. They advise others not to visit unless necessary for survival."
+        },
+        {
+            "_id": "surly",
+            "count": 1,
+            "avgScore": -0.5423,
+            "avgMagnitude": 0,
+            "descArr": [
+                "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!"
+            ],
+            "summary": "Customers are dissatisfied with the surly staff and low-quality food at Balham's McDonalds. The atmosphere is described as noisy and unpleasant, leading to an overall negative experience."
+        },
+        {
+            "_id": "fuss",
+            "count": 1,
+            "avgScore": -0.34,
+            "avgMagnitude": 0,
+            "descArr": [
+                "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!"
+            ],
+            "summary": "The customer expresses extreme dissatisfaction with the level of fuss they experienced at Balham's McDonald's. They describe the staff as surly and ungraceful, with noisy children adding to the unpleasant atmosphere. They strongly advise against visiting this location unless absolutely necessary."
+        },
+        {
+            "_id": "noisy",
+            "count": 2,
+            "avgScore": -0.40835,
+            "avgMagnitude": 0,
+            "descArr": [
+                "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!"
+            ],
+            "summary": "The customer is expressing their dissatisfaction with the noisy environment at McDonald's in Balham along with the poor quality of food and service. The noisy children add to the unpleasant experience and the customer recommends avoiding the restaurant unless necessary."
+        },
+        {
+            "_id": "awful",
+            "count": 2,
+            "avgScore": -0.5423,
+            "avgMagnitude": 0,
+            "descArr": [
+                "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!"
+            ],
+            "summary": "The customer had an awful experience at McDonald's in Balham due to food that had been stored for too long, surly staff, noisy children, and a lack of grace in service. They do not recommend going there unless your life depends on it."
+        },
+        {
+            "_id": "grace",
+            "count": 1,
+            "avgScore": -0.5423,
+            "avgMagnitude": 0,
+            "descArr": [
+                "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!"
+            ],
+            "summary": "The customer expresses that they received minimum amount of grace from surly staff while visiting a McDonald's in Balham which resulted in a truly awful experience. The review warns others not to visit unless their life depends on it."
+        }
+    ],
+    "analytics": [
+        {
+            "_id": "6549584f747a5a85e8229db8",
+            "desc": "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "awful",
+                "sentimentScore": -0.5423,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "11/09/2008T00:00:00",
+                "_id": "6549584f747a5a85e8229dba"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db8",
+            "desc": "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "awful",
+                "sentimentScore": -0.5423,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "11/09/2008T00:00:00",
+                "_id": "6549584f747a5a85e8229dc0"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db8",
+            "desc": "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "fuss",
+                "sentimentScore": -0.34,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "11/09/2008T00:00:00",
+                "_id": "6549584f747a5a85e8229dbb"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db8",
+            "desc": "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "grace",
+                "sentimentScore": -0.5423,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "11/09/2008T00:00:00",
+                "_id": "6549584f747a5a85e8229dbc"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db8",
+            "desc": "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "noisy",
+                "sentimentScore": -0.34,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "11/09/2008T00:00:00",
+                "_id": "6549584f747a5a85e8229db9"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db8",
+            "desc": "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "noisy",
+                "sentimentScore": -0.4767,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "11/09/2008T00:00:00",
+                "_id": "6549584f747a5a85e8229dbd"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db8",
+            "desc": "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "stored",
+                "sentimentScore": -0.6808,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "11/09/2008T00:00:00",
+                "_id": "6549584f747a5a85e8229dbe"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db8",
+            "desc": "McDonalds restaurants are popular because you supposedly always know what you're going to get. When visiting Balham's McDonalds what you're going to get food that has been stored for too long and surly staff who serve you with the maximum amount of fuss and the minimum amount of grace. If that hasn't whetted your appetite then the noisy children who seem to constantly inhabit the place certainly will. Just a truly awful exerience. Dont go there unless your life depends on it!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "surly",
+                "sentimentScore": -0.5423,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "11/09/2008T00:00:00",
+                "_id": "6549584f747a5a85e8229dbf"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1446 @@
+{
+    "categories": [
+        {
+            "_id": "negative",
+            "count": 3
+        },
+        {
+            "_id": "positive",
+            "count": 4
+        }
+    ],
+    "sources": {
+        "0": {
+            "_id": "local",
+            "count": 7
+        }
+    },
+    "insights": [
+        {
+            "_id": "cadbury caramel mcflurry",
+            "count": 2,
+            "avgScore": -0.4,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer had a mixed experience at the McDonald's they visited. Despite the unsatisfactory seating options, the food was deemed better than American McDonald's. The grilled chicken sweet chili wrap, mccrispy, and chicken selects were highlights, though the smartie and Cadbury caramel mcflurrys were underwhelming and more like sundaes. The millionaire donut was positively reviewed for its caramel filling."
+        },
+        {
+            "_id": "espresso",
+            "count": 1,
+            "avgScore": 0.6,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer likes the taste of espresso at this restaurant. However, they criticize the seating selection and cleanliness of the place. The customer enjoyed the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. They found the sweet chili wrap very spicy but loved its flavor. Chicken selects and mccrispy stood out for them. They did not like the mcflurrys, but the millionaire donut with caramel filling was a hit."
+        },
+        {
+            "_id": "yummy",
+            "count": 1,
+            "avgScore": 0.6,
+            "avgMagnitude": 0,
+            "descArr": [
+                "It's McDonalds, what else do you want?The menu selection is much smaller than back home, but the food is the same quality. We did miss ranch, though, because chicken tenders were not as yummy with a spicy sauce."
+            ],
+            "summary": "The customer expresses that the food at McDonald's is of the same quality, although missing some menu selections. They specifically mention that chicken tenders were not as enjoyable without ranch sauce. Overall, the message conveyed is that the food can be yummy, but missing certain elements can impact the taste."
+        },
+        {
+            "_id": "solid foods",
+            "count": 1,
+            "avgScore": 0,
+            "avgMagnitude": 0,
+            "descArr": [
+                "The workers here move in slow motion. Don't come here unless you're ready to wait 20+ minutes for a simple order. Ridiculous."
+            ],
+            "summary": "The review does not express anything about solid foods."
+        },
+        {
+            "_id": "not mentioned",
+            "count": 4,
+            "avgScore": 0,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer expresses satisfaction with the service provided by the staff at McDonald's in Marylebone Road and Baker Street. The restaurant is spacious, clean, and tidy, with friendly staff who are always up for a conversation. The food is standard McDonald's fare, but the customer notes the outstanding customer service provided by the staff member who served them. The staff member engaged in conversation, obliged special requests, and offered extra sauces, which made the experience enjoyable."
+        },
+        {
+            "_id": "underwhelming",
+            "count": 1,
+            "avgScore": -0.5,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer expressed that the seating selection was rough and dirty, but the food was good. They particularly enjoyed the grilled chicken sweet chili wrap, mccrispy, and chicken selects. However, they found the McFlurrys to be underwhelming as the toppings were not mixed in. The millionaire donut was a standout item with its delicious caramel filling."
+        },
+        {
+            "_id": "open and spacious",
+            "count": 1,
+            "avgScore": 0.7,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer is expressing that the McDonald's branch they visited is open and spacious, with plenty of seats and clean surroundings. The staff are friendly and provide good customer service, going above and beyond by accommodating extra requests for sauces. The food is standard McDonald's fare but the experience is made better by the good service."
+        },
+        {
+            "_id": "Sweet Chilli Chicken deli meal",
+            "count": 1,
+            "avgScore": 0.5,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer had a positive experience at this McDonald's location. Although they do not visit often due to health concerns, they noted that the Sweet Chilli Chicken deli meal is the best thing on the menu. The staff were friendly and had a good conversation with the customer, accommodating their request for extra chilli sauce. The customer appreciated the good service and the cleanliness of the restaurant. The food was standard McDonald's fare, but the experience was elevated by the service provided."
+        },
+        {
+            "_id": "clean",
+            "count": 1,
+            "avgScore": 0.7,
+            "avgMagnitude": 0,
+            "descArr": [
+                "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi."
+            ],
+            "summary": "Customers appreciate that this McDonald's location is conveniently placed and has clean facilities, including well-stocked toilets and clean tables. The customer also notes the availability of Wi-Fi."
+        },
+        {
+            "_id": "worse",
+            "count": 1,
+            "avgScore": -1,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Bloody awful!Talk about the worse food I have ever had. They replaced half the ingredients in the special meals and the service was awful. Certainly not somewhere I would recommend to anyone that I know!"
+            ],
+            "summary": "The customer is expressing their dissatisfaction with the food and service they received at the restaurant. They describe it as \"bloody awful\" and \"the worst food\" they have ever had. They mention that ingredients were replaced in the special meals and that the service was also bad. Overall, they do not recommend this restaurant to anyone."
+        },
+        {
+            "_id": "generous",
+            "count": 2,
+            "avgScore": 0.75,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+                "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi."
+            ],
+            "summary": "The customers in both reviews touch on different aspects of their experience at McDonald's, but neither expressed anything about generosity or lack thereof. Review 1 talks about the food they tried, including various burgers, wraps, and desserts, and generally liked the taste except for the mcflurrys. They also commented that the seating was rough and dirty. Review 2 mentioned the location and cleanliness of the restaurant, including the availability of bathrooms and Wi-Fi. Overall, neither review addresses anything about the generosity of McDonald's."
+        },
+        {
+            "_id": "good for a laugh",
+            "count": 1,
+            "avgScore": 0.8,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer enjoyed their visit to this McDonald's and appreciated the open and spacious atmosphere as well as the friendly staff who were \"good for a laugh.\" They had a pleasant conversation with a server who even accommodated their request for extra chilli sauce. While the food was standard McDonald's fare, the customer noted that the excellent service made all the difference."
+        },
+        {
+            "_id": "decent",
+            "count": 2,
+            "avgScore": 0.55,
+            "avgMagnitude": 0,
+            "descArr": [
+                "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi."
+            ],
+            "summary": "The customer expresses that this McDonald's location near Madame Tussaud's and Baker Street Tube station is clean, well-stocked, and has good Wi-Fi. The tables are also cleaned frequently, making it a decent place to eat."
+        },
+        {
+            "_id": "frozen lemonde",
+            "count": 2,
+            "avgScore": 0.6,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The frozen lemonade is not mentioned specifically in Review 1."
+        },
+        {
+            "_id": "awful",
+            "count": 2,
+            "avgScore": -1,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Bloody awful!Talk about the worse food I have ever had. They replaced half the ingredients in the special meals and the service was awful. Certainly not somewhere I would recommend to anyone that I know!"
+            ],
+            "summary": "The customer expresses their negative experience at a restaurant which they describe as \"bloody awful\". They had a bad experience with the food as half of the ingredients in their special meals were replaced and the customer also criticized the service. The customer concludes by stating they would not recommend this restaurant to anyone they know. Overall, the review indicates that the customer had a very poor experience at the restaurant."
+        },
+        {
+            "_id": "ridiculous",
+            "count": 1,
+            "avgScore": -0.9,
+            "avgMagnitude": 0,
+            "descArr": [
+                "The workers here move in slow motion. Don't come here unless you're ready to wait 20+ minutes for a simple order. Ridiculous."
+            ],
+            "summary": "Customers found the service to be slow and unacceptably long, making their visit an unpleasant experience. The service was deemed \"ridiculous\" by the reviewer."
+        },
+        {
+            "_id": "great seasoning",
+            "count": 1,
+            "avgScore": 0.9,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer in the review is expressing positive feedback about the seasoning of the chicken selects and mccrispy at the fast-food restaurant, despite the rough and dirty seating selection. They particularly enjoyed the flavor of the sweet chili wrap, while finding the mcflurrys underwhelming. Despite these shortcomings, they overall liked the food, especially the great seasoning."
+        },
+        {
+            "_id": "drinks",
+            "count": 1,
+            "avgScore": 0,
+            "avgMagnitude": 0,
+            "descArr": [
+                "The workers here move in slow motion. Don't come here unless you're ready to wait 20+ minutes for a simple order. Ridiculous."
+            ],
+            "summary": "The customer did not provide any feedback related to drinks."
+        },
+        {
+            "_id": "standard",
+            "count": 1,
+            "avgScore": 0,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer expresses that the standard McDonald's food is served at this branch, but the staff at this location are friendly and provide great service. The spacious and clean location has plenty of seats and the server went above and beyond by having a conversation with the customer and providing them with extra sauce without them having to ask for it. The friendly and good-natured service made the food experience more enjoyable."
+        },
+        {
+            "_id": "friendly",
+            "count": 3,
+            "avgScore": 0.7000000000000001,
+            "avgMagnitude": 0,
+            "descArr": [
+                "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover.",
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+                "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi."
+            ],
+            "summary": "The customers are expressing that the McDonald's location on Baker Street has friendly employees who engage in conversation with customers and provide extra services, such as offering extra pots of sauces. The location is well-maintained and offers plenty of seating space. However, the food is the standard McDonald's fare and not exactly healthy. Overall, the reviews indicate that the friendly service and clean environment make up for the lack of healthy options."
+        },
+        {
+            "_id": "delicious",
+            "count": 3,
+            "avgScore": 0.8333333333333334,
+            "avgMagnitude": 0,
+            "descArr": [
+                "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover.",
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+                "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi."
+            ],
+            "summary": "Customers are generally satisfied with the cleanliness and spaciousness of this McDonald's branch located off Marylebone Road in Baker Street. Although the food is not regarded as healthy gourmet, reviewers mention the great Sweet Chilli Chicken deli meal and friendly and helpful service. Many also comment on the ample seating and the cleanliness of the restaurant and its washrooms."
+        },
+        {
+            "_id": "Crunchie McFlurry",
+            "count": 1,
+            "avgScore": 0.4,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer had a positive experience at this branch of McDonald's. They praise the cleanliness and spaciousness of the restaurant and commend the friendly and chatty staff. The customer appreciates that the server was accommodating to their requests for extra chilli sauce and sauce pots. They comment that the food was standard McDonald's but the excellent service made a difference to their overall experience. The customer also mentions receiving a free student card Crunchie McFlurry with their order."
+        },
+        {
+            "_id": "yes",
+            "count": 1,
+            "avgScore": 0.7,
+            "avgMagnitude": 0,
+            "descArr": [
+                "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi."
+            ],
+            "summary": "The customer is expressing satisfaction with the convenience and cleanliness of the McDonald's location near Madame Tussaud's and Baker Street Tube station. They also appreciate the well-stocked and clean restrooms, as well as the frequent cleaning of tables. The customer enjoyed having a decent place to eat and use the Wi-Fi while in the restaurant."
+        },
+        {
+            "_id": "good service",
+            "count": 1,
+            "avgScore": 0.9,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer is expressing that good service makes all the difference, even in a standard McDonald's branch. They note that the staff are always friendly and good for a laugh, and that they received a great conversation and extra sauce with their order. The customer appreciates that the server was accommodating, and made them feel comfortable in asking for extras. The food itself was considered standard, but the customer highlights that good service elevated their experience."
+        },
+        {
+            "_id": "ranch",
+            "count": 1,
+            "avgScore": -0.4,
+            "avgMagnitude": 0,
+            "descArr": [
+                "It's McDonalds, what else do you want?The menu selection is much smaller than back home, but the food is the same quality. We did miss ranch, though, because chicken tenders were not as yummy with a spicy sauce."
+            ],
+            "summary": "The customer misses ranch at McDonald's and feels that chicken tenders are not as good without it. The quality of the food is consistent with what they are used to, but the menu selection is smaller."
+        },
+        {
+            "_id": "fresh",
+            "count": 1,
+            "avgScore": 0.6,
+            "avgMagnitude": 0,
+            "descArr": [
+                "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi."
+            ],
+            "summary": "The customer is expressing satisfaction with the cleanliness and convenience of a McDonald's location near Madame Tussaud's and a Tube station. They specifically mention that the bathrooms are clean and the tables are frequently bussed. The customer also notes the availability of Wi-Fi."
+        },
+        {
+            "_id": "burger",
+            "count": 1,
+            "avgScore": 0.3,
+            "avgMagnitude": 0,
+            "descArr": [
+                "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover."
+            ],
+            "summary": "The customer is expressing that while the McDonald's location they frequented was always clean, had ample seating, and friendly staff, they can only give it 3 stars due to the fact that it's a fast-food restaurant with limited options for healthy food choices. Despite this, the customer still enjoys their quarter pounder with cheese combo meal as a hangover cure."
+        },
+        {
+            "_id": "chicken tenders",
+            "count": 1,
+            "avgScore": -0.2,
+            "avgMagnitude": 0,
+            "descArr": [
+                "It's McDonalds, what else do you want?The menu selection is much smaller than back home, but the food is the same quality. We did miss ranch, though, because chicken tenders were not as yummy with a spicy sauce."
+            ],
+            "summary": "The customer is expressing that the chicken tenders at McDonald's are of the same quality as back home, but they missed the ranch sauce as they did not enjoy them as much with the spicy sauce."
+        },
+        {
+            "_id": "spicy",
+            "count": 1,
+            "avgScore": 0.7,
+            "avgMagnitude": 0,
+            "descArr": [
+                "It's McDonalds, what else do you want?The menu selection is much smaller than back home, but the food is the same quality. We did miss ranch, though, because chicken tenders were not as yummy with a spicy sauce."
+            ],
+            "summary": "The customer feels that the chicken tenders were not as tasty with a spicy sauce. However, the customer does not elaborate on whether they simply do not prefer the taste or if the spice level was too high."
+        },
+        {
+            "_id": "fries",
+            "count": 1,
+            "avgScore": 0.6,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the food at the restaurant and thought it was better than American McDonald's. They tried a variety of items including grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry and the millionaire donut. They particularly enjoyed the flavor of the sweet chili wrap, mccrispy and chicken selects. However, the McFlurrys were disappointing as the toppings were not mixed in properly. Overall, the customer enjoyed the food but had some reservations about the seating selection and cleanliness of the restaurant."
+        },
+        {
+            "_id": "loved the caramel filling",
+            "count": 1,
+            "avgScore": 0.9,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the food at McDonald's, preferring it over American McDonald's. They loved the grilled chicken sweet chili wrap, mccrispy, chicken selects, and the millionaire donut. They found the mcflurrys to be underwhelming, but loved the caramel filling in the millionaire donut. The seating selection was rough and dirty, however."
+        },
+        {
+            "_id": "clean and tidy",
+            "count": 2,
+            "avgScore": 0.7,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer is expressing that this McDonald's location is open, spacious, and kept clean and tidy by a friendly and jovial staff. The staff is accommodating, offering extra sauce without being prompted and engaging in conversation with customers. Although the food is typical McDonald's fare, the exceptional service sets this location apart."
+        },
+        {
+            "_id": "super spicy",
+            "count": 1,
+            "avgScore": -0.3,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the food at the restaurant and found it to be better than American McDonald's. They particularly enjoyed the grilled chicken sweet chili wrap and the mccrispy. However, they mentioned that the sweet chili wrap was super spicy."
+        },
+        {
+            "_id": "cheeseburger",
+            "count": 1,
+            "avgScore": 0.8,
+            "avgMagnitude": 0,
+            "descArr": [
+                "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi."
+            ],
+            "summary": "The customer is expressing that the McDonald's location is conveniently located and has clean facilities. They also mention enjoying their cheeseburger while utilizing the restaurant's Wi-Fi."
+        },
+        {
+            "_id": "millionaire donut",
+            "count": 2,
+            "avgScore": 0.9,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the food at Millionaire Donut, finding it better than American McDonald's. They appreciated the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonade, and the millionaire donut. The seating selection was rough and dirty, and the McFlurrys were underwhelming, but they loved the flavor of the wrap, seasoning on the chicken, and especially the millionaire donut with its delicious caramel filling. Overall, the customer thought the food was good and enjoyed their visit to Millionaire Donut."
+        },
+        {
+            "_id": "standard McDonald's fare",
+            "count": 1,
+            "avgScore": 0,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer is expressing that while the food at McDonald's is standard and not exceptional, the service at this particular location is excellent. The staff is friendly and accommodating, going above and beyond to make the customer feel welcome. The customer appreciated the server's conversation and willingness to provide extra sauce, making the experience feel more personalized. Overall, the customer had a positive experience at this McDonald's location."
+        },
+        {
+            "_id": "extra chilli sauce",
+            "count": 1,
+            "avgScore": 0.6,
+            "avgMagnitude": 0,
+            "descArr": [
+                "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool."
+            ],
+            "summary": "The customer enjoyed the experience at this McDonald's branch due to the cleanliness, spaciousness, and friendly staff. They particularly enjoyed the Sweet Chilli Chicken deli meal and appreciated the server's willingness to provide extra chilli sauce without hesitation. The customer also appreciated the great conversation they had with the server about their studies. Despite the standard McDonald's food, the customer highly valued the quality of service they received."
+        },
+        {
+            "_id": "really good",
+            "count": 1,
+            "avgScore": 0.9,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the food at Really Good, stating that it was better than American McDonald's. They tried a variety of items and particularly enjoyed the grilled chicken sweet chili wrap, mccrispy, and chicken selects. However, they noted that the seating selection was rough and dirty. The McFlurrys were underwhelming, but the millionaire donut with a caramel filling was really good. Overall, despite the seating situation, the customer was satisfied with the taste of the food at Really Good."
+        },
+        {
+            "_id": "smartie mcflurry",
+            "count": 2,
+            "avgScore": -0.5,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the food at McDonald's but found the seating dirty. They particularly enjoyed the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonade, and the millionaire donut. However, they were disappointed with the smartie mcflurry as it was underwhelming and more like a sundae with unmixed toppings. Overall, the customer had a positive experience at McDonald's in comparison to American McDonald's."
+        },
+        {
+            "_id": "reasonable",
+            "count": 2,
+            "avgScore": 0.65,
+            "avgMagnitude": 0,
+            "descArr": [
+                "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover.",
+                "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi."
+            ],
+            "summary": "The customers in both reviews express that the McDonald's location being discussed is clean, spacious, and conveniently situated. Though the food isn't necessarily of high quality, the employees are friendly and the atmosphere is pleasant. The second review focuses more on the location's accessibility to nearby attractions and mentions the clean facilities. Both reviews are overall positive, but neither rates the location higher than 3 stars."
+        },
+        {
+            "_id": "spectacularly clean",
+            "count": 1,
+            "avgScore": 0.8,
+            "avgMagnitude": 0,
+            "descArr": [
+                "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover."
+            ],
+            "summary": "The customer expresses that the McDonald's location is \"spectacularly clean\" with plenty of seating and friendly staff. However, they can only give it three stars because McDonald's isn't known for healthy food."
+        },
+        {
+            "_id": "soooooo good",
+            "count": 1,
+            "avgScore": 0.9,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer had a mixed experience at the restaurant with good food, but rough and dirty seating. The grilled chicken sweet chili wrap and mccrispy were the favorites and were \"soooooo good\". They also enjoyed the chicken selects and the millionaire donut, but found the mcflurrys underwhelming as the toppings were not mixed in. Overall, the food was better than American McDonald's."
+        },
+        {
+            "_id": "quarter pounder",
+            "count": 1,
+            "avgScore": 0.7,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the food at McDonald's, specifically the grilled chicken sweet chili wrap, mccrispy, quarter pounder and chicken selects. They found the seating area dirty. The mcflurrys were underwhelming, but the millionaire donut was tasty with good caramel filling. The customer thinks the food is better than American McDonald's."
+        },
+        {
+            "_id": "20+ minutes",
+            "count": 1,
+            "avgScore": -0.7,
+            "avgMagnitude": 0,
+            "descArr": [
+                "The workers here move in slow motion. Don't come here unless you're ready to wait 20+ minutes for a simple order. Ridiculous."
+            ],
+            "summary": "The customer is expressing dissatisfaction with the slow service at the establishment. They warn others to avoid coming unless they're willing to wait for a long time, specifically 20+ minutes, for a simple order."
+        },
+        {
+            "_id": "grilled chicken sweet chili wrap",
+            "count": 2,
+            "avgScore": 0.8,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the Grilled Chicken Sweet Chili Wrap from McDonald's due to its spicy flavor. They also expressed satisfaction with the seasoning on the Chicken Selects and the taste of the McCrispy. However, they found the seating area dirty and underwhelming McFlurrys. Overall, they enjoyed the food and found it much better than American McDonald's."
+        },
+        {
+            "_id": "mccrispy",
+            "count": 2,
+            "avgScore": 0.9,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the food at McCrispy, particularly the grilled chicken sweet chili wrap, chicken selects, and the Millionaire donut. They found the seating area to be dirty but noted that the food was better than that of American McDonald's. The customer loved the flavor of the spicy sweet chili wrap. They singled out the McCrispy as the favorite item, while the McFlurrys were underwhelming. Overall, the customer had a positive experience at McCrispy."
+        },
+        {
+            "_id": "amazing",
+            "count": 1,
+            "avgScore": 0.9,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer had a good experience with the food, finding it much better than the American McDonald's. However, they were disappointed with the dirty and uncomfortable seating. They enjoyed the sweet chili wrap, mccrispy, and chicken selects, praising the seasoning and flavor. The mcflurrys were not mixed well, but the millionaire donut was a hit with the caramel filling. Overall, the customer was happy with the food and its taste."
+        },
+        {
+            "_id": "chicken selects",
+            "count": 2,
+            "avgScore": 0.8500000000000001,
+            "avgMagnitude": 0,
+            "descArr": [
+                "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!"
+            ],
+            "summary": "The customer enjoyed the food at McDonald's, particularly the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, and millionaire donut. They found the seasoning on the chicken selects amazing. However, they thought that the seating selection was dirty, and the McFlurrys were underwhelming as the toppings weren't mixed in. The sweet chili wrap was super spicy but had great flavor. Overall, the customer preferred McDonald's in this location to American McDonald's."
+        }
+    ],
+    "analytics": [
+        {
+            "_id": "6549584f747a5a85e8229d6e",
+            "desc": "The workers here move in slow motion. Don't come here unless you're ready to wait 20+ minutes for a simple order. Ridiculous.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "20+ minutes",
+                "sentimentScore": -0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "06/06/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d72"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "Crunchie McFlurry",
+                "sentimentScore": 0.4,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229d9c"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "Sweet Chilli Chicken deli meal",
+                "sentimentScore": 0.5,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229d9b"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "amazing",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d88"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d92",
+            "desc": "Bloody awful!Talk about the worse food I have ever had. They replaced half the ingredients in the special meals and the service was awful. Certainly not somewhere I would recommend to anyone that I know!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "awful",
+                "sentimentScore": -1,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/17/2012T00:00:00",
+                "_id": "6549584f747a5a85e8229d93"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d92",
+            "desc": "Bloody awful!Talk about the worse food I have ever had. They replaced half the ingredients in the special meals and the service was awful. Certainly not somewhere I would recommend to anyone that I know!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "awful",
+                "sentimentScore": -1,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/17/2012T00:00:00",
+                "_id": "6549584f747a5a85e8229d94"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db2",
+            "desc": "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "burger",
+                "sentimentScore": 0.3,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "01/09/2009T00:00:00",
+                "_id": "6549584f747a5a85e8229db4"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "cadbury caramel mcflurry",
+                "sentimentScore": -0.4,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d75"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "cadbury caramel mcflurry",
+                "sentimentScore": -0.4,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d82"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "cheeseburger",
+                "sentimentScore": 0.8,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229daa"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "chicken selects",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d7a"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "chicken selects",
+                "sentimentScore": 0.8,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d80"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d8d",
+            "desc": "It's McDonalds, what else do you want?The menu selection is much smaller than back home, but the food is the same quality. We did miss ranch, though, because chicken tenders were not as yummy with a spicy sauce.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "chicken tenders",
+                "sentimentScore": -0.2,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "01/17/2013T00:00:00",
+                "_id": "6549584f747a5a85e8229d8f"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "clean",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229da8"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "clean and tidy",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229d98"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "clean and tidy",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229d9a"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "decent",
+                "sentimentScore": 0.6,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229da9"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "decent",
+                "sentimentScore": 0.5,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229db1"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db2",
+            "desc": "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "delicious",
+                "sentimentScore": 0.8,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "01/09/2009T00:00:00",
+                "_id": "6549584f747a5a85e8229db7"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "delicious",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229da3"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "delicious",
+                "sentimentScore": 0.8,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229daf"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d6e",
+            "desc": "The workers here move in slow motion. Don't come here unless you're ready to wait 20+ minutes for a simple order. Ridiculous.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "drinks",
+                "sentimentScore": 0,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "06/06/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d6f"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "espresso",
+                "sentimentScore": 0.6,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d77"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "extra chilli sauce",
+                "sentimentScore": 0.6,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229da4"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "fresh",
+                "sentimentScore": 0.6,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229db0"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db2",
+            "desc": "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "friendly",
+                "sentimentScore": 0.6,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "01/09/2009T00:00:00",
+                "_id": "6549584f747a5a85e8229db6"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "friendly",
+                "sentimentScore": 0.8,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229da1"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "friendly",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229dae"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "fries",
+                "sentimentScore": 0.6,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d7f"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "frozen lemonde",
+                "sentimentScore": 0.6,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d74"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "frozen lemonde",
+                "sentimentScore": 0.6,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d81"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "generous",
+                "sentimentScore": 0.8,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d85"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "generous",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229dab"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "good for a laugh",
+                "sentimentScore": 0.8,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229da2"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "good service",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229da5"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "great seasoning",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d89"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "grilled chicken sweet chili wrap",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d78"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "grilled chicken sweet chili wrap",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d7c"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "loved the caramel filling",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d8c"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "mccrispy",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d79"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "mccrispy",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d7d"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "millionaire donut",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d7b"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "millionaire donut",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d84"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "not mentioned",
+                "sentimentScore": 0,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229d99"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "not mentioned",
+                "sentimentScore": 0,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229d9f"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "not mentioned",
+                "sentimentScore": 0,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229da0"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "not mentioned",
+                "sentimentScore": 0,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229da6"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "open and spacious",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229d97"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "quarter pounder",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d7e"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d8d",
+            "desc": "It's McDonalds, what else do you want?The menu selection is much smaller than back home, but the food is the same quality. We did miss ranch, though, because chicken tenders were not as yummy with a spicy sauce.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "ranch",
+                "sentimentScore": -0.4,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "01/17/2013T00:00:00",
+                "_id": "6549584f747a5a85e8229d8e"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "really good",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d8b"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db2",
+            "desc": "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "reasonable",
+                "sentimentScore": 0.5,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "01/09/2009T00:00:00",
+                "_id": "6549584f747a5a85e8229db5"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "reasonable",
+                "sentimentScore": 0.8,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229dac"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d6e",
+            "desc": "The workers here move in slow motion. Don't come here unless you're ready to wait 20+ minutes for a simple order. Ridiculous.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "ridiculous",
+                "sentimentScore": -0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "06/06/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d71"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "smartie mcflurry",
+                "sentimentScore": -0.5,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d76"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "smartie mcflurry",
+                "sentimentScore": -0.5,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d83"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d6e",
+            "desc": "The workers here move in slow motion. Don't come here unless you're ready to wait 20+ minutes for a simple order. Ridiculous.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "solid foods",
+                "sentimentScore": 0,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "06/06/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d70"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "soooooo good",
+                "sentimentScore": 0.9,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d87"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229db2",
+            "desc": "I used to go to this McDonald's around the corner from my dorm when I was hungover and barely able to get out of bed. Â My hangover cure? Â A quarter pounder with cheese combo meal. Â This location has always been spectacularly clean (there are employees whose sole duty is just to clean all day) and never too terribly busy. Â There's also lots of seating (there's an upstairs as well) and the employees are very friendly. Â The location is great - just off Marylebone Road on Baker Street.So why only 3 stars? Â Well, it's a McDonald's. Â Not exactly known for healthy gourmet food. Â A good location though, and definitely hits the spot when I'm hurting with a hangover.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "spectacularly clean",
+                "sentimentScore": 0.8,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "01/09/2009T00:00:00",
+                "_id": "6549584f747a5a85e8229db3"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d8d",
+            "desc": "It's McDonalds, what else do you want?The menu selection is much smaller than back home, but the food is the same quality. We did miss ranch, though, because chicken tenders were not as yummy with a spicy sauce.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "spicy",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "01/17/2013T00:00:00",
+                "_id": "6549584f747a5a85e8229d90"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "standard",
+                "sentimentScore": 0,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229d9e"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d96",
+            "desc": "Yes, it's a McDonald's, yes they serve standard McDonald's food, but while I try not to frequent here (it's not good for my ever-expanding waistline - I only have to look at food to put on weight...) this branch of the popular fast food chain is pretty good.Open and spacious and located just off the corner of Marylebone Road and Baker Street, this McDonald's has plenty of seats and is always kept clean and tidy by the multitude of staff around who are always friendly and good for a laugh.I went in over the weekend, tempted along by a couple of friends, and whilst ordering my Sweet Chilli Chicken deli meal (easily the best thing on the menu), and my free student card Crunchie McFlurry, the server was asking me about which uni I was at, what I studied and having a great conversation with me. She even obliged my request for extra chilli sauce on the deli (not many people know you can ask for extra sauces or things on your food here), and it came with lashings of the stuff.She even asked if I wanted extra pots of sauces, which was nice as sometimes I feel a bit awkward asking, particularly when it's busy and they're rushing around trying to please everyone.Food was standard McDonald's fare and no better or worse than usual, but the lovely touch of really good service makes all the difference. Coincidentally the girl that served me was doing a Masters in Law, which is very cool.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "standard McDonald's fare",
+                "sentimentScore": 0,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/24/2011T00:00:00",
+                "_id": "6549584f747a5a85e8229d9d"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "super spicy",
+                "sentimentScore": -0.3,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d86"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d73",
+            "desc": "the seating selection here is rough. and dirty. but the food was good. way better than american mcdonalds. we got the grilled chicken sweet chili wrap, mccrispy, quarter pounder, fries, chicken selects, frozen lemonde, cadbury caramel mcflurry, smartie mcflurry, and the millionaire donut. loved the flavor on the sweet chili wrap, it is super spicy though! the mccrispy was our favorite thing we tried soooooo good! chicken selects were also amazing with great seasoning. the mcflurrys were underwhelming. more like a sundae as the toppings werent mixed in. the millionaire donut though was really good, loved the caramel filling!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "underwhelming",
+                "sentimentScore": -0.5,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "05/03/2023T00:00:00",
+                "_id": "6549584f747a5a85e8229d8a"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d92",
+            "desc": "Bloody awful!Talk about the worse food I have ever had. They replaced half the ingredients in the special meals and the service was awful. Certainly not somewhere I would recommend to anyone that I know!",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "worse",
+                "sentimentScore": -1,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/17/2012T00:00:00",
+                "_id": "6549584f747a5a85e8229d95"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229da7",
+            "desc": "A handy McDonald's around the corner from Madame Tussaud's and the Baker Street Tube station, this one is on two floors with the loos ('toilets' in American) on the first floor ('second floor'). As with most McD's, the loos were clean and well stocked. The tables are cleaned and bussed often, leaving a decent place to eat your cheeseburger while you do what you need to do with their wi-fi.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "yes",
+                "sentimentScore": 0.7,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "12/12/2010T00:00:00",
+                "_id": "6549584f747a5a85e8229dad"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229d8d",
+            "desc": "It's McDonalds, what else do you want?The menu selection is much smaller than back home, but the food is the same quality. We did miss ranch, though, because chicken tenders were not as yummy with a spicy sauce.",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "yummy",
+                "sentimentScore": 0.6,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "01/17/2013T00:00:00",
+                "_id": "6549584f747a5a85e8229d91"
+            }
+        }
+    ]
+}

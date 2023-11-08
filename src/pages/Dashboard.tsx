@@ -132,7 +132,7 @@ function Dashboard() {
         setNegReview(0);
         setNeuReview(0);
         setMixReview(0);
-    }
+    };
 
     const getInsightsAndAnalytics = async (
         businessId = "65227a4fd7a294d9ee6f18a6",
@@ -141,7 +141,7 @@ function Dashboard() {
         setLoader(true);
         try {
             const res = await GET(
-                `/review/getinsightAnalytics?businessId=${businessId}&locationId=${locationId}`
+                `/review/getCategories?businessId=${businessId}&locationId=${locationId}`
             );
             if (res && res.status === 200) {
                 if (res.data.insights && res.data.insights.length) {
@@ -165,8 +165,8 @@ function Dashboard() {
                 }
 
                 if (res.data.categories && res.data.categories.length) {
-                    resetAllCount(); 
-                    
+                    resetAllCount();
+
                     res.data.categories.map((e: any) => {
                         switch (e._id) {
                             case "negative":
@@ -415,56 +415,59 @@ function Dashboard() {
                             >
                                 Positive insights
                             </Typography>
-                            {positiveInsights.map((e: InsightType, i: number) => (
-                                <Tooltip
-                                    title={`${camelCaseToTitleCase(
-                                        e.name
-                                    )} appears ${e.count} times.`}
-                                    key={i}
-                                >
-                                    <Chip
-                                        size="small"
-                                        // icon={<ThumbUpOutlinedIcon />}
-                                        label={
-                                            <Box
-                                                display="flex"
-                                                alignItems="center"
-                                            >
-                                                <small>
-                                                    <strong>
-                                                        {camelCaseToTitleCase(
-                                                            e.name
-                                                        )}
-                                                    </strong>
-                                                </small>
+                            {positiveInsights.map(
+                                (e: InsightType, i: number) => (
+                                    <Tooltip
+                                        title={`${camelCaseToTitleCase(
+                                            e.name
+                                        )} appears ${e.count} times.`}
+                                        key={i}
+                                    >
+                                        <Chip
+                                            size="small"
+                                            // icon={<ThumbUpOutlinedIcon />}
+                                            label={
                                                 <Box
-                                                    sx={{
-                                                        borderRadius: "50%",
-                                                        width: "20px",
-                                                        height: "20px",
-                                                        display: "flex",
-                                                        justifyContent:
-                                                            "center",
-                                                        alignItems: "center",
-                                                        ml: 0.5,
-                                                        backgroundColor:
-                                                            "success.light",
-                                                        color: "#fff",
-                                                    }}
+                                                    display="flex"
+                                                    alignItems="center"
                                                 >
-                                                    {e.count}
+                                                    <small>
+                                                        <strong>
+                                                            {camelCaseToTitleCase(
+                                                                e.name
+                                                            )}
+                                                        </strong>
+                                                    </small>
+                                                    <Box
+                                                        sx={{
+                                                            borderRadius: "50%",
+                                                            width: "20px",
+                                                            height: "20px",
+                                                            display: "flex",
+                                                            justifyContent:
+                                                                "center",
+                                                            alignItems:
+                                                                "center",
+                                                            ml: 0.5,
+                                                            backgroundColor:
+                                                                "success.light",
+                                                            color: "#fff",
+                                                        }}
+                                                    >
+                                                        {e.count}
+                                                    </Box>
                                                 </Box>
-                                            </Box>
-                                        }
-                                        variant="outlined"
-                                        // color="success"
-                                        sx={{
-                                            m: 0.5,
-                                            px: 0.5,
-                                        }}
-                                    />
-                                </Tooltip>
-                            ))}
+                                            }
+                                            variant="outlined"
+                                            // color="success"
+                                            sx={{
+                                                m: 0.5,
+                                                px: 0.5,
+                                            }}
+                                        />
+                                    </Tooltip>
+                                )
+                            )}
                             {positiveInsights.length === 10 && (
                                 <Chip
                                     size="small"
@@ -493,57 +496,60 @@ function Dashboard() {
                             >
                                 Negative insights
                             </Typography>
-                            {negativeInsights.map((e: InsightType, i: number) => (
-                                <Tooltip
-                                    title={`${camelCaseToTitleCase(
-                                        e.name
-                                    )} appears ${e.count} times.`}
-                                    key={i}
-                                >
-                                    <Chip
-                                        key={e.name}
-                                        size="small"
-                                        // icon={<ThumbDownOffAltOutlinedIcon />}
-                                        label={
-                                            <Box
-                                                display="flex"
-                                                alignItems="center"
-                                            >
-                                                <small>
-                                                    <strong>
-                                                        {camelCaseToTitleCase(
-                                                            e.name
-                                                        )}
-                                                    </strong>
-                                                </small>
+                            {negativeInsights.map(
+                                (e: InsightType, i: number) => (
+                                    <Tooltip
+                                        title={`${camelCaseToTitleCase(
+                                            e.name
+                                        )} appears ${e.count} times.`}
+                                        key={i}
+                                    >
+                                        <Chip
+                                            key={e.name}
+                                            size="small"
+                                            // icon={<ThumbDownOffAltOutlinedIcon />}
+                                            label={
                                                 <Box
-                                                    sx={{
-                                                        borderRadius: "50%",
-                                                        width: "20px",
-                                                        height: "20px",
-                                                        display: "flex",
-                                                        justifyContent:
-                                                            "center",
-                                                        alignItems: "center",
-                                                        ml: 0.5,
-                                                        backgroundColor:
-                                                            "warning.light",
-                                                        // color: "#fff",
-                                                    }}
+                                                    display="flex"
+                                                    alignItems="center"
                                                 >
-                                                    {e.count}
+                                                    <small>
+                                                        <strong>
+                                                            {camelCaseToTitleCase(
+                                                                e.name
+                                                            )}
+                                                        </strong>
+                                                    </small>
+                                                    <Box
+                                                        sx={{
+                                                            borderRadius: "50%",
+                                                            width: "20px",
+                                                            height: "20px",
+                                                            display: "flex",
+                                                            justifyContent:
+                                                                "center",
+                                                            alignItems:
+                                                                "center",
+                                                            ml: 0.5,
+                                                            backgroundColor:
+                                                                "warning.light",
+                                                            // color: "#fff",
+                                                        }}
+                                                    >
+                                                        {e.count}
+                                                    </Box>
                                                 </Box>
-                                            </Box>
-                                        }
-                                        variant="outlined"
-                                        // color="error"
-                                        sx={{
-                                            m: 0.5,
-                                            px: 0.5,
-                                        }}
-                                    />
-                                </Tooltip>
-                            ))}
+                                            }
+                                            variant="outlined"
+                                            // color="error"
+                                            sx={{
+                                                m: 0.5,
+                                                px: 0.5,
+                                            }}
+                                        />
+                                    </Tooltip>
+                                )
+                            )}
                             {negativeInsights.length === 10 && (
                                 <Chip
                                     size="small"

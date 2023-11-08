@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import LineChart from "../components/charts/LineChart";
 import ReviewForm from "../components/module/review/ReviewForm";
 import useApp from "../store/app.context";
-import { GET } from "../services/api.service";
+import { GET, POST } from "../services/api.service";
 import { alpha, useTheme } from "@mui/material/styles";
 import {
     Box,
@@ -30,6 +30,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 import InsightFilterModal from "../components/modals/InsightFilterModal";
 import ChatBot from "../components/module/chat";
 import ChatRoundedIcon from "@mui/icons-material/ChatRounded";
+import axios from "axios";
 
 const initChartDataSet = [
     {
@@ -95,6 +96,7 @@ type InsightType = {
     value: number;
     checked?: boolean;
     summary: string;
+    descArr: string[];
 };
 
 function Dashboard() {
@@ -133,13 +135,15 @@ function Dashboard() {
             selectedLocation
         ) {
             // reset
+            setIsAppliedFilter(false);
             resetInights();
             setChartsData([]);
 
-            getInsightsAndAnalytics(
-                user?.business?.businessId,
-                selectedLocation.id
-            );
+            // getInsightsAndAnalytics(
+            //     user?.business?.businessId,
+            //     selectedLocation.id
+            // );
+            loadLocalInsightJSON(selectedLocation.id);
         }
     }, [user, selectedLocation]);
 
@@ -148,6 +152,7 @@ function Dashboard() {
     }, [insights]);
 
     const resetInights = () => {
+        setInsights([]);
         setPositiveInsights([]);
         setNegativeInsights([]);
     };
@@ -175,6 +180,52 @@ function Dashboard() {
         // console
     };
 
+    const getInsightSumm = async (insight: string, descArr: string[]) => {
+        try {
+            const res = await POST("/review/getInsightSummaries", {
+                insight,
+                desc: descArr,
+            });
+            console.log(res);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const loadLocalInsightJSON = (locId: number) => {
+        setLoader(true);
+        const url = `/insights/loc${locId}.json`;
+        console.log({ url });
+        axios
+            .get(url)
+            .then((res) => {
+                if (res) {
+                    const insightsRes = res.data.insights;
+                    const insights = buildInsightData(insightsRes);
+
+                    if (
+                        res.data.analytics &&
+                        res.data.analytics.length &&
+                        insights.length
+                    ) {
+                        const chartData = buildAnalyticsData(
+                            insights,
+                            res.data.analytics
+                        );
+                        setChartsData(
+                            chartData.filter((e) => e.data.labels.length > 1)
+                        );
+                    }
+                }
+
+                setLoader(false);
+            })
+            .catch((err) => {
+                console.log(err);
+                setLoader(false);
+            });
+    };
+
     const getInsightsAndAnalytics = async (
         businessId: string,
         locationId: string
@@ -182,134 +233,141 @@ function Dashboard() {
         setLoader(true);
         try {
             const res = await GET(
-                `/review/getSummarizedInsightAnalytics?businessId=${businessId}&locationId=${locationId}`
+                `/review/getInsightAnalytics?businessId=${businessId}&locationId=${locationId}`
             );
             if (res && res.status === 200) {
                 const insightsRes = res.data.insights;
-                let insights;
-                if (insightsRes && insightsRes.length) {
-                    insights = insightsRes.map((e: any) => ({
-                        ...e,
-                        label: e._id,
-                        score: e.avgScore,
-                        count: e?.count,
-                        checked: true,
-                        value:
-                            e.avgScore > 1
-                                ? Math.floor(e.avgScore)
-                                : Math.floor(e.avgScore * 10),
-                    }));
-                    // store in state
-                    setInsights(insights);
-
-                    // categories insights
-                    categoriesInsights(insights);
-
-                    /*setLowPerfAment(
-                        insights
-                            .filter((e: any) => e.score < 0)
-                            .reduce((a: any, b: any) => {
-                                return a.value < b.value ? a : b;
-                            })
-                    );
-
-                    setHighPerfAment(
-                        insights
-                            .filter((e: any) => e.score > 0)
-                            .reduce((a: any, b: any) => {
-                                return a.value > b.value ? a : b;
-                            })
-                    );*/
-                }
+                const insights = buildInsightData(insightsRes);
 
                 if (
                     res.data.analytics &&
                     res.data.analytics.length &&
                     insights.length
                 ) {
-                    const data = res.data.analytics.map((e: any) => ({
-                        entityName: e.entityScores.entityName,
-                        date: dayjs(e.entityScores.date.split("T")),
-                        score: Math.floor(e.entityScores.sentimentScore * 10),
-                    }));
-
-                    const analyticsData: any[] = [];
-
-                    insights.forEach((e: any) => {
-                        analyticsData.push({
-                            type: e?.label,
-                            data: data.filter(
-                                (d: any) => d.entityName === e?.label
-                            ),
-                        });
-                    });
-
-                    const newData = analyticsData.map((a) => {
-                        const sortedData = a.data.sort((a: any, b: any) =>
-                            dayjs(a.date).isAfter(dayjs(b.date)) ? 1 : -1
-                        );
-                        const data =
-                            sortedData.length < 6
-                                ? sortedData
-                                : sortedData.slice(
-                                      sortedData.length - 6,
-                                      sortedData.length
-                                  );
-                        return {
-                            type: a.type,
-                            data: data,
-                        };
-                    });
-
-                    const chartData = newData.map((e: any) => {
-                        const dynamicColor = theme.palette.primary.main;
-                        return {
-                            type: e.type,
-                            data: {
-                                labels: e.data.map((n: any) =>
-                                    dayjs(n.date).format("MMM, YYYY")
-                                ),
-                                datasets: [
-                                    {
-                                        tension: 0.4,
-                                        borderColor: dynamicColor,
-                                        fill: "start",
-                                        backgroundColor: ({
-                                            chart,
-                                        }: {
-                                            chart: any;
-                                        }) => {
-                                            const bgGrd =
-                                                chart.ctx.createLinearGradient(
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    theme.breakpoints.up("lg")
-                                                        ? 200
-                                                        : 120
-                                                );
-                                            // More config for your gradient
-                                            bgGrd.addColorStop(0, dynamicColor);
-                                            bgGrd.addColorStop(1, "white");
-                                            return bgGrd;
-                                        },
-                                        // backgroundColor: randomColor(),
-                                        data: e.data.map((l: any) => l.score),
-                                    },
-                                ],
-                            },
-                        };
-                    });
+                    const chartData = buildAnalyticsData(
+                        insights,
+                        res.data.analytics
+                    );
                     setChartsData(
                         chartData.filter((e) => e.data.labels.length > 1)
                     );
                 }
             }
+
+            setLoader(false);
         } catch (err) {
             console.log(err);
+            setLoader(false);
+        }
+    };
+
+    const buildInsightData = (insightData: any) => {
+        let insights;
+        if (insightData && insightData.length) {
+            insights = insightData.map((e: any) => ({
+                ...e,
+                label: e._id,
+                score: e.avgScore,
+                count: e?.count,
+                checked: true,
+                value:
+                    e.avgScore > 1
+                        ? Math.floor(e.avgScore)
+                        : Math.floor(e.avgScore * 10),
+            }));
+            // store in state
+            setInsights(insights);
+
+            // categories insights
+            categoriesInsights(insights);
+
+            /*setLowPerfAment(
+                insights
+                    .filter((e: any) => e.score < 0)
+                    .reduce((a: any, b: any) => {
+                        return a.value < b.value ? a : b;
+                    })
+            );
+
+            setHighPerfAment(
+                insights
+                    .filter((e: any) => e.score > 0)
+                    .reduce((a: any, b: any) => {
+                        return a.value > b.value ? a : b;
+                    })
+            );*/
         }
 
-        setLoader(false);
+        return insights;
+    };
+
+    const buildAnalyticsData = (insights: any, analyticsResData: any) => {
+        const data = analyticsResData.map((e: any) => ({
+            entityName: e.entityScores.entityName,
+            date: dayjs(e.entityScores.date.split("T")),
+            score: Math.floor(e.entityScores.sentimentScore * 10),
+        }));
+
+        const analyticsData: any[] = [];
+
+        insights.forEach((e: any) => {
+            analyticsData.push({
+                type: e?.label,
+                data: data.filter((d: any) => d.entityName === e?.label),
+            });
+        });
+
+        const newData = analyticsData.map((a) => {
+            const sortedData = a.data.sort((a: any, b: any) =>
+                dayjs(a.date).isAfter(dayjs(b.date)) ? 1 : -1
+            );
+            const data =
+                sortedData.length < 6
+                    ? sortedData
+                    : sortedData.slice(
+                          sortedData.length - 6,
+                          sortedData.length
+                      );
+            return {
+                type: a.type,
+                data: data,
+            };
+        });
+
+        const chartData = newData.map((e: any) => {
+            const dynamicColor = theme.palette.primary.main;
+            return {
+                type: e.type,
+                data: {
+                    labels: e.data.map((n: any) =>
+                        dayjs(n.date).format("MMM, YYYY")
+                    ),
+                    datasets: [
+                        {
+                            tension: 0.4,
+                            borderColor: dynamicColor,
+                            fill: "start",
+                            backgroundColor: ({ chart }: { chart: any }) => {
+                                const bgGrd = chart.ctx.createLinearGradient(
+                                    0,
+                                    0,
+                                    0,
+                                    theme.breakpoints.up("lg") ? 200 : 120
+                                );
+                                // More config for your gradient
+                                bgGrd.addColorStop(0, dynamicColor);
+                                bgGrd.addColorStop(1, "white");
+                                return bgGrd;
+                            },
+                            // backgroundColor: randomColor(),
+                            data: e.data.map((l: any) => l.score),
+                        },
+                    ],
+                },
+            };
+        });
+
+        return chartData;
     };
 
     const userData1 = {
@@ -552,6 +610,12 @@ function Dashboard() {
                                                 <Chip
                                                     key={e.label}
                                                     size="small"
+                                                    onClick={() =>
+                                                        getInsightSumm(
+                                                            e.label,
+                                                            e.descArr
+                                                        )
+                                                    }
                                                     // icon={
                                                     //     <ThumbUpOutlinedIcon />
                                                     // }
@@ -631,6 +695,12 @@ function Dashboard() {
                                                 <Chip
                                                     key={e.label}
                                                     size="small"
+                                                    onClick={() =>
+                                                        getInsightSumm(
+                                                            e.label,
+                                                            e.descArr
+                                                        )
+                                                    }
                                                     // icon={
                                                     //     <ThumbDownOffAltOutlinedIcon />
                                                     // }

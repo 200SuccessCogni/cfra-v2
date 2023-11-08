@@ -1,0 +1,90 @@
+{
+    "categories": [
+        {
+            "_id": "positive",
+            "count": 1
+        }
+    ],
+    "sources": {
+        "0": {
+            "_id": "local",
+            "count": 1
+        }
+    },
+    "insights": [
+        {
+            "_id": "breakfast meal",
+            "count": 1,
+            "avgScore": 0.5,
+            "avgMagnitude": 0,
+            "descArr": [
+                "This place always saves me in mornings specially with Breakfast Meal . .It is not much but very useful . . . LOL Â . . ."
+            ],
+            "summary": "The customer expresses that the Breakfast Meal at this place is very useful for them in the mornings. They seem to appreciate the convenience it provides."
+        },
+        {
+            "_id": "useful",
+            "count": 1,
+            "avgScore": 0.2,
+            "avgMagnitude": 0,
+            "descArr": [
+                "This place always saves me in mornings specially with Breakfast Meal . .It is not much but very useful . . . LOL Â . . ."
+            ],
+            "summary": "Customers find the breakfast meals served in the place highly useful in the mornings. Despite being simple, the meals are considered valuable."
+        },
+        {
+            "_id": "mornings",
+            "count": 1,
+            "avgScore": 0.4,
+            "avgMagnitude": 0,
+            "descArr": [
+                "This place always saves me in mornings specially with Breakfast Meal . .It is not much but very useful . . . LOL Â . . ."
+            ],
+            "summary": "Customers appreciate having a convenient option for breakfast in the morning and find this place to be helpful, despite it not being particularly remarkable."
+        }
+    ],
+    "analytics": [
+        {
+            "_id": "6549584f747a5a85e8229dc1",
+            "desc": "This place always saves me in mornings specially with Breakfast Meal . .It is not much but very useful . . . LOL Â . . .",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "breakfast meal",
+                "sentimentScore": 0.5,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "10/24/2012T00:00:00",
+                "_id": "6549584f747a5a85e8229dc2"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229dc1",
+            "desc": "This place always saves me in mornings specially with Breakfast Meal . .It is not much but very useful . . . LOL Â . . .",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "mornings",
+                "sentimentScore": 0.4,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "10/24/2012T00:00:00",
+                "_id": "6549584f747a5a85e8229dc4"
+            }
+        },
+        {
+            "_id": "6549584f747a5a85e8229dc1",
+            "desc": "This place always saves me in mornings specially with Breakfast Meal . .It is not much but very useful . . . LOL Â . . .",
+            "entityScores": {
+                "sentence": "",
+                "entityName": "useful",
+                "sentimentScore": 0.2,
+                "sentimentMagnitude": 0,
+                "category": "",
+                "actionItem": "",
+                "date": "10/24/2012T00:00:00",
+                "_id": "6549584f747a5a85e8229dc3"
+            }
+        }
+    ]
+}
