@@ -8,6 +8,7 @@ import {
     Checkbox,
     Button,
     Box,
+    Divider,
 } from "@mui/material";
 
 const sourceList = [
@@ -85,9 +86,10 @@ function ReviewForm(props: Iprops) {
 
     return (
         <>
-            <Typography variant="body2" sx={{ color: "#666" }}>
+            <Typography variant="body2" gutterBottom sx={{ color: "#666" }}>
                 By Source
             </Typography>
+            <Divider />
             <FormGroup>
                 {filters.length > 0 &&
                     filters.map((item, i) => (
@@ -127,6 +129,7 @@ function ReviewForm(props: Iprops) {
                         onChange={ratingHandler}
                     />
                 </FormControl> */}
+
                 {!!props?.showCategory && (
                     <Box sx={{ display: "flex", flexDirection: "column" }}>
                         <Typography
@@ -136,6 +139,7 @@ function ReviewForm(props: Iprops) {
                         >
                             By Category
                         </Typography>
+                        <Divider />
                         {categories.length > 0 &&
                             categories.map((item, i) => (
                                 <FormControlLabel
