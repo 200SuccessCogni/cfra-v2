@@ -21,12 +21,15 @@ import dayjs from "dayjs";
 import AIChip from "../components/core/chip/AIChip";
 import { IReviewItem } from "@/interfaces/review.interface";
 import { camelCaseToTitleCase, randomColor } from "../services/shared.service";
+import TrendingDownIcon from "@mui/icons-material/TrendingDown";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 
 function StatCard(props: ICountCard) {
     return (
         <Paper
             elevation={0}
             sx={{
+                position: "relative",
                 display: "flex",
                 justifyContent: "space-between",
                 flexDirection: "column",
@@ -48,6 +51,30 @@ function StatCard(props: ICountCard) {
             >
                 {props.label}
             </Typography>
+            {props.percentage && (
+                <Box
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        position: "absolute",
+                        top: "10px",
+                        right: "15px",
+                    }}
+                >
+                    {!props.isImproving && (
+                        <TrendingDownIcon sx={{ color: props.color }} />
+                    )}
+                    {props.isImproving && (
+                        <TrendingUpIcon sx={{ color: props.color }} />
+                    )}
+                    <Typography
+                        variant="caption"
+                        sx={{ lineHeight: 1, color: props.color, pl: 0.51 }}
+                    >
+                        {props.percentage || 2}%
+                    </Typography>
+                </Box>
+            )}
         </Paper>
     );
 }
@@ -269,6 +296,9 @@ function Dashboard() {
                                 count={neuReview}
                                 label="Neutral Reviews"
                                 backgroundColor="rgb(178 226 254 / 50%)"
+                                color="#00301fb3"
+                                isImproving={true}
+                                percentage={3}
                             />
                         </Grid>
                         <Grid item xs={6} md={3}>
@@ -276,6 +306,9 @@ function Dashboard() {
                                 count={posReview}
                                 label="Positive Reviews"
                                 backgroundColor="rgb(178 254 206 / 50%)"
+                                color="#00301fb3"
+                                isImproving={true}
+                                percentage={3}
                             />
                         </Grid>
                         <Grid item xs={6} md={3}>
@@ -283,10 +316,19 @@ function Dashboard() {
                                 count={negReview}
                                 label="Negative Reviews"
                                 backgroundColor="rgb(254 178 178 / 46%)"
+                                color="#9d1414"
+                                isImproving={false}
+                                percentage={3}
                             />
                         </Grid>
                         <Grid item xs={6} md={3}>
-                            <StatCard count={mixReview} label="Mixed Reviews" />
+                            <StatCard
+                                count={mixReview}
+                                label="Mixed Reviews"
+                                color="#00301fb3"
+                                isImproving={true}
+                                percentage={3}
+                            />
                         </Grid>
                     </Grid>
                     <Box
