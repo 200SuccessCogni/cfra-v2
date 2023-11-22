@@ -112,7 +112,7 @@ const theme = createTheme({
 });
 
 const defaultTheme = theme;
-const mcdTheme = getNewTheme({ primary: "#ffbc0d", secondary: "#000" });
+export const mcdTheme = getNewTheme({ primary: "#ffbc0d", secondary: "#000" });
 // defaultTheme = mcdTheme;
 
 export default defaultTheme;

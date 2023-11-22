@@ -16,7 +16,7 @@ import useApp from "./store/app.context";
 
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { getNewTheme } from "./styles/theme";
+import { getNewTheme, mcdTheme } from "./styles/theme";
 
 // Lazy loading
 const Dashboard = lazy(() => import("./pages/Dashboard"));
@@ -41,9 +41,10 @@ function withAuthInterceptor(component: ReactElement, isAuthenticated = true) {
 function App() {
     const { alert, setAlert, theme, setTheme } = useApp();
 
-    // useEffect(() => {
-    //     setTheme(getNewTheme({ primary: "#ffbc0d", secondary: "#000" }));
-    // }, []);
+    useEffect(() => {
+        // Set McDonald's theme
+        setTheme(mcdTheme);
+    }, []);
 
     return (
         <>
