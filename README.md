@@ -19,7 +19,7 @@ To get started with CFRA Web UI, follow these steps:
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/200SuccessCogni/cfra-ui-v2
+git clone https://github.com/200SuccessCogni/cfra-ui-v2.git
 ```
 
 Change into the project directory:
