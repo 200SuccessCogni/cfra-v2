@@ -123,7 +123,7 @@ function RecommendModal(props: IRecModal) {
                     </Button>
                     <Button
                         onClick={props.closeHandler}
-                        color="primary"
+                        color="black"
                         variant="contained"
                         // autoFocus
                     >

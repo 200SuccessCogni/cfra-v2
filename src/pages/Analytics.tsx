@@ -585,7 +585,7 @@ function Dashboard() {
                                     sx={{
                                         borderRadius: "1rem",
                                         backgroundColor: alpha(
-                                            theme.palette.primary.light,
+                                            theme.palette.success.light,
                                             0.1
                                         ),
                                         p: 2,
@@ -593,7 +593,7 @@ function Dashboard() {
                                 >
                                     <Typography
                                         variant="body2"
-                                        color="primary.main"
+                                        color="success.dark"
                                         gutterBottom
                                         fontWeight={600}
                                     >

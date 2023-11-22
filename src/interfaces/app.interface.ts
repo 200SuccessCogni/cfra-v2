@@ -1,8 +1,9 @@
+import { Theme } from "@mui/material";
 import { IResort } from "./resort.interface";
 import { Iuser } from "./user.interface";
 
 export interface IApp {
-    theme: string;
+    theme: Theme;
     currentPage: string;
     loader: boolean;
     user: Iuser | null;
@@ -18,6 +19,7 @@ export interface IApp {
     setResort: (data: IResort[]) => undefined;
     setALLReviews: (data: any[]) => undefined;
     setAlert: (data: IAlert) => undefined;
+    setTheme: (data: Theme) => undefined;
 }
 
 export interface INotification {

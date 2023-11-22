@@ -36,58 +36,83 @@ declare module "@mui/material/Button" {
     }
 }
 
-const primaryBase = "#00301F";
-const secondaryBase = "#FFD681";
-const blackBase = "#000";
-const primaryMain = alpha(primaryBase, 0.7);
-const secondaryMain = alpha(secondaryBase, 0.7);
-
-const palette: ExtendedPaletteOptions = {
-    primary: {
-        main: primaryMain,
-        light: alpha(primaryBase, 0.3),
-        dark: alpha(primaryBase, 0.9),
-        contrastText:
-            getContrastRatio(primaryMain, "#fff") > 4.5 ? "#fff" : "#111",
-    },
-    secondary: {
-        main: secondaryMain,
-        light: alpha(secondaryBase, 0.5),
-        dark: alpha(secondaryBase, 0.9),
-        contrastText:
-            getContrastRatio(secondaryMain, "#fff") > 4.5 ? "#fff" : "#111",
-        darker: secondaryBase,
-    },
-    black: {
-        main: alpha(blackBase, 0.7),
-        light: alpha(blackBase, 0.5),
-        dark: alpha(blackBase, 0.9),
-        contrastText: "#fff",
-    },
-    gray: {
-        main: "#777",
-    },
-    error: {
-        main: red.A400,
-    },
-    text: {
-        primary: "#032e2b",
-        secondary: "#222",
-        light: "#454545",
-        contrastText: "#fff",
-        contrastTextLight: "#d0e9f3",
-    },
-    background: {
-        default: "#ecf3eb",
-    },
+type themeColos = {
+    primary: string;
+    secondary: string;
+    text?: string;
 };
+
+export function generatePalette(colors?: themeColos) {
+    const primaryBase = (colors && colors.primary) || "#00301F";
+    const secondaryBase = (colors && colors.secondary) || "#FFD681";
+    const blackBase = "#000";
+    const primaryMain = alpha(primaryBase, 0.7);
+    const secondaryMain = alpha(secondaryBase, 0.7);
+
+    const palette: ExtendedPaletteOptions = {
+        primary: {
+            main: primaryMain,
+            light: alpha(primaryBase, 0.3),
+            dark: alpha(primaryBase, 0.9),
+            contrastText:
+                getContrastRatio(primaryMain, "#fff") > 4.5 ? "#fff" : "#111",
+        },
+        secondary: {
+            main: secondaryMain,
+            light: alpha(secondaryBase, 0.5),
+            dark: alpha(secondaryBase, 0.9),
+            contrastText:
+                getContrastRatio(secondaryMain, "#fff") > 4.5 ? "#fff" : "#111",
+            darker: secondaryBase,
+        },
+        black: {
+            main: alpha(blackBase, 0.7),
+            light: alpha(blackBase, 0.5),
+            dark: alpha(blackBase, 0.9),
+            contrastText: "#fff",
+        },
+        gray: {
+            main: "#777",
+        },
+        error: {
+            main: red.A400,
+        },
+        text: {
+            primary: "#032e2b",
+            secondary: "#222",
+            light: "#454545",
+            contrastText: "#fff",
+            contrastTextLight: "#d0e9f3",
+        },
+        background: {
+            default: "#ecf3eb",
+        },
+    };
+
+    return palette;
+}
+
+export function getNewTheme(color: themeColos) {
+    // Create a theme instance.
+    const theme = createTheme({
+        palette: generatePalette(color),
+        typography: {
+            fontFamily: "Poppins",
+        },
+    });
+    return theme;
+}
 
 // Create a theme instance.
 const theme = createTheme({
-    palette: palette,
+    palette: generatePalette(),
     typography: {
         fontFamily: "Poppins",
     },
 });
 
-export default theme;
+const defaultTheme = theme;
+const mcdTheme = getNewTheme({ primary: "#ffbc0d", secondary: "#000" });
+// defaultTheme = mcdTheme;
+
+export default defaultTheme;

@@ -107,7 +107,6 @@ export default function SideNav(props: Props) {
                         >
                             <Typography
                                 variant="button"
-                                color="primary"
                                 sx={{
                                     px: 1,
                                     textTransform: "none",
@@ -120,11 +119,11 @@ export default function SideNav(props: Props) {
                             </Typography>
                             <Typography
                                 variant="caption"
-                                color="primary"
                                 sx={{
                                     px: 1,
                                     textTransform: "none",
                                     fontWeight: "400",
+                                    color: "text.primary",
                                     lineHeight: 1,
                                 }}
                             >
@@ -157,7 +156,6 @@ export default function SideNav(props: Props) {
                         >
                             <Typography
                                 variant="button"
-                                color="primary"
                                 sx={{
                                     px: 1,
                                     textTransform: "none",
@@ -170,7 +168,6 @@ export default function SideNav(props: Props) {
                             </Typography>
                             <Typography
                                 variant="caption"
-                                color="primary"
                                 sx={{
                                     px: 1,
                                     textTransform: "none",
@@ -258,8 +255,8 @@ const MenuList = ({
                         justifyContent: "center",
                         color: `${
                             currentPath === url
-                                ? "primary.main"
-                                : "text.primary"
+                                ? "primary.dark"
+                                : "text.secondary"
                         }`,
                     }}
                 >
@@ -272,8 +269,8 @@ const MenuList = ({
                             fontWeight={currentPath === url ? "600" : "500"}
                             color={
                                 currentPath === url
-                                    ? "primary.main"
-                                    : "text.primary"
+                                    ? "primary.dark"
+                                    : "text.secondary"
                             }
                             fontSize="0.85rem"
                         >

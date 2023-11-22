@@ -11,7 +11,7 @@ function LinerarProgressTwoWay({ value }: { value: number }) {
             />
             <LinearProgress
                 variant="determinate"
-                color="primary"
+                color="success"
                 value={value > 0 ? value : 0}
             />
         </Box>

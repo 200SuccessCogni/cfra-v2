@@ -82,7 +82,7 @@ function OverallScore(props: OverallScoreType) {
                                         ? theme.palette.error.light
                                         : e.value > 5
                                         ? theme.palette.success.light
-                                        : theme.palette.primary.light
+                                        : theme.palette.success.light
                                 }
                                 aria-controls="panel1d-content"
                                 id="panel1d-header"

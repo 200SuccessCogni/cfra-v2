@@ -198,7 +198,7 @@ function GlobalSearch(props: GlobalSearchPropsType) {
         <>
             <Button
                 variant="outlined"
-                color="primary"
+                color="black"
                 onClick={() => setOpen(true)}
                 // sx={{ backgroundColor: "secondary.main", borderColor: "#eee" }}
             >
