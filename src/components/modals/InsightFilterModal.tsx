@@ -24,8 +24,6 @@ function InsightFilterModal(props: IRecModal) {
 
     useEffect(() => {
         setList(props.entities);
-
-        console.log({ props, list });
     }, [props.entities]);
 
     const closeHandler = () => {

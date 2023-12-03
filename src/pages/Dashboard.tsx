@@ -47,7 +47,7 @@ function StatCard(props: ICountCard) {
             </Typography>
             <Typography
                 variant="body2"
-                sx={{ lineHeight: 1, color: "text.secondary", pr: "30%" }}
+                sx={{ lineHeight: 1.1, color: "text.secondary", pr: "30%" }}
             >
                 {props.label}
             </Typography>

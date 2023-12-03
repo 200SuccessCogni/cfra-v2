@@ -118,7 +118,7 @@ function GlobalDateSelect() {
                         Cancel
                     </Button>
                     <Button
-                        color="black"
+                        color="primary"
                         variant="contained"
                         onClick={() => onDateSelect(state)}
                         autoFocus

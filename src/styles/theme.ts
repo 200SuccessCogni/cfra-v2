@@ -43,24 +43,24 @@ type themeColos = {
 };
 
 export function generatePalette(colors?: themeColos) {
-    const primaryBase = (colors && colors.primary) || "#0033A0";
+    const primaryBase = (colors && colors.primary) || "#000048";
     const secondaryBase = (colors && colors.secondary) || "#36C0CF";
     const blackBase = "#000";
-    const primaryMain = alpha(primaryBase, 0.7);
-    const secondaryMain = alpha(secondaryBase, 0.7);
+    const primaryMain = alpha(primaryBase, 0.9);
+    const secondaryMain = alpha(secondaryBase, 0.9);
 
     const palette: ExtendedPaletteOptions = {
         primary: {
             main: primaryMain,
             light: alpha(primaryBase, 0.3),
-            dark: alpha(primaryBase, 0.9),
+            dark: alpha(primaryBase, 1),
             contrastText:
                 getContrastRatio(primaryMain, "#fff") > 4.5 ? "#fff" : "#111",
         },
         secondary: {
             main: secondaryMain,
             light: alpha(secondaryBase, 0.5),
-            dark: alpha(secondaryBase, 0.9),
+            dark: alpha(secondaryBase, 1),
             contrastText:
                 getContrastRatio(secondaryMain, "#fff") > 4.5 ? "#fff" : "#111",
             darker: secondaryBase,
@@ -68,7 +68,7 @@ export function generatePalette(colors?: themeColos) {
         black: {
             main: alpha(blackBase, 0.7),
             light: alpha(blackBase, 0.5),
-            dark: alpha(blackBase, 0.9),
+            dark: alpha(blackBase, 0.95),
             contrastText: "#fff",
         },
         gray: {

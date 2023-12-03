@@ -21,6 +21,7 @@ import { getNewTheme, mcdTheme, kohlerTheme } from "./styles/theme";
 // Lazy loading
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Reviews = lazy(() => import("./pages/Reviews"));
+const Insights = lazy(() => import("./pages/Insights"));
 const Analytics = lazy(() => import("./pages/Analytics"));
 const Integration = lazy(() => import("./pages/Integration"));
 const Onboarding = lazy(() => import("./pages/Onboarding"));
@@ -70,6 +71,10 @@ function App() {
                             <Route
                                 path="/analytics"
                                 element={withAuthInterceptor(<Analytics />)}
+                            />
+                            <Route
+                                path="/insights"
+                                element={withAuthInterceptor(<Insights />)}
                             />
                             <Route
                                 path="/compare"

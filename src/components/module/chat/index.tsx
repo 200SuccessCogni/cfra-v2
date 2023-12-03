@@ -47,7 +47,7 @@ export default function ChatBot({
             message:
                 "Hello there! 👋 Need help to get more insights? Reach out to us right here, and we'll get back to you as soon as we can! ",
         },
-        
+
         // {
         //     user: { fullName: "User", isSender: true },
         //     message:
@@ -59,8 +59,7 @@ export default function ChatBot({
 
     useEffect(() => {
         const url = `ws://3.14.42.49/ws/customdata`;
-        // const url = `ws://https://4b61-84-17-35-112.ngrok.io/ws/customdata`;
-        const ws = new WebSocket(url, );
+        const ws = new WebSocket(url);
 
         ws.onopen = () => {
             ws.send("Connect");

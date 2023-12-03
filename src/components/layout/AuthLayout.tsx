@@ -17,12 +17,14 @@ import {
     SwipeableDrawer,
     Link as MuiLink,
 } from "@mui/material";
+import { useTheme, alpha } from "@mui/material/styles";
 import HomeTwoToneIcon from "@mui/icons-material/HomeTwoTone";
 import QueryStatsTwoToneIcon from "@mui/icons-material/QueryStatsTwoTone";
 import TimelineTwoToneIcon from "@mui/icons-material/TimelineTwoTone";
 // import RecommendTwoToneIcon from "@mui/icons-material/RecommendTwoTone";
 import PolylineTwoToneIcon from "@mui/icons-material/PolylineTwoTone";
 import RecommendTwoToneIcon from "@mui/icons-material/RecommendTwoTone";
+import InsightsIcon from "@mui/icons-material/Insights";
 import LogoutIcon from "@mui/icons-material/Logout";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
@@ -43,8 +45,13 @@ const menuList = [
     { icon: <TimelineTwoToneIcon />, name: "Reviews", url: "/reviews" },
     { icon: <CompareArrowsIcon />, name: "Comparision", url: "/compare" },
     {
+        icon: <InsightsIcon />,
+        name: "Insights",
+        url: "/insights",
+    },
+    {
         icon: <QueryStatsTwoToneIcon />,
-        name: "Insights & Analytics",
+        name: "Analytics",
         url: "/analytics",
     },
     // {
@@ -242,42 +249,73 @@ const MenuList = ({
         currentPath,
         url,
         name,
+        onClick,
     }: {
         icon: ReactElement;
         currentPath: string;
         url: string;
         name: string;
+        onClick?: () => void;
     }) => {
+        const isActiveUrl = currentPath === url;
+        const theme = useTheme();
+
         return (
             <>
-                <ListItemIcon
+                <ListItem
+                    disablePadding
+                    key={name}
                     sx={{
-                        justifyContent: "center",
-                        color: `${
-                            currentPath === url
-                                ? "primary.dark"
-                                : "text.secondary"
-                        }`,
+                        backgroundColor: isActiveUrl
+                            ? alpha(theme.palette.primary.light, 0.05)
+                            : "transparent",
+                        borderRadius: "10px",
+                        my: 0.5,
+                        "&:hover": {
+                            backgroundColor: alpha(
+                                theme.palette.primary.light,
+                                0.05
+                            ),
+                            borderRadius: "10px",
+                        },
                     }}
+                    onClick={onClick && onClick}
                 >
-                    {icon}
-                </ListItemIcon>
-                <ListItemText
-                    primary={
-                        <Typography
-                            variant="body2"
-                            fontWeight={currentPath === url ? "600" : "500"}
-                            color={
-                                currentPath === url
-                                    ? "primary.dark"
-                                    : "text.secondary"
-                            }
-                            fontSize="0.85rem"
+                    <ListItemButton
+                        sx={{
+                            p: 0.5,
+                        }}
+                    >
+                        <ListItemIcon
+                            sx={{
+                                justifyContent: "center",
+                                color: `${
+                                    isActiveUrl
+                                        ? "primary.dark"
+                                        : "text.secondary"
+                                }`,
+                            }}
                         >
-                            {name}
-                        </Typography>
-                    }
-                />
+                            {icon}
+                        </ListItemIcon>
+                        <ListItemText
+                            primary={
+                                <Typography
+                                    variant="body2"
+                                    fontWeight={isActiveUrl ? "600" : "500"}
+                                    color={
+                                        isActiveUrl
+                                            ? "primary.dark"
+                                            : "text.secondary"
+                                    }
+                                    fontSize="0.85rem"
+                                >
+                                    {name}
+                                </Typography>
+                            }
+                        />
+                    </ListItemButton>
+                </ListItem>
             </>
         );
     };
@@ -295,16 +333,12 @@ const MenuList = ({
                 {menuList.slice(0, 3).map((e) => {
                     return (
                         <Link to={e.url} key={e.name}>
-                            <ListItem disablePadding key={e.name}>
-                                <ListItemButton sx={{ p: 0.5 }}>
-                                    <Menutem
-                                        icon={e.icon}
-                                        name={e.name}
-                                        url={e.url}
-                                        currentPath={currentPath}
-                                    />
-                                </ListItemButton>
-                            </ListItem>
+                            <Menutem
+                                icon={e.icon}
+                                name={e.name}
+                                url={e.url}
+                                currentPath={currentPath}
+                            />
                         </Link>
                     );
                 })}
@@ -313,41 +347,32 @@ const MenuList = ({
             <List>
                 {menuList.slice(3, 6).map((e) => (
                     <Link to={e.url} key={e.name}>
-                        <ListItem disablePadding key={e.name}>
-                            <ListItemButton sx={{ p: 0.5 }}>
-                                <Menutem
-                                    icon={e.icon}
-                                    name={e.name}
-                                    url={e.url}
-                                    currentPath={currentPath}
-                                />
-                            </ListItemButton>
-                        </ListItem>
+                        <Menutem
+                            icon={e.icon}
+                            name={e.name}
+                            url={e.url}
+                            currentPath={currentPath}
+                        />
                     </Link>
                 ))}
             </List>
             <Box sx={{ mt: "auto", py: 2, width: "100%" }}>
                 <Link to={"/settings"}>
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ p: 0.5 }}>
-                            <Menutem
-                                icon={<SettingsTwoToneIcon />}
-                                name={"Settings"}
-                                url={"/settings"}
-                                currentPath={currentPath}
-                            />
-                        </ListItemButton>
-                    </ListItem>
+                    <Menutem
+                        icon={<SettingsTwoToneIcon />}
+                        name={"Settings"}
+                        url={"/settings"}
+                        currentPath={currentPath}
+                    />
                 </Link>
                 <ListItem disablePadding>
-                    <ListItemButton sx={{ p: 0.5 }} onClick={() => logout()}>
-                        <Menutem
-                            icon={<LogoutIcon />}
-                            name={"Logout"}
-                            url={"/logout"}
-                            currentPath={currentPath}
-                        />
-                    </ListItemButton>
+                    <Menutem
+                        onClick={() => logout()}
+                        icon={<LogoutIcon />}
+                        name={"Logout"}
+                        url={"/logout"}
+                        currentPath={currentPath}
+                    />
                 </ListItem>
             </Box>
         </Box>

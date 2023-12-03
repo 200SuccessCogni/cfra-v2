@@ -99,7 +99,7 @@ type InsightType = {
     descArr: string[];
 };
 
-function Dashboard() {
+function Analytics() {
     const theme = useTheme();
     const [insights, setInsights] = useState<InsightType[]>([]);
     const { setLoader, user, selectedLocation } = useApp();
@@ -139,11 +139,11 @@ function Dashboard() {
             resetInights();
             setChartsData([]);
 
-            // getInsightsAndAnalytics(
-            //     user?.business?.businessId,
-            //     selectedLocation.id
-            // );
-            loadLocalInsightJSON(selectedLocation.id);
+            getInsightsAndAnalytics(
+                user?.business?.businessId,
+                selectedLocation.id
+            );
+            // loadLocalInsightJSON(selectedLocation.id);
         }
     }, [user, selectedLocation]);
 
@@ -192,6 +192,10 @@ function Dashboard() {
         }
     };
 
+    /**
+     * Get stored insight data from local JSON
+     * @param locId
+     */
     const loadLocalInsightJSON = (locId: number) => {
         setLoader(true);
         const url = `/insights/loc${locId}.json`;
@@ -231,8 +235,8 @@ function Dashboard() {
         locationId: string
     ) => {
         setLoader(true);
-        // const url = `/review/getInsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
-        const url = `/review/getSummarizedInsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
+        const url = `/review/getInsightAnalytics?businessId=${businessId}&locationId=${locationId}`; // not live
+        // const url = `/review/getSummarizedInsightAnalytics?businessId=${businessId}&locationId=${locationId}`; // live
         try {
             const res = await GET(url);
             if (res && res.status === 200) {
@@ -370,16 +374,6 @@ function Dashboard() {
         return chartData;
     };
 
-    const userData1 = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "June", "July"],
-        datasets: [
-            {
-                backgroundColor: ["#51EAEA"],
-                data: [4.2, 3.7, 1.8, 5, 4.1, 2.5, 4.6],
-            },
-        ],
-    };
-
     const onPromptSearch = (query: string) => {
         console.log({ query });
     };
@@ -387,368 +381,10 @@ function Dashboard() {
     return (
         <>
             <Typography variant="h5" fontWeight={500}>
-                Insights & Analytics
+                Analytics
             </Typography>
             <Grid container spacing={3} sx={{ mt: 0, height: "auto" }}>
                 <Grid item xs={12} md={9}>
-                    {/* <Container
-                        sx={{
-                            backgroundColor: "#fff",
-                            borderRadius: "1rem",
-                            px: 2,
-                            pb: 3,
-                            pt: 2,
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                            }}
-                        >
-                            <Typography
-                                variant="h6"
-                                color="text.primary"
-                                gutterBottom
-                            >
-                                Overview
-                            </Typography>
-                            <Typography
-                                variant="caption"
-                                color="text.primary"
-                                gutterBottom
-                            >
-                                * Score defines how one amenity or entity is
-                                performing.
-                            </Typography>
-                        </Box>
-                        <Grid container spacing={3}>
-                            <Grid item xs={12} md={6}>
-                                <OverviewCard
-                                    bgColor="secondary.light"
-                                    // icon={<TrendingUpIcon />}
-                                    // iconBgColor="#fff"
-
-                                    count={
-                                        (highPerfAment &&
-                                            highPerfAment?.value) ||
-                                        ""
-                                    }
-                                    contentText={
-                                        (highPerfAment &&
-                                            camelCaseToTitleCase(
-                                                highPerfAment?._id
-                                            )) ||
-                                        ""
-                                    }
-                                    headerTitle="Top Performing Amenity / Entity"
-                                />
-                            </Grid>
-                            <Grid item xs={12} md={6}>
-                                <OverviewCard
-                                    bgColor="secondary.light"
-                                    contentText={
-                                        (lowPerfAment &&
-                                            camelCaseToTitleCase(
-                                                lowPerfAment?._id
-                                            )) ||
-                                        ""
-                                    }
-                                    headerTitle="Low Performing Amenity / Entity"
-                                    count={
-                                        (lowPerfAment && lowPerfAment?.value) ||
-                                        ""
-                                    }
-                                    // icon={<TrendingDownIcon />}
-                                    // iconBgColor="#fff"
-                                    // iconColor="text.contrastText"
-                                />
-                            </Grid>
-
-                            <Box
-                                sx={{
-                                    display: "flex",
-                                    justifyContent: "flex-end",
-                                    width: "100%",
-                                    mt: 1.5,
-                                    "& > * ": {
-                                        ml: 1,
-                                    },
-                                }}
-                            >
-                                <Typography
-                                    variant="caption"
-                                    gutterBottom
-                                    // color="error"
-                                >
-                                    ** -10-0 Low performer.{" "}
-                                </Typography>
-                                <Typography
-                                    variant="caption"
-                                    gutterBottom
-                                    // color="warning"
-                                >
-                                    ** 0-4 Satisfactory.{" "}
-                                </Typography>
-                                <Typography
-                                    variant="caption"
-                                    // sx={{ color: "blue" }}
-                                    gutterBottom
-                                >
-                                    ** 5-7 Good.{" "}
-                                </Typography>
-                                <Typography
-                                    variant="caption"
-                                    // color="success"
-                                    gutterBottom
-                                >
-                                    {" "}
-                                    ** 8 above - Very good.
-                                </Typography>
-                            </Box>
-                        </Grid>
-                    </Container> */}
-                    <Box
-                        sx={{
-                            backgroundColor: "#fff",
-                            mb: 3,
-                            p: 2,
-                            borderRadius: "1rem",
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                alignItems: "flex-start",
-                            }}
-                        >
-                            <Box>
-                                <Typography
-                                    variant="body1"
-                                    gutterBottom
-                                    fontWeight={500}
-                                    lineHeight={1}
-                                >
-                                    All insights
-                                </Typography>
-                                <Typography
-                                    variant="caption"
-                                    sx={{
-                                        color: "#777",
-                                        mb: 2,
-                                        display: "block",
-                                    }}
-                                    gutterBottom
-                                    lineHeight={1.1}
-                                    fontWeight={400}
-                                >
-                                    Insights are auto generated. Please choose
-                                    insights relevant to your business.
-                                </Typography>
-                                <Typography
-                                    variant="caption"
-                                    sx={{
-                                        color: "#777",
-                                        mb: 2,
-                                        display: "block",
-                                    }}
-                                    gutterBottom
-                                    lineHeight={1.1}
-                                    fontWeight={400}
-                                ></Typography>
-                            </Box>
-                            {/* <Box display="flex" alignItems="center">
-                                <PlaceIcon />{" "}
-                                <Typography
-                                    variant="body2"
-                                    gutterBottom
-                                    lineHeight={1}
-                                    sx={{ ml: 1 }}
-                                    fontWeight={400}
-                                >
-                                    {selectedLocation &&
-                                        selectedLocation?.locationName}
-                                </Typography>
-                            </Box> */}
-                            <Button
-                                variant="text"
-                                onClick={() => setShowFilter(true)}
-                            >
-                                Filter
-                            </Button>
-                        </Box>
-                        <Grid container spacing={3}>
-                            <Grid item xs={12} md={6}>
-                                <Box
-                                    sx={{
-                                        borderRadius: "1rem",
-                                        backgroundColor: alpha(
-                                            theme.palette.success.light,
-                                            0.1
-                                        ),
-                                        p: 2,
-                                    }}
-                                >
-                                    <Typography
-                                        variant="body2"
-                                        color="success.dark"
-                                        gutterBottom
-                                        fontWeight={600}
-                                    >
-                                        Positive insights
-                                    </Typography>
-                                    {positiveInsights.map((e: InsightType) => (
-                                        <>
-                                            <Tooltip
-                                                title={`${camelCaseToTitleCase(
-                                                    e.label
-                                                )} appears ${e.count} times.`}
-                                                key={e.label}
-                                            >
-                                                <Chip
-                                                    key={e.label}
-                                                    size="small"
-                                                    // icon={
-                                                    //     <ThumbUpOutlinedIcon />
-                                                    // }
-                                                    label={
-                                                        <Box
-                                                            display="flex"
-                                                            alignItems="center"
-                                                        >
-                                                            <small>
-                                                                <strong>
-                                                                    {camelCaseToTitleCase(
-                                                                        e.label
-                                                                    )}
-                                                                </strong>
-                                                            </small>
-                                                            <Box
-                                                                sx={{
-                                                                    borderRadius:
-                                                                        "50%",
-                                                                    width: "20px",
-                                                                    height: "20px",
-                                                                    display:
-                                                                        "flex",
-                                                                    justifyContent:
-                                                                        "center",
-                                                                    alignItems:
-                                                                        "center",
-                                                                    ml: 0.5,
-                                                                    backgroundColor:
-                                                                        "success.light",
-                                                                    color: "#fff",
-                                                                }}
-                                                            >
-                                                                {e.count}
-                                                            </Box>
-                                                        </Box>
-                                                    }
-                                                    variant="outlined"
-                                                    // color="success"
-                                                    sx={{
-                                                        m: 0.5,
-                                                        px: 0.5,
-                                                    }}
-                                                />
-                                            </Tooltip>
-                                        </>
-                                    ))}
-                                </Box>
-                            </Grid>
-                            <Grid item xs={12} md={6}>
-                                <Box
-                                    sx={{
-                                        borderRadius: "1rem",
-                                        backgroundColor: alpha(
-                                            theme.palette.warning.light,
-                                            0.2
-                                        ),
-                                        p: 2,
-                                    }}
-                                >
-                                    <Typography
-                                        variant="body2"
-                                        color="warning.main"
-                                        gutterBottom
-                                        fontWeight={600}
-                                    >
-                                        Negative insights
-                                    </Typography>
-                                    {negativeInsights.map((e: InsightType) => (
-                                        <>
-                                            <Tooltip
-                                                title={`${camelCaseToTitleCase(
-                                                    e.label
-                                                )} appears ${e.count} times.`}
-                                                key={e.label}
-                                            >
-                                                <Chip
-                                                    key={e.label}
-                                                    size="small"
-                                                    // icon={
-                                                    //     <ThumbDownOffAltOutlinedIcon />
-                                                    // }
-                                                    label={
-                                                        <Box
-                                                            display="flex"
-                                                            alignItems="center"
-                                                        >
-                                                            <small>
-                                                                <strong>
-                                                                    {camelCaseToTitleCase(
-                                                                        e.label
-                                                                    )}
-                                                                </strong>
-                                                            </small>
-                                                            <Box
-                                                                sx={{
-                                                                    borderRadius:
-                                                                        "50%",
-                                                                    width: "20px",
-                                                                    height: "20px",
-                                                                    display:
-                                                                        "flex",
-                                                                    justifyContent:
-                                                                        "center",
-                                                                    alignItems:
-                                                                        "center",
-                                                                    ml: 0.5,
-                                                                    backgroundColor:
-                                                                        "warning.light",
-                                                                    // color: "#fff",
-                                                                }}
-                                                            >
-                                                                {e.count}
-                                                            </Box>
-                                                        </Box>
-                                                    }
-                                                    variant="outlined"
-                                                    // color="error"
-                                                    sx={{
-                                                        m: 0.5,
-                                                        px: 0.5,
-                                                    }}
-                                                />
-                                            </Tooltip>
-                                        </>
-                                    ))}
-                                </Box>
-                            </Grid>
-                        </Grid>
-                        <Typography
-                            variant="caption"
-                            color="black"
-                            fontWeight={400}
-                            align="right"
-                        >
-                            * Count defines how many times customer mentioned.
-                        </Typography>
-                    </Box>
-
                     {isFilterApplied && (
                         <Box
                             sx={{
@@ -841,103 +477,11 @@ function Dashboard() {
                             />
                         </Box>
                     )}
-                    {/* <Box
-                        sx={{
-                            borderRadius: "1rem",
-                            backgroundColor: "secondary.light",
-                            p: 2,
-                            my: 4,
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                            }}
-                        >
-                            <Typography
-                                variant="body1"
-                                gutterBottom
-                                fontWeight={500}
-                                // sx={{ mb: 2 }}
-                            >
-                                General Amenity Activity
-                            </Typography>
-                            <Box
-                                sx={{
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    flexBasis: "40%",
-                                }}
-                            >
-                                <Link underline="hover">
-                                    <small>Last year</small>
-                                </Link>
-                                <Link underline="hover">
-                                    <small>Last 6 month</small>
-                                </Link>
-                                <Link underline="hover">
-                                    <small>Last month</small>
-                                </Link>
-                            </Box>
-                        </Box>
 
-                        <Box
-                            sx={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                            }}
-                        >
-                            <Box>
-                                {appliedDateSet.map((e, i) => (
-                                    <Chip
-                                        label={e.label}
-                                        variant="outlined"
-                                        key={i}
-                                        sx={{
-                                            color: "text.primary",
-                                            m: 0.5,
-                                            backgroundColor: e.borderColor,
-                                        }}
-                                        onDelete={() => handleDelete(i)}
-                                        size="small"
-                                    />
-                                ))}
-                                <Chip
-                                    label="Customize"
-                                    color="primary"
-                                    sx={{
-                                        m: 0.5,
-                                        bgColor: "black",
-                                        color: "text.contrastText",
-                                    }}
-                                    size="small"
-                                />
-                            </Box>
-                            <Button
-                                color="black"
-                                variant="contained"
-                                size="small"
-                                sx={{
-                                    boxShadow: "none",
-                                    ml: "auto",
-                                    mt: 1,
-                                }}
-                            >
-                                {" "}
-                                Report
-                            </Button>
-                        </Box>
-                        <AnalyticsChart dataSet={appliedDateSet} />
-                    </Box> */}
                     <Box
                         sx={{
                             backgroundColor: "#fff",
                             borderRadius: "1rem",
-                            my: 3,
                             p: 2,
                         }}
                     >
@@ -1068,112 +612,8 @@ function Dashboard() {
                     </Box>
                 </Grid>
             </Grid>
-
-            <Popover
-                id={anchorEl ? "simple-popover" : undefined}
-                open={!!anchorEl}
-                anchorEl={anchorEl}
-                // onClose={closeChatBot}
-                anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                }}
-            >
-                <ChatBot closeHandler={closeChatBot} />
-            </Popover>
-
-            <Box
-                sx={{
-                    position: "sticky",
-                    bottom: 0,
-                    right: 0,
-                }}
-            >
-                {/* {!showFullPrompt && ( */}
-                <Box display="flex" justifyContent="flex-end">
-                    <Tooltip title="Get more insights">
-                        <Fab
-                            variant="extended"
-                            color="primary"
-                            onClick={openChatBot}
-                        >
-                            <ChatRoundedIcon />
-                        </Fab>
-                    </Tooltip>
-                </Box>
-                {/* )} */}
-            </Box>
-            <InsightFilterModal
-                show={showFiler}
-                entities={insights && insights}
-                onSelect={(data: any) => {
-                    setInsights(data);
-                    setIsAppliedFilter(true);
-                }}
-                closeHandler={() => setShowFilter(false)}
-            />
         </>
     );
 }
 
-export default Dashboard;
-
-/*const AnalyticsChart = ({ dataSet }: { dataSet: any[] }) => {
-    const [chartData, setChartData] = useState({
-        labels: ["26/06", "27/06", "28/06", "29/06", "30/06", "01/07", "02/07"],
-        datasets: dataSet,
-    });
-
-    useEffect(() => {
-        setChartData({
-            labels: [
-                "26/06",
-                "27/06",
-                "28/06",
-                "29/06",
-                "30/06",
-                "01/07",
-                "02/07",
-            ],
-            datasets: dataSet,
-        });
-    }, [dataSet]);
-
-    const options = {
-        responsive: true,
-        scales: {
-            x: {
-                grid: {
-                    display: false,
-                },
-            },
-            y: {
-                ticks: {
-                    display: false,
-                },
-            },
-        },
-        plugins: {
-            legend: {
-                position: "bottom",
-                display: false,
-            },
-            title: {
-                display: true,
-                // text: "Review Sources",
-            },
-            tooltip: {
-                enabled: true,
-                position: "nearest",
-            },
-            chartAreaBorder: {
-                borderColor: "red",
-                borderWidth: 2,
-                borderDash: [5, 5],
-                borderDashOffset: 2,
-            },
-        },
-    };
-
-    return <LineChart chartData={chartData} options={options} />;
-};*/
+export default Analytics;

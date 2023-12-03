@@ -8,9 +8,23 @@ export type AnalyticsOverviewCard = {
     count?: number | string;
 };
 
+export interface ScoreAccordCardType extends InsightType {
+    expanded: boolean;
+    onClick: (data: any) => void;
+}
+
 export type OverallScoreType = {
-    scores: { label: string; value: number; summary: string }[];
+    scores: InsightType[];
     backgroundColor?: string;
+};
+
+export type InsightType = {
+    label: string;
+    count: number;
+    score: number;
+    value: number;
+    checked?: boolean;
+    descArr: string[];
 };
 
 export type AnalyticsChartType = {

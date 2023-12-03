@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
+import React, { useEffect, useState, useCallback, useRef } from "react";
+import { Box, Typography, LinearProgress } from "@mui/material";
 
 import { styled } from "@mui/material/styles";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
@@ -9,12 +9,16 @@ import MuiAccordionSummary, {
 } from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 
-import { OverallScoreType } from "../types/analytics";
+import {
+    OverallScoreType,
+    InsightType,
+    ScoreAccordCardType,
+} from "../types/analytics";
 import { camelCaseToTitleCase } from "../../../services/shared.service";
 import { alpha, useTheme } from "@mui/material/styles";
 
-import AppPrompt from "../../app/AppPrompt";
 import LinerarProgressTwoWay from "../../core/linerarProgressTwoWay";
+import { POST } from "../../../services/api.service";
 
 const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -54,9 +58,95 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
+function ScoreAccordCard(props: ScoreAccordCardType) {
+    const theme = useTheme();
+    const [loader, setLoader] = useState(false);
+    const [summary, setSummary] = useState("");
+    const prevSelectedInsight = useRef("");
+
+    const getInsightSumm = useCallback(async () => {
+        try {
+            setLoader(true);
+            const res = await POST("/review/getInsightSummaries", {
+                insight: props.label,
+                desc: props.descArr,
+            });
+            console.log(res);
+            if (res && res.status === 200 && res.data) {
+                setSummary(res.data.data);
+            }
+            setLoader(false);
+        } catch (err) {
+            setLoader(false);
+            console.log(err);
+        }
+    }, [props.label]);
+
+    useEffect(() => {
+        if (prevSelectedInsight.current != props.label) getInsightSumm();
+        prevSelectedInsight.current = props.label;
+    }, [props.label, props.expanded]);
+
+    return (
+        <Accordion
+            key={props.label}
+            expanded={props.expanded}
+            onChange={props.onClick}
+        >
+            <AccordionSummary
+                color={
+                    props.value < 0
+                        ? theme.palette.error.light
+                        : props.value > 5
+                        ? theme.palette.success.light
+                        : theme.palette.success.light
+                }
+                aria-controls="panel1d-content"
+                id="panel1d-header"
+            >
+                <Box
+                    sx={{
+                        px: 2,
+                        py: 1,
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        borderRadius: 2,
+                        width: "100%",
+                    }}
+                >
+                    <Box flexBasis="30%">
+                        <Typography variant="body2" fontWeight={600}>
+                            {camelCaseToTitleCase(props.label)}
+                        </Typography>
+                    </Box>
+                    <Box flexBasis="70%">
+                        <LinerarProgressTwoWay value={props.value * 10} />
+                    </Box>
+                    <Typography sx={{ px: 2 }}>{props.value}</Typography>
+                </Box>
+            </AccordionSummary>
+            <AccordionDetails>
+                {!!loader && <LinearProgress color="primary" />}
+                <Typography variant="body2" fontWeight={500} gutterBottom>
+                    Summary
+                </Typography>
+                <Typography
+                    sx={{ display: "inline-block" }}
+                    variant="caption"
+                    color="text"
+                    lineHeight={1.2}
+                    fontWeight={500}
+                >
+                    {summary}
+                </Typography>
+            </AccordionDetails>
+        </Accordion>
+    );
+}
+
 function OverallScore(props: OverallScoreType) {
     const [expanded, setExpanded] = React.useState<number>(0);
-    const theme = useTheme();
 
     const handleChange = (index: number) => setExpanded(index);
     const onSearch = (data: any) => {
@@ -66,78 +156,14 @@ function OverallScore(props: OverallScoreType) {
     return (
         <>
             {props.scores &&
-                props.scores.map(
-                    (
-                        e: { label: string; value: number; summary: string },
-                        i: number
-                    ) => (
-                        <Accordion
-                            key={e.label}
-                            expanded={expanded === i}
-                            onChange={() => handleChange(i)}
-                        >
-                            <AccordionSummary
-                                color={
-                                    e.value < 0
-                                        ? theme.palette.error.light
-                                        : e.value > 5
-                                        ? theme.palette.success.light
-                                        : theme.palette.success.light
-                                }
-                                aria-controls="panel1d-content"
-                                id="panel1d-header"
-                            >
-                                <Box
-                                    sx={{
-                                        px: 2,
-                                        py: 1,
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        alignItems: "center",
-                                        borderRadius: 2,
-                                        width: "100%",
-                                    }}
-                                >
-                                    <Box flexBasis="30%">
-                                        <Typography
-                                            variant="body2"
-                                            fontWeight={600}
-                                        >
-                                            {camelCaseToTitleCase(e.label)}
-                                        </Typography>
-                                    </Box>
-                                    <Box flexBasis="70%">
-                                        <LinerarProgressTwoWay
-                                            value={e.value * 10}
-                                        />
-                                    </Box>
-                                    <Typography sx={{ px: 2 }}>
-                                        {e.value}
-                                    </Typography>
-                                </Box>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography
-                                    variant="body2"
-                                    fontWeight={500}
-                                    gutterBottom
-                                >
-                                    Summary
-                                </Typography>
-                                <Typography
-                                    sx={{ display: "inline-block" }}
-                                    variant="caption"
-                                    color="text"
-                                    lineHeight={1.2}
-                                    fontWeight={500}
-                                >
-                                    {e.summary}
-                                </Typography>
-                                {/* <AppPrompt onClick={onSearch} />  */}
-                            </AccordionDetails>
-                        </Accordion>
-                    )
-                )}
+                props.scores.map((e: InsightType, i: number) => (
+                    <ScoreAccordCard
+                        key={i}
+                        {...e}
+                        expanded={expanded === i}
+                        onClick={(data: any) => handleChange(i)}
+                    />
+                ))}
         </>
     );
 }
