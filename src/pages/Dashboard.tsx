@@ -51,7 +51,7 @@ function StatCard(props: ICountCard) {
             >
                 {props.label}
             </Typography>
-            {props.percentage && (
+            {!!props.percentage && (
                 <Box
                     sx={{
                         display: "flex",
@@ -103,10 +103,10 @@ function Dashboard() {
         user,
     } = useApp();
     const navigate = useNavigate();
-    const [posReview, setPosReview] = useState(0);
-    const [negReview, setNegReview] = useState(0);
-    const [neuReview, setNeuReview] = useState(0);
-    const [mixReview, setMixReview] = useState(0);
+    const [posReview, setPosReview] = useState({ count: 0, percentage: 0 });
+    const [negReview, setNegReview] = useState({ count: 0, percentage: 0 });
+    const [neuReview, setNeuReview] = useState({ count: 0, percentage: 0 });
+    const [mixReview, setMixReview] = useState({ count: 0, percentage: 0 });
     const [positiveInsights, setPositiveInsights] = useState<InsightType[]>([]);
     const [negativeInsights, setNegativeInsights] = useState<InsightType[]>([]);
     const theme = useTheme();
@@ -155,10 +155,10 @@ function Dashboard() {
     );
 
     const resetAllCount = () => {
-        setPosReview(0);
-        setNegReview(0);
-        setNeuReview(0);
-        setMixReview(0);
+        setPosReview({ count: 0, percentage: 0 });
+        setNegReview({ count: 0, percentage: 0 });
+        setNeuReview({ count: 0, percentage: 0 });
+        setMixReview({ count: 0, percentage: 0 });
     };
 
     const getInsightsAndAnalytics = async (
@@ -166,8 +166,8 @@ function Dashboard() {
         locationId = "65227ab4d7a294d9ee6f18db"
     ) => {
         setLoader(true);
-        // const url = `/review/getCategories?businessId=${businessId}&locationId=${locationId}`;
-        const url = `/review/getinsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
+        const url = `/review/getCategories?businessId=${businessId}&locationId=${locationId}`;
+        // const url = `/review/getinsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
         try {
             const res = await GET(url);
             if (res && res.status === 200) {
@@ -194,22 +194,32 @@ function Dashboard() {
                 if (res.data.categories && res.data.categories.length) {
                     resetAllCount();
 
-                    res.data.categories.map((e: any) => {
-                        switch (e._id) {
-                            case "negative":
-                                setNegReview(e.count);
-                                break;
-                            case "positive":
-                                setPosReview(e.count);
-                                break;
-                            case "neutral":
-                                setNeuReview(e.count);
-                                break;
-                            default:
-                                setMixReview(e.count);
-                                break;
+                    res.data.categories.map(
+                        ({
+                            count,
+                            percentage,
+                            _id,
+                        }: {
+                            count: number;
+                            percentage: number;
+                            _id: string;
+                        }) => {
+                            switch (_id) {
+                                case "negative":
+                                    setNegReview({ count, percentage });
+                                    break;
+                                case "positive":
+                                    setPosReview({ count, percentage });
+                                    break;
+                                case "neutral":
+                                    setNeuReview({ count, percentage });
+                                    break;
+                                default:
+                                    setMixReview({ count, percentage });
+                                    break;
+                            }
                         }
-                    });
+                    );
                 }
 
                 if (res.data.sources) {
@@ -293,41 +303,41 @@ function Dashboard() {
                     <Grid container spacing={3}>
                         <Grid item xs={6} md={3}>
                             <StatCard
-                                count={neuReview}
+                                count={neuReview.count}
                                 label="Neutral Reviews"
                                 backgroundColor="rgb(178 226 254 / 50%)"
                                 color="#00301fb3"
                                 isImproving={true}
-                                percentage={3}
+                                percentage={neuReview.percentage}
                             />
                         </Grid>
                         <Grid item xs={6} md={3}>
                             <StatCard
-                                count={posReview}
+                                count={posReview.count}
                                 label="Positive Reviews"
                                 backgroundColor="rgb(178 254 206 / 50%)"
                                 color="#00301fb3"
                                 isImproving={true}
-                                percentage={3}
+                                percentage={posReview.percentage}
                             />
                         </Grid>
                         <Grid item xs={6} md={3}>
                             <StatCard
-                                count={negReview}
+                                count={negReview.count}
                                 label="Negative Reviews"
                                 backgroundColor="rgb(254 178 178 / 46%)"
                                 color="#9d1414"
                                 isImproving={false}
-                                percentage={3}
+                                percentage={negReview.percentage}
                             />
                         </Grid>
                         <Grid item xs={6} md={3}>
                             <StatCard
-                                count={mixReview}
+                                count={mixReview.count}
                                 label="Mixed Reviews"
                                 color="#00301fb3"
                                 isImproving={true}
-                                percentage={3}
+                                percentage={mixReview.percentage}
                             />
                         </Grid>
                     </Grid>

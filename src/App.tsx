@@ -16,7 +16,7 @@ import useApp from "./store/app.context";
 
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { getNewTheme, mcdTheme } from "./styles/theme";
+import { getNewTheme, mcdTheme, kohlerTheme } from "./styles/theme";
 
 // Lazy loading
 const Dashboard = lazy(() => import("./pages/Dashboard"));
@@ -42,8 +42,10 @@ function App() {
     const { alert, setAlert, theme, setTheme } = useApp();
 
     useEffect(() => {
-        // Set McDonald's theme
-        setTheme(mcdTheme);
+        // // Set McDonald's theme
+        // setTheme(mcdTheme);
+        // // Set Kohler's theme
+        // setTheme(kohlerTheme);
     }, []);
 
     return (

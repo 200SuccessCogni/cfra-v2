@@ -43,8 +43,8 @@ type themeColos = {
 };
 
 export function generatePalette(colors?: themeColos) {
-    const primaryBase = (colors && colors.primary) || "#00301F";
-    const secondaryBase = (colors && colors.secondary) || "#FFD681";
+    const primaryBase = (colors && colors.primary) || "#0033A0";
+    const secondaryBase = (colors && colors.secondary) || "#36C0CF";
     const blackBase = "#000";
     const primaryMain = alpha(primaryBase, 0.7);
     const secondaryMain = alpha(secondaryBase, 0.7);
@@ -113,6 +113,10 @@ const theme = createTheme({
 
 const defaultTheme = theme;
 export const mcdTheme = getNewTheme({ primary: "#ffbc0d", secondary: "#000" });
+export const kohlerTheme = getNewTheme({
+    primary: "#2b2a28",
+    secondary: "#364573",
+});
 // defaultTheme = mcdTheme;
 
 export default defaultTheme;
