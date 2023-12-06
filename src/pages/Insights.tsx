@@ -1050,26 +1050,30 @@ function Insights() {
                         alignItems: "flex-start",
                     }}
                 >
-                    <Box
-                        sx={{
-                            backgroundColor: "#fff",
-                            borderRadius: "10px",
-                            p: 3,
-                            width: "100%",
-                            position: "sticky",
-                        }}
-                    >
-                        <Typography
-                            variant="body1"
-                            gutterBottom
-                            fontWeight={500}
+                    <Box sx={{ position: "relative", width: "100%" }}>
+                        <Box
+                            sx={{
+                                backgroundColor: "#fff",
+                                borderRadius: "10px",
+                                p: 3,
+                                width: "100%",
+                                position: "sticky",
+                                top: 0,
+                                right: 0,
+                            }}
                         >
-                            Filters
-                        </Typography>
-                        <ReviewForm
-                            sourcesFilter={onFilterApply}
-                            showCategory={false}
-                        />
+                            <Typography
+                                variant="body1"
+                                gutterBottom
+                                fontWeight={500}
+                            >
+                                Filters
+                            </Typography>
+                            <ReviewForm
+                                sourcesFilter={onFilterApply}
+                                showCategory={false}
+                            />
+                        </Box>
                     </Box>
                 </Grid>
             </Grid>
@@ -1089,9 +1093,9 @@ function Insights() {
 
             <Box
                 sx={{
-                    position: "sticky",
-                    bottom: 0,
-                    right: 0,
+                    position: "fixed",
+                    bottom: "1.5rem",
+                    right: "2.5rem",
                 }}
             >
                 {/* {!showFullPrompt && ( */}

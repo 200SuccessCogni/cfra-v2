@@ -225,25 +225,30 @@ function Reviews() {
                         alignItems: "flex-start",
                     }}
                 >
-                    <Box
-                        sx={{
-                            bgcolor: "#fff",
-                            borderRadius: "10px",
-                            p: 3,
-                            width: "100%",
-                        }}
-                    >
-                        <Typography
-                            variant="body1"
-                            gutterBottom
-                            fontWeight={500}
+                    <Box sx={{ position: "relative", width: "100%" }}>
+                        <Box
+                            sx={{
+                                bgcolor: "#fff",
+                                borderRadius: "10px",
+                                p: 3,
+                                width: "100%",
+                                position: "sticky",
+                                top: 0,
+                                right: 0,
+                            }}
                         >
-                            Filters
-                        </Typography>
-                        <ReviewForm
-                            sourcesFilter={onFilterApply}
-                            showCategory={true}
-                        />
+                            <Typography
+                                variant="body1"
+                                gutterBottom
+                                fontWeight={500}
+                            >
+                                Filters
+                            </Typography>
+                            <ReviewForm
+                                sourcesFilter={onFilterApply}
+                                showCategory={true}
+                            />
+                        </Box>
                     </Box>
                 </Grid>
             </Grid>
