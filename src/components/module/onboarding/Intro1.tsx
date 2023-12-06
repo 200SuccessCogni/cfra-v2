@@ -1,4 +1,11 @@
-import { Box, Typography, Button, AvatarGroup, Avatar } from "@mui/material";
+import {
+    Box,
+    Typography,
+    Button,
+    AvatarGroup,
+    Avatar,
+    Grid,
+} from "@mui/material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import React, { useEffect, useState } from "react";
 import { tags } from "../../../constants/taglines.constant";
@@ -16,7 +23,7 @@ function FeatureCard(props: IFeatureCard) {
             p={1.5}
             mb={1}
             border="1px solid"
-            width="70%"
+            // width="70%"
             position="relative"
             sx={{ backgroundColor: "white" }}
         >
@@ -103,35 +110,63 @@ function Intro1(props: any) {
                     The voice of the customer is our compass.
                 </Typography>
                 <Box>
-                    <FeatureCard
-                        title="Central dashboard"
-                        subtitle="Get the accurate evaluation of your property through
-                        CFRA. You can precisely identify which service are
-                        being affeected, get recommended actions and get
-                        lastest review from diffrent third party sites."
-                    ></FeatureCard>
-                    <FeatureCard
-                        title="Seamless integrate"
-                        subtitle="Easily integrate third-party booking site review
-                        data and get full insights of it and do needfull
-                        action."
-                    >
-                        <AvatarGroup max={7}>
-                            <Avatar alt="Tripadvisor" src="/tripadvisor.png" />
-                            <Avatar alt="Google" src="/google.png" />
-                            <Avatar alt="Booking" src="/booking.png" />
-                            <Avatar alt="Goibio" src="/goibibo.png" />
-                            <Avatar alt="Makemytrip" src="/makemytrip.png" />
-                            <Avatar alt="Facebook" src="/facebook.png" />
-                            <Avatar alt="Makemytrip" src="/makemytrip.png" />
-                            <Avatar alt="Facebook" src="/facebook.png" />
-                        </AvatarGroup>
-                    </FeatureCard>
-                    {/* <FeatureCard
-                        title="Full Insight"
-                        subtitle="Get the full insight of which of your service is
-                            affected and take actions accordingly."
-                    /> */}
+                    <Grid container spacing={3}>
+                        <Grid item md={6}>
+                            <FeatureCard
+                                title="Central dashboard"
+                                subtitle="Get the accurate evaluation of your property through
+                                            CFRA. You can precisely identify which service are
+                                            being affeected."
+                            />
+                            <FeatureCard
+                                title="Full Insight"
+                                subtitle="Get the full insight of your service and brand which is
+                                    affected and take actions accordingly."
+                            />
+                        </Grid>
+                        <Grid item md={6}>
+                            <FeatureCard
+                                title="Seamless integrate"
+                                subtitle="Easily integrate third-party booking site review
+                                            data and get full insights of it and do needfull
+                                            action."
+                            >
+                                <AvatarGroup max={6}>
+                                    <Avatar
+                                        alt="Tripadvisor"
+                                        src="/tripadvisor.png"
+                                    />
+                                    <Avatar alt="Google" src="/google.png" />
+                                    <Avatar alt="Booking" src="/booking.png" />
+                                    <Avatar alt="Goibio" src="/goibibo.png" />
+                                    <Avatar
+                                        alt="Makemytrip"
+                                        src="/makemytrip.png"
+                                    />
+                                    <Avatar
+                                        alt="Facebook"
+                                        src="/facebook.png"
+                                    />
+                                    <Avatar
+                                        alt="UberEats"
+                                        src="/uber-eats.png"
+                                    />
+                                    <Avatar
+                                        alt="UberEats"
+                                        src="/uber-eats.png"
+                                    />
+                                    <Avatar
+                                        alt="UberEats"
+                                        src="/uber-eats.png"
+                                    />
+                                </AvatarGroup>
+                            </FeatureCard>
+                            <FeatureCard
+                                title="Analytics"
+                                subtitle="Get the full analytics of your entites, amentites or products over time."
+                            />
+                        </Grid>
+                    </Grid>
                 </Box>
                 <Button
                     variant="contained"
@@ -141,6 +176,7 @@ function Intro1(props: any) {
                         boxShadow: "none",
                         width: "100px",
                         marginLeft: "80%",
+                        mt: 2,
                     }}
                 >
                     Next

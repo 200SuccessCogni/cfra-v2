@@ -72,7 +72,9 @@ function LocationsAdd(props: any) {
                             fontWeight={500}
                             color="text.light"
                         >
-                            {" (Hotels, Restaurants or Airlines)"}
+                            {
+                                " (Hotels, Restaurants, Airlines or E-commerce Products)"
+                            }
                         </Typography>
                     </Typography>
                 </Box>

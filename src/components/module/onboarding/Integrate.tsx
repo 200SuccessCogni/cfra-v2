@@ -148,6 +148,11 @@ function Integrate(props: any) {
                         subtitle="Integrate demo API to get all reviews and take action accrodingly."
                     />
                     <FeatureCard
+                        src="./google.png"
+                        title="Google"
+                        subtitle="Integrate Google to get all reviews and take action accrodingly."
+                    />
+                    <FeatureCard
                         src="./tripadvisor.png"
                         title="Tripadvisor"
                         subtitle="Integrate Tripadvisor to get all reviews and take action accrodingly."
@@ -156,11 +161,6 @@ function Integrate(props: any) {
                         src="./booking.png"
                         title="Booking.com"
                         subtitle="Integrate Booking.com to get all reviews and take action accrodingly."
-                    />
-                    <FeatureCard
-                        src="./google.png"
-                        title="Google"
-                        subtitle="Integrate Google to get all reviews and take action accrodingly."
                     />
                 </Box>
                 <Box sx={{ display: "flex", justifyContent: "flex-end" }}>

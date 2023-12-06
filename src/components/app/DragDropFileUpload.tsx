@@ -87,7 +87,7 @@ function DragDropFileUpload() {
                             fontWeight={500}
                             lineHeight={1.1}
                         >
-                            Drag and drop your locations
+                            Drag and drop your data
                         </Typography>
                         <Typography variant="body2">OR</Typography>
                         <Typography variant="body2">Browse here</Typography>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, Link, Grid } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import AuthForm from "../components/module/auth/AuthForm";
 import { POST } from "../services/api.service";
 import useApp from "../store/app.context";
@@ -166,10 +166,6 @@ function Login() {
                     </Typography>
                 </Box>
             </Box>
-            {/* <Grid container spacing={3}>
-                <Grid item md={6}></Grid>
-                <Grid item md={6}></Grid>
-            </Grid> */}
         </Box>
     );
 }
