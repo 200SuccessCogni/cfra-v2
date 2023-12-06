@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography, Link, Grid } from "@mui/material";
 import AuthForm from "../components/module/auth/AuthForm";
 import { POST } from "../services/api.service";
 import useApp from "../store/app.context";
@@ -65,63 +65,95 @@ function Login() {
                 justifyContent: "center",
                 height: "100vh",
                 width: "100vw",
-                background: "rgb(178, 226, 254)",
+                // background: "rgb(178, 226, 254)",
             }}
         >
             <Box
                 sx={{
-                    background: "#eee",
-                    margin: { xs: 0, md: "2rem" },
-                    borderRadius: { xs: 0, md: "1rem" },
-                    maxWidth: { xs: "100%", md: "30%" },
-                    p: 5,
-                    display: "flex",
-                    justifyContent: "space-between",
-                    flexDirection: "column",
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    width: "100%",
                 }}
             >
-                <Box mb={3}>
+                <Box
+                    sx={{
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "right",
+                        backgroundImage: `url("bg-kohler.png"), linear-gradient(180deg, rgba(255,255,255,1) 16%, rgba(139,139,139,1) 71%)`,
+                    }}
+                ></Box>
+                <Box
+                    sx={{
+                        background: "#eee",
+                        // margin: { xs: 0, md: "2rem" },
+                        // borderRadius: { xs: 0, md: "1rem" },
+                        // maxWidth: { xs: "100%", md: "60%" },
+                        p: 5,
+                        display: "flex",
+                        justifyContent: "space-between",
+                        flexDirection: "column",
+                    }}
+                >
+                    <Box mb={3}>
+                        <Typography
+                            variant="body2"
+                            fontWeight="bold"
+                            lineHeight={0.9}
+                        >
+                            CFRA
+                        </Typography>
+                        <Typography variant="caption" gutterBottom>
+                            Customer Feedback and Review Analysis
+                        </Typography>
+                    </Box>
+                    <Box my="auto">
+                        <Typography
+                            variant="h6"
+                            fontWeight="bold"
+                            align="center"
+                        >
+                            Welcome
+                        </Typography>
+                        <Typography
+                            variant="body1"
+                            gutterBottom
+                            align="center"
+                            sx={{ mb: 2 }}
+                        >
+                            Please login to get access application.
+                        </Typography>
+                        <AuthForm
+                            isLogin={true}
+                            loading={loading}
+                            onSubmit={loginHandler}
+                        />
+                    </Box>
+
                     <Typography
                         variant="body2"
-                        fontWeight="bold"
-                        lineHeight={0.9}
+                        align="center"
+                        gutterBottom
+                        sx={{ my: 3 }}
                     >
-                        CFRA
-                    </Typography>
-                    <Typography variant="caption" gutterBottom>
-                        Customer Feedback and Review Analysis
+                        Not register yet.{" "}
+                        <Link
+                            component="button"
+                            variant="body2"
+                            onClick={() => {
+                                navigate("/signup");
+                            }}
+                        >
+                            Sign up
+                        </Link>{" "}
+                        here.
                     </Typography>
                 </Box>
-                <Box my="auto">
-                    <Typography variant="h6" fontWeight="bold" gutterBottom>
-                        Welcome
-                    </Typography>
-                    <AuthForm
-                        isLogin={true}
-                        loading={loading}
-                        onSubmit={loginHandler}
-                    />
-                </Box>
-
-                <Typography
-                    variant="body2"
-                    align="center"
-                    gutterBottom
-                    sx={{ my: 3 }}
-                >
-                    Not register yet.{" "}
-                    <Link
-                        component="button"
-                        variant="body2"
-                        onClick={() => {
-                            navigate("/signup");
-                        }}
-                    >
-                        Sign up
-                    </Link>{" "}
-                    here.
-                </Typography>
             </Box>
+            {/* <Grid container spacing={3}>
+                <Grid item md={6}></Grid>
+                <Grid item md={6}></Grid>
+            </Grid> */}
         </Box>
     );
 }

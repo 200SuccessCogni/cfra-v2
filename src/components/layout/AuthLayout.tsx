@@ -71,7 +71,7 @@ export default function SideNav(props: Props) {
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const [currentPath, setCurrentPath] = useState("");
-    const { loader, user = { name: "" } } = useApp();
+    const { loader, user } = useApp();
 
     useEffect(() => {
         setCurrentPath(pathname);
@@ -97,6 +97,11 @@ export default function SideNav(props: Props) {
                             border: "none",
                             // backgroundColor: "secondary.light",
                             borderRight: "1px solid #eee",
+                            // backgroundSize: `${drawerWidth}px 100%`,
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "right",
+                            background: `url("https://www.toptal.com/designers/subtlepatterns/uploads/light-grey-terrazzo.png")`,
                         },
                         position: "relative",
                         display: { xs: "none", md: "block" },
@@ -122,7 +127,9 @@ export default function SideNav(props: Props) {
                                     fontSize: "1.2rem",
                                 }}
                             >
-                                CFRA
+                                CFRA |{" "}
+                                {user &&
+                                    user.business?.businessName.split(" ")[0]}
                             </Typography>
                             <Typography
                                 variant="caption"
@@ -267,7 +274,7 @@ const MenuList = ({
                     key={name}
                     sx={{
                         backgroundColor: isActiveUrl
-                            ? alpha(theme.palette.primary.light, 0.05)
+                            ? alpha(theme.palette.primary.light, 0.1)
                             : "transparent",
                         borderRadius: "10px",
                         my: 0.5,

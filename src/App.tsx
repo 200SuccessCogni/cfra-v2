@@ -45,8 +45,8 @@ function App() {
     useEffect(() => {
         // // Set McDonald's theme
         // setTheme(mcdTheme);
-        // // Set Kohler's theme
-        // setTheme(kohlerTheme);
+        // Set Kohler's theme
+        setTheme(kohlerTheme);
     }, []);
 
     return (
