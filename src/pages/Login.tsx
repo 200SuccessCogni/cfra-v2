@@ -77,12 +77,28 @@ function Login() {
             >
                 <Box
                     sx={{
+                        background: `linear-gradient(180deg, rgba(255,255,0,0) 15%, rgba(0,0,0,0.6) 71%), url('bg-kohler.png')`,
+                        transition: "all 0.3s ease-in",
+                        backgroundPosition: "center",
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
-                        backgroundPosition: "right",
-                        backgroundImage: `url("bg-kohler.png"), linear-gradient(180deg, rgba(255,255,255,1) 16%, rgba(139,139,139,1) 71%)`,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-end",
+                        p: 3,
                     }}
-                ></Box>
+                >
+                    <Typography
+                        variant="h5"
+                        align="left"
+                        fontWeight="normal"
+                        sx={{ color: "#fff", lineHeight: 1.1 }}
+                    >
+                        Kohler is your one stop destination for luxury
+                        sanitaryware, bathroom fittings, wash basin, bathtubs
+                        showers etc
+                    </Typography>
+                </Box>
                 <Box
                     sx={{
                         background: "#eee",
