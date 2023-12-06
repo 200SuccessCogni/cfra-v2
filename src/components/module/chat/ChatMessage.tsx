@@ -5,26 +5,33 @@ import { MessageType } from "../types/chat";
 
 interface IChatMessage extends MessageType {
     others?: any;
-    isSender: boolean
+    isSender: boolean;
 }
 
 export default function ChatMessage(props: IChatMessage) {
     const { user, message, others, isSender } = props;
 
     return (
-        <Box className={styles[isSender ? "my-message-container" : "another-message-container"]} {...others}>
+        <Box
+            className={
+                styles[
+                    isSender
+                        ? "my-message-container"
+                        : "another-message-container"
+                ]
+            }
+            {...others}
+        >
             <Box>
                 <Typography variant="caption" align="right" fontWeight={400}>
                     {camelCaseToTitleCase(user?.fullName)}
                 </Typography>
-                <Box className={styles[isSender ? "my-message" : "another-message"]}>
-                    <Typography
-                        variant="body2"
-                        fontWeight={400}
-                        className={styles.message}
-                    >
-                        {message}
-                    </Typography>
+                <Box
+                    className={
+                        styles[isSender ? "my-message" : "another-message"]
+                    }
+                >
+                    <div className={styles.message}>{message}</div>
                 </Box>
             </Box>
 

@@ -22,6 +22,11 @@ const ChatContainer = styled("div")({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
+    // background:
+    //     "url('https://www.toptal.com/designers/subtlepatterns/uploads/geometric-leaves.png')",
+    // backgroundPosition: "center",
+    // backgroundSize: "cover",
+    // backgroundRepeat: "no-repeat",
 });
 
 const ChatHeader = styled("header")({
@@ -32,7 +37,7 @@ const ChatHeader = styled("header")({
     padding: "1rem 1rem",
     color: "#fff",
     height: "80px",
-    background: "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+    background: "linear-gradient(-45deg, #736d6b, #9b9a9b, #949494, #212927)",
 });
 
 export default function ChatBot({
@@ -149,17 +154,23 @@ export default function ChatBot({
                             <OutlinedInput
                                 id="outlined-adornment-prompt"
                                 size="small"
+                                multiline
+                                maxRows={3}
+                                minRows={2}
                                 value={message}
                                 onChange={(e: any) =>
                                     setMessage(e.target.value)
                                 }
-                                onKeyDown={(e: any) => {
-                                    if (e.keyCode === 13 && !e.shiftKey) {
-                                        // keyCode 13 is for Enter key
-                                        e.preventDefault(); // Prevents the default action (like adding a new line)
-                                        sendMessage();
-                                    }
+                                sx={{
+                                    fontSize: "14px",
                                 }}
+                                // onKeyDown={(e: any) => {
+                                //     if (e.keyCode === 13 && !e.shiftKey) {
+                                //         // keyCode 13 is for Enter key
+                                //         e.preventDefault(); // Prevents the default action (like adding a new line)
+                                //         sendMessage();
+                                //     }
+                                // }}
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <IconButton
