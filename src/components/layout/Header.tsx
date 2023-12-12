@@ -21,23 +21,52 @@ const drawerWidth = 260;
 function Header(props: any) {
     const [filteredLocations, setFilteredLocations] = useState<any[]>([]);
     const [recommendedLocs, setRecommendedLocs] = useState<any[]>([]);
+    const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
+    const [recommendedProds, setRecommendedProds] = useState<any[]>([]);
     const {
         resortList,
+        productList,
         setResort,
+        setProducts,
         setSelectedLocation,
+        setSelectedProduct,
         user,
         selectedLocation,
+        selectedProduct,
     } = useApp();
 
+    // For Resorts or hotels
     useEffect(() => {
+        const sampleResortList =
+            resortList.length < 4 ? resortList : resortList.slice(0, 3) || [];
         setRecommendedLocs(
-            resortList.length < 4 ? resortList : resortList.slice(0, 3) || []
+            sampleResortList.map((e) => ({
+                entityId: e.id,
+                entityName: e.locationName,
+                entityAddress: e.locationAddress,
+            }))
         );
     }, [resortList]);
+
+    // For cosumer products
+    useEffect(() => {
+        const sampleProds =
+            productList.length < 4
+                ? productList
+                : productList.slice(0, 3) || [];
+        setRecommendedProds(
+            sampleProds.map((e) => ({
+                entityId: e.id,
+                entityName: e.locationName,
+                entityAddress: e.locationAddress,
+            }))
+        );
+    }, [productList]);
 
     useEffect(() => {
         if (user && user.business && user.business?.businessId) {
             getAllLocations();
+            getAllProducts();
         }
     }, [user]);
 
@@ -49,12 +78,47 @@ function Header(props: any) {
         const locations = [...resortList].filter((r) => {
             return r.locationName.toLowerCase().includes(value.toLowerCase());
         });
-        setFilteredLocations(locations);
+        setFilteredLocations(
+            locations.map((e) => ({
+                entityId: e.id,
+                entityName: e.locationName,
+                entityAddress: e.locationAddress,
+            }))
+        );
+    };
+
+    const onProductChange = (value: string) => {
+        if (!value) {
+            setFilteredProducts([]);
+            return;
+        }
+        const products = [...productList].filter((r) => {
+            return r.locationName.toLowerCase().includes(value.toLowerCase());
+        });
+        setFilteredProducts(
+            products.map((e) => ({
+                entityId: e.id,
+                entityName: e.locationName,
+                entityAddress: e.locationAddress,
+            }))
+        );
     };
 
     const onLocationChoose = (data: any) => {
         console.log({ data });
-        setSelectedLocation(data);
+        setSelectedLocation({
+            id: data.entityId,
+            locationName: data.entityName,
+            locationAddress: data.entityAddress,
+        });
+    };
+
+    const onProdcutChoose = (data: any) => {
+        setSelectedProduct({
+            id: data.entityId,
+            locationName: data.entityName,
+            locationAddress: data.entityAddress,
+        });
     };
 
     // notification popover
@@ -93,6 +157,39 @@ function Header(props: any) {
                 if (resorts && resorts.length) {
                     setResort(resorts);
                     setSelectedLocation(resorts[0]);
+                }
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }, [user?.business?.businessId]);
+
+    const getAllProducts = useCallback(async () => {
+        try {
+            const res = await GET(
+                `/location/getAll?businessId=${user?.business?.businessId}`
+            );
+
+            if (
+                res &&
+                res?.data &&
+                res.data?.data &&
+                Array.isArray(res.data.data)
+            ) {
+                const products: any[] = res.data.data.map((r: any) => ({
+                    id: r._id,
+                    businessId: r.businessId,
+                    locationName: r.locationName,
+                    locationAddress: r.address,
+                    city: r.city,
+                    country: r.country,
+                    state: r.state,
+                    organization: r.organization,
+                }));
+
+                if (products && products.length) {
+                    setProducts(products);
+                    setSelectedProduct(products[0]);
                 }
             }
         } catch (err) {
@@ -147,8 +244,39 @@ function Header(props: any) {
                     searchItemResult={filteredLocations || []}
                     onChange={onResortChange}
                     onSelect={onLocationChoose}
-                    selectedLocation={selectedLocation}
+                    inputProps={{
+                        placeholder: "Search your location...",
+                        type: "text",
+                    }}
+                    selectedEntity={
+                        (selectedLocation && {
+                            entityId: selectedLocation.id,
+                            entityName: selectedLocation.locationName,
+                        }) ||
+                        null
+                    }
                 />
+
+                <Box mx={2}>
+                    <GlobalSearch
+                        recommendedItems={recommendedProds}
+                        searchItemResult={filteredProducts || []}
+                        onChange={onProductChange}
+                        onSelect={onProdcutChoose}
+                        inputProps={{
+                            placeholder: "Search your item...",
+                            type: "text",
+                        }}
+                        selectedEntity={
+                            (selectedProduct && {
+                                entityId: selectedProduct.id,
+                                entityName: selectedProduct.locationName,
+                            }) ||
+                            null
+                        }
+                        controlKey="q"
+                    />
+                </Box>
                 <Box
                     sx={{
                         ml: "auto",
