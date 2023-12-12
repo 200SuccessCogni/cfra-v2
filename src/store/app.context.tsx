@@ -4,6 +4,7 @@ import { IResort } from "../interfaces/resort.interface";
 import { useContext, useReducer, createContext } from "react";
 import theme from "../styles/theme";
 import { Theme } from "@mui/material";
+import { allProds } from "../constants/app.constant";
 
 const initAppData: IApp = {
     theme: theme,
@@ -16,7 +17,7 @@ const initAppData: IApp = {
         show: false,
     },
     resortList: [],
-    productList: [],
+    productList: [...allProds],
     selectedDateRange: null,
     selectedLocation: null,
     selectedProduct: null,

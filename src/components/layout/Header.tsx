@@ -56,9 +56,8 @@ function Header(props: any) {
                 : productList.slice(0, 3) || [];
         setRecommendedProds(
             sampleProds.map((e) => ({
-                entityId: e.id,
-                entityName: e.locationName,
-                entityAddress: e.locationAddress,
+                entityId: e,
+                entityName: e,
             }))
         );
     }, [productList]);
@@ -66,7 +65,7 @@ function Header(props: any) {
     useEffect(() => {
         if (user && user.business && user.business?.businessId) {
             getAllLocations();
-            getAllProducts();
+            // getAllProducts();
         }
     }, [user]);
 
@@ -116,8 +115,7 @@ function Header(props: any) {
     const onProdcutChoose = (data: any) => {
         setSelectedProduct({
             id: data.entityId,
-            locationName: data.entityName,
-            locationAddress: data.entityAddress,
+            prodName: data.entityName,
         });
     };
 
@@ -264,13 +262,13 @@ function Header(props: any) {
                         onChange={onProductChange}
                         onSelect={onProdcutChoose}
                         inputProps={{
-                            placeholder: "Search your item...",
+                            placeholder: "All products",
                             type: "text",
                         }}
                         selectedEntity={
                             (selectedProduct && {
-                                entityId: selectedProduct.id,
-                                entityName: selectedProduct.locationName,
+                                entityId: selectedProduct.prodName,
+                                entityName: selectedProduct.prodName,
                             }) ||
                             null
                         }
