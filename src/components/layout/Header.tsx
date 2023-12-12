@@ -92,7 +92,7 @@ function Header(props: any) {
             return;
         }
         const products = [...productList].filter((r) => {
-            return r.locationName.toLowerCase().includes(value.toLowerCase());
+            return r.toLowerCase().includes(value.toLowerCase());
         });
         setFilteredProducts(
             products.map((e) => ({
