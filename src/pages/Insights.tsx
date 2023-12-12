@@ -143,7 +143,7 @@ function Insights() {
             getInsightsAndAnalytics(
                 user?.business?.businessId,
                 selectedLocation.id,
-                selectedProduct?.id
+                selectedProduct?.id || null
             );
             // loadLocalInsightJSON(selectedLocation.id);
         }

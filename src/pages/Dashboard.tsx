@@ -125,12 +125,12 @@ function Dashboard() {
             getInsightsAndAnalytics(
                 user?.business?.businessId,
                 selectedLocation.id,
-                selectedProduct?.id
+                selectedProduct?.id || null
             );
             getAllReviews(
                 user?.business?.businessId,
                 selectedLocation.id,
-                selectedProduct?.id
+                selectedProduct?.id || null
             );
         }
     }, [user, selectedLocation, selectedProduct]);
