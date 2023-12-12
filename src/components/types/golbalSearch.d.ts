@@ -9,6 +9,7 @@ export type GlobalSearchPropsType = {
     controlKey?: string;
     onChange: (searchQuery: string) => void;
     onSelect: (searchQuery: SearchDataType) => void;
+    onClear?: () => void;
 };
 
 export type SearchDataType = {

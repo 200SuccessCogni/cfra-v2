@@ -272,6 +272,7 @@ function Header(props: any) {
                             null
                         }
                         controlKey="q"
+                        onClear={() => setSelectedProduct(null)}
                     />
                 </Box>
                 <Box

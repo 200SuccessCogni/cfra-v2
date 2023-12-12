@@ -256,6 +256,19 @@ function GlobalSearch(props: GlobalSearchPropsType) {
                     </SearchForm>
                 </header>
                 <Divider />
+                {props.selectedEntity && props.onClear && (
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "flex-end",
+                            px: 3,
+                        }}
+                    >
+                        <Button onClick={props.onClear && props.onClear}>
+                            Clear filter
+                        </Button>
+                    </Box>
+                )}
                 <DialogContent sx={{ p: 0 }}>
                     {/* Search result */}
                     {!!props.searchItemResult.length && (
