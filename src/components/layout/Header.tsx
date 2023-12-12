@@ -96,9 +96,8 @@ function Header(props: any) {
         });
         setFilteredProducts(
             products.map((e) => ({
-                entityId: e.id,
-                entityName: e.locationName,
-                entityAddress: e.locationAddress,
+                entityId: e,
+                entityName: e,
             }))
         );
     };
