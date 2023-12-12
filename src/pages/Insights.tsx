@@ -103,7 +103,7 @@ function Insights() {
     const theme = useTheme();
     const [insights, setInsights] = useState<InsightType[]>([]);
     const [selectedInsights, setSelectedInsights] = useState<InsightType[]>([]);
-    const { setLoader, user, selectedLocation } = useApp();
+    const { setLoader, user, selectedLocation, selectedProduct } = useApp();
     const [chartsData, setChartsData] = useState<any[]>();
     const [appliedDateSet, setAppliedDateSet] = useState(initChartDataSet);
     const [showFullPrompt, setShowFullPrompt] = useState(false);
@@ -142,11 +142,12 @@ function Insights() {
 
             getInsightsAndAnalytics(
                 user?.business?.businessId,
-                selectedLocation.id
+                selectedLocation.id,
+                selectedProduct?.id
             );
             // loadLocalInsightJSON(selectedLocation.id);
         }
-    }, [user, selectedLocation]);
+    }, [user, selectedLocation, selectedProduct]);
 
     useEffect(() => {
         categoriesInsights(insights);
@@ -233,10 +234,11 @@ function Insights() {
 
     const getInsightsAndAnalytics = async (
         businessId: string,
-        locationId: string
+        locationId: string,
+        productId: string
     ) => {
         setLoader(true);
-        const url = `/review/getInsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
+        const url = `/review/getInsightAnalytics?businessId=${businessId}&locationId=${locationId}&productId=${productId}`;
         // const url = `/review/getSummarizedInsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
         try {
             const res = await GET(url);

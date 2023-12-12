@@ -102,7 +102,7 @@ type InsightType = {
 function Analytics() {
     const theme = useTheme();
     const [insights, setInsights] = useState<InsightType[]>([]);
-    const { setLoader, user, selectedLocation } = useApp();
+    const { setLoader, user, selectedLocation, selectedProduct } = useApp();
     const [chartsData, setChartsData] = useState<any[]>();
     const [appliedDateSet, setAppliedDateSet] = useState(initChartDataSet);
     const [showFullPrompt, setShowFullPrompt] = useState(false);
@@ -141,11 +141,12 @@ function Analytics() {
 
             getInsightsAndAnalytics(
                 user?.business?.businessId,
-                selectedLocation.id
+                selectedLocation.id,
+                selectedProduct?.id || null
             );
             // loadLocalInsightJSON(selectedLocation.id);
         }
-    }, [user, selectedLocation]);
+    }, [user, selectedLocation, selectedProduct]);
 
     useEffect(() => {
         categoriesInsights(insights);
@@ -232,10 +233,11 @@ function Analytics() {
 
     const getInsightsAndAnalytics = async (
         businessId: string,
-        locationId: string
+        locationId: string,
+        productId?: string
     ) => {
         setLoader(true);
-        const url = `/review/getInsightAnalytics?businessId=${businessId}&locationId=${locationId}`; // not live
+        const url = `/review/getInsightAnalytics?businessId=${businessId}&locationId=${locationId}&productId=${productId}`; // not live
         // const url = `/review/getSummarizedInsightAnalytics?businessId=${businessId}&locationId=${locationId}`; // live
         try {
             const res = await GET(url);
