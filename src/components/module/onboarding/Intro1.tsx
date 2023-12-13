@@ -132,11 +132,12 @@ function Intro1(props: any) {
                                             action."
                             >
                                 <AvatarGroup max={6}>
+                                <Avatar alt="Trustpilot" src="/Trustpilot.png" />
+                                    <Avatar alt="Google" src="/google.png" />
                                     <Avatar
                                         alt="Tripadvisor"
                                         src="/tripadvisor.png"
                                     />
-                                    <Avatar alt="Google" src="/google.png" />
                                     <Avatar alt="Booking" src="/booking.png" />
                                     <Avatar alt="Goibio" src="/goibibo.png" />
                                     <Avatar

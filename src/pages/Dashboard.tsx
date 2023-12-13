@@ -42,7 +42,7 @@ function StatCard(props: ICountCard) {
             }}
             // className="box-shadow"
         >
-            <Typography variant="h2" align="left">
+            <Typography variant="h2" align="left" sx = {{marginTop:3}}>
                 {props.count}
             </Typography>
             <Typography

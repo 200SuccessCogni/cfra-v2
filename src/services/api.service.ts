@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const axiosConfig = {
-    baseURL: import.meta.env.DEV
-        ? "http://localhost:4000/api/v1.0/"
-        : import.meta.env.VITE_API_BASE_URL,
-    // baseURL: import.meta.env.VITE_API_BASE_URL,
+    //baseURL: import.meta.env.DEV
+        //? "http://localhost:4000/api/v1.0/"
+        //: import.meta.env.VITE_API_BASE_URL,
+    baseURL: import.meta.env.VITE_API_BASE_URL,
     timeout: 60000,
     headers: {
         "Content-Type": "application/json",
