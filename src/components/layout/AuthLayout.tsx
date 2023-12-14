@@ -43,7 +43,7 @@ const drawerWidth = 260;
 const menuList = [
     { icon: <HomeTwoToneIcon />, name: "Dashboard", url: "/" },
     { icon: <TimelineTwoToneIcon />, name: "Reviews", url: "/reviews" },
-    { icon: <CompareArrowsIcon />, name: "Comparision", url: "/compare" },
+    // { icon: <CompareArrowsIcon />, name: "Comparision", url: "/compare" },
     {
         icon: <InsightsIcon />,
         name: "Insights",
