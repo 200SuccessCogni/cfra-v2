@@ -89,7 +89,7 @@ function Intro1(props: any) {
                             fontWeight="bold"
                             lineHeight={0.9}
                         >
-                            CFRA
+                            Sentiment 360
                         </Typography>
                         <Typography variant="caption" gutterBottom>
                             Customer Feedback and Review Analysis
@@ -115,7 +115,7 @@ function Intro1(props: any) {
                             <FeatureCard
                                 title="Central dashboard"
                                 subtitle="Get the accurate evaluation of your property through
-                                            CFRA. You can precisely identify which service are
+                                            Sentiment 360. You can precisely identify which service are
                                             being affeected."
                             />
                             <FeatureCard

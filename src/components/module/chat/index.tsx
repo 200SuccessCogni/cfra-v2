@@ -63,7 +63,8 @@ export default function ChatBot({
     const ref = useChatScroll(messages);
 
     useEffect(() => {
-        const url = `ws://3.14.42.49/ws/customdata`;
+        // const url = `ws://3.14.42.49/ws/customdata`
+        const url = `ws://3.133.161.182/ws/kohlerchat`;
         const ws = new WebSocket(url);
 
         ws.onopen = () => {
@@ -113,7 +114,7 @@ export default function ChatBot({
                             fontWeight={600}
                             lineHeight={1.1}
                         >
-                            CFRA Chatbot
+                            Sentiment 360 Chatbot
                         </Typography>
                         <Typography variant="caption" fontWeight={400}>
                             Get more insights by typing your prompt query{" "}

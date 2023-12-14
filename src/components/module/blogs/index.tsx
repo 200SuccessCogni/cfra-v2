@@ -30,7 +30,7 @@ function Blog(props: Iprops) {
                             fontSize: "1.2rem",
                         }}
                     >
-                        CFRA
+                        Sentiment 360
                         <Typography
                             variant="button"
                             color="primary"

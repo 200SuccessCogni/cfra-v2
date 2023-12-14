@@ -1,6 +1,6 @@
-# Customer Feedback and Review Analysis (CFRA) Web UI
+# Customer Feedback and Review Analysis (Sentiment 360) Web UI
 
-This is the README file for the Customer Feedback and Review Analysis (CFRA) Web UI project. CFRA Web UI is a web application that allows you to analyze and visualize customer feedback and reviews. It provides various features and tools to help you gain insights from customer feedback data.
+This is the README file for the Customer Feedback and Review Analysis (Sentiment 360) Web UI project. Sentiment 360 Web UI is a web application that allows you to analyze and visualize customer feedback and reviews. It provides various features and tools to help you gain insights from customer feedback data.
 
 ## Table of Contents
 
@@ -14,18 +14,18 @@ License
 
 ## Installation
 
-To get started with CFRA Web UI, follow these steps:
+To get started with Sentiment 360 Web UI, follow these steps:
 
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/200SuccessCogni/cfra-ui-v2.git
+git clone https://github.com/200SuccessCogni/Sentiment 360-ui-v2.git
 ```
 
 Change into the project directory:
 
 ```bash
-cd cfra-web-ui
+cd Sentiment 360-web-ui
 ```
 
 Install the project dependencies using npm or yarn:
@@ -40,7 +40,7 @@ yarn install
 
 ## Usage
 
-To run the CFRA Web UI application, you can use the following commands:
+To run the Sentiment 360 Web UI application, you can use the following commands:
 
 ### Development Mode
 
@@ -94,7 +94,7 @@ npm run preview
 yarn preview
 ```
 
-For more information on how to use the CFRA Web UI and its features, refer to the project documentation.
+For more information on how to use the Sentiment 360 Web UI and its features, refer to the project documentation.
 
 ## Features
 
@@ -106,7 +106,7 @@ For more information on how to use the CFRA Web UI and its features, refer to th
 
 ## Dependencies
 
-The CFRA Web UI project relies on several dependencies, including but not limited to:
+The Sentiment 360 Web UI project relies on several dependencies, including but not limited to:
 
 -   @emotion/react: For styling components with Emotion.
 -   @mui/material and @mui/icons-material: Material-UI components for the user - interface.
@@ -125,4 +125,4 @@ The project includes various npm scripts for development and building. These scr
 -   preview: Preview the built application locally.
     You can run these scripts using npm run dev or yarn dev.
 
-Thank you for using CFRA Web UI! If you have any questions or encounter any issues, please don't hesitate to open an issue on our GitHub repository.
+Thank you for using Sentiment 360 Web UI! If you have any questions or encounter any issues, please don't hesitate to open an issue on our GitHub repository.

@@ -127,7 +127,7 @@ export default function SideNav(props: Props) {
                                     fontSize: "1.2rem",
                                 }}
                             >
-                                CFRA |{" "}
+                                Sentiment 360 |{" "}
                                 {user &&
                                     user.business?.businessName.split(" ")[0]}
                             </Typography>
@@ -178,7 +178,7 @@ export default function SideNav(props: Props) {
                                     fontSize: "1.2rem",
                                 }}
                             >
-                                CFRA
+                                Sentiment 360
                             </Typography>
                             <Typography
                                 variant="caption"
