@@ -43,7 +43,7 @@ const drawerWidth = 260;
 const menuList = [
     { icon: <HomeTwoToneIcon />, name: "Dashboard", url: "/" },
     { icon: <TimelineTwoToneIcon />, name: "Reviews", url: "/reviews" },
-    { icon: <CompareArrowsIcon />, name: "Comparision", url: "/compare" },
+    // { icon: <CompareArrowsIcon />, name: "Comparision", url: "/compare" },
     {
         icon: <InsightsIcon />,
         name: "Insights",
@@ -127,7 +127,7 @@ export default function SideNav(props: Props) {
                                     fontSize: "1.2rem",
                                 }}
                             >
-                                CFRA |{" "}
+                                Sentiment 360 |{" "}
                                 {user &&
                                     user.business?.businessName.split(" ")[0]}
                             </Typography>
@@ -178,7 +178,7 @@ export default function SideNav(props: Props) {
                                     fontSize: "1.2rem",
                                 }}
                             >
-                                CFRA
+                                Sentiment 360
                             </Typography>
                             <Typography
                                 variant="caption"

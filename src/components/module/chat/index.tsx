@@ -157,7 +157,7 @@ export default function ChatBot({
                             fontWeight={600}
                             lineHeight={1.1}
                         >
-                            CFRA Chatbot
+                            Sentiment 360 Chatbot
                         </Typography>
                         <Typography variant="caption" fontWeight={400}>
                             Get more insights by typing your prompt query{" "}

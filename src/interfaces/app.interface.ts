@@ -9,14 +9,18 @@ export interface IApp {
     user: Iuser | null;
     alert: IAlert;
     resortList: any[];
+    productList: any[];
     selectedDateRange: any;
     selectedLocation: any;
+    selectedProduct: any;
     allReviews: any[];
     setSelectedDateRange: (data: any) => undefined;
     setSelectedLocation: (data: any) => undefined;
+    setSelectedProduct: (data: any) => undefined;
     setLoader: (data: boolean) => undefined;
     setUser: (data: any) => undefined;
     setResort: (data: IResort[]) => undefined;
+    setProducts: (data: any) => undefined;
     setALLReviews: (data: any[]) => undefined;
     setAlert: (data: IAlert) => undefined;
     setTheme: (data: Theme) => undefined;

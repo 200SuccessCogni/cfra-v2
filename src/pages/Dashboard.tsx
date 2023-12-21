@@ -42,7 +42,7 @@ function StatCard(props: ICountCard) {
             }}
             // className="box-shadow"
         >
-            <Typography variant="h2" align="left">
+            <Typography variant="h2" align="left" sx = {{marginTop:3}}>
                 {props.count}
             </Typography>
             <Typography
@@ -97,6 +97,7 @@ function Dashboard() {
     const {
         setLoader,
         selectedLocation,
+        selectedProduct,
         loader,
         setALLReviews,
         allReviews,
@@ -123,18 +124,23 @@ function Dashboard() {
         ) {
             getInsightsAndAnalytics(
                 user?.business?.businessId,
-                selectedLocation.id
+                selectedLocation.id,
+                selectedProduct?.id || null
             );
-            getAllReviews(user?.business?.businessId, selectedLocation.id);
+            getAllReviews(
+                user?.business?.businessId,
+                selectedLocation.id,
+                selectedProduct?.id || null
+            );
         }
-    }, [user, selectedLocation]);
+    }, [user, selectedLocation, selectedProduct]);
 
     const getAllReviews = useCallback(
-        async (businessId: string, locationId: string) => {
+        async (businessId: string, locationId: string, productId: string) => {
             setLoader(true);
             try {
                 const res = await GET(
-                    `/review/getall?businessId=${businessId}&locationId=${locationId}`
+                    `/review/getall?businessId=${businessId}&locationId=${locationId}&productId=${productId}`
                 );
                 if (res && res.status === 200) {
                     const allReviews: IReviewItem[] = res.data.data.map(
@@ -163,10 +169,11 @@ function Dashboard() {
 
     const getInsightsAndAnalytics = async (
         businessId = "65227a4fd7a294d9ee6f18a6",
-        locationId = "65227ab4d7a294d9ee6f18db"
+        locationId = "65227ab4d7a294d9ee6f18db",
+        productId: string
     ) => {
         setLoader(true);
-        const url = `/review/getCategories?businessId=${businessId}&locationId=${locationId}`;
+        const url = `/review/getCategories?businessId=${businessId}&locationId=${locationId}&productId=${productId}`;
         // const url = `/review/getinsightAnalytics?businessId=${businessId}&locationId=${locationId}`;
         try {
             const res = await GET(url);

@@ -4,6 +4,7 @@ import { IResort } from "../interfaces/resort.interface";
 import { useContext, useReducer, createContext } from "react";
 import theme from "../styles/theme";
 import { Theme } from "@mui/material";
+import { allProds } from "../constants/app.constant";
 
 const initAppData: IApp = {
     theme: theme,
@@ -16,15 +17,19 @@ const initAppData: IApp = {
         show: false,
     },
     resortList: [],
+    productList: [...allProds],
     selectedDateRange: null,
     selectedLocation: null,
+    selectedProduct: null,
     allReviews: [],
     setTheme: (theme: Theme) => undefined,
     setSelectedDateRange: (data: any) => undefined,
     setSelectedLocation: (data: IResort) => undefined,
+    setSelectedProduct: (data: any) => undefined,
     setLoader: (data: boolean) => undefined,
     setUser: (data: any) => undefined,
     setResort: (data: IResort[]) => undefined,
+    setProducts: (data: any) => undefined,
     setALLReviews: (data: any[]) => undefined,
     setAlert: (data: IAlert) => undefined,
 };
@@ -34,10 +39,14 @@ const appReducer = (prevState: any, action: any) => {
         return { ...prevState, selectedDateRange: action.data };
     } else if (action.type === "SET_SELECTED_LOCATION") {
         return { ...prevState, selectedLocation: action.data };
+    } else if (action.type === "SET_SELECTED_PRODUCT") {
+        return { ...prevState, selectedProduct: action.data };
     } else if (action.type === "SET_LOADER") {
         return { ...prevState, loader: action.data };
     } else if (action.type === "SET_RESORT") {
         return { ...prevState, resortList: action.data };
+    } else if (action.type === "SET_PRODUCT") {
+        return { ...prevState, productList: action.data };
     } else if (action.type === "SET_USER") {
         return { ...prevState, user: action.data };
     } else if (action.type === "SET_ALL_REVIEWS") {
@@ -71,6 +80,11 @@ export const AppContextProvidor = (props: any) => {
         appDispatch({ type: "SET_SELECTED_LOCATION", data });
     };
 
+    const setSelectedProduct = (data: any) => {
+        // console.log({ data });
+        appDispatch({ type: "SET_SELECTED_PRODUCT", data });
+    };
+
     const setUser = (data: Iuser) => {
         appDispatch({ type: "SET_USER", data });
     };
@@ -78,6 +92,11 @@ export const AppContextProvidor = (props: any) => {
     const setResort = (data: any[]) => {
         console.log({ data });
         appDispatch({ type: "SET_RESORT", data });
+    };
+
+    const setProducts = (data: any[]) => {
+        console.log({ data });
+        appDispatch({ type: "SET_PRODUCT", data });
     };
 
     const setALLReviews = (data: any[]) => {
@@ -103,9 +122,11 @@ export const AppContextProvidor = (props: any) => {
                 ...appState,
                 setSelectedDateRange,
                 setSelectedLocation,
+                setSelectedProduct,
                 setLoader,
                 setUser,
                 setResort,
+                setProducts,
                 reset,
                 setALLReviews,
                 setAlert,

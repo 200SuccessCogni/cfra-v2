@@ -117,7 +117,7 @@ function Login() {
                             fontWeight="bold"
                             lineHeight={0.9}
                         >
-                            CFRA
+                            Sentiment 360
                         </Typography>
                         <Typography variant="caption" gutterBottom>
                             Customer Feedback and Review Analysis

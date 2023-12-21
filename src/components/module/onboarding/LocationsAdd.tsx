@@ -51,7 +51,7 @@ function LocationsAdd(props: any) {
                                 fontWeight="bold"
                                 lineHeight={0.9}
                             >
-                                CFRA
+                                Sentiment 360
                             </Typography>
                             <Typography variant="caption" gutterBottom>
                                 Customer Feedback and Review Analysis
@@ -95,7 +95,7 @@ function LocationsAdd(props: any) {
                         id="outlined-basic"
                         label="API url"
                         placeholder="Enter the full URL"
-                        value="https://cfra.onrender.com/api/v1.0/resort/getAllResort"
+                        value="https://Sentiment 360.onrender.com/api/v1.0/resort/getAllResort"
                         sx={{ width: "100%", mb: 2 }}
                     />
                     <Typography variant="body2" fontWeight={600} gutterBottom>

@@ -21,6 +21,7 @@ function Reviews() {
         setALLReviews,
         user,
         selectedLocation,
+        selectedProduct,
     } = useApp();
     const [reviews, setReviews] = useState<IReviewItem[] | null>(null);
     const [isFiltered, setIsFiltered] = useState<boolean>(false);
@@ -53,16 +54,20 @@ function Reviews() {
             user.business?.businessId &&
             selectedLocation
         ) {
-            getAllReviews(user?.business?.businessId, selectedLocation.id);
+            getAllReviews(
+                user?.business?.businessId,
+                selectedLocation.id,
+                selectedProduct?.id || null
+            );
         }
-    }, [user, selectedLocation]);
+    }, [user, selectedLocation, selectedProduct]);
 
     const getAllReviews = useCallback(
-        async (businessId: string, locationId: string) => {
+        async (businessId: string, locationId: string, productId: string) => {
             setLoader(true);
             try {
                 const res = await GET(
-                    `/review/getall?businessId=${businessId}&locationId=${locationId}`
+                    `/review/getall?businessId=${businessId}&locationId=${locationId}&productId=${productId}`
                 );
                 if (res && res.status === 200) {
                     const allReviews: IReviewItem[] = res.data.data.map(

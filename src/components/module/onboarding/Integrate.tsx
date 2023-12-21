@@ -125,7 +125,7 @@ function Integrate(props: any) {
                             fontWeight="bold"
                             lineHeight={0.9}
                         >
-                            CFRA
+                            Sentiment 360
                         </Typography>
                         <Typography variant="caption" gutterBottom>
                             Customer Feedback and Review Analysis
@@ -153,13 +153,13 @@ function Integrate(props: any) {
                         subtitle="Integrate Google to get all reviews and take action accrodingly."
                     />
                     <FeatureCard
-                        src="./tripadvisor.png"
-                        title="Tripadvisor"
+                        src="./Trustpilot.png"
+                        title="Trustpilot"
                         subtitle="Integrate Tripadvisor to get all reviews and take action accrodingly."
                     />
                     <FeatureCard
-                        src="./booking.png"
-                        title="Booking.com"
+                        src="./facebook.png"
+                        title="Facebook"
                         subtitle="Integrate Booking.com to get all reviews and take action accrodingly."
                     />
                 </Box>

@@ -107,7 +107,10 @@ function GlobalSearch(props: GlobalSearchPropsType) {
 
     React.useEffect(() => {
         const down = (e: KeyboardEvent) => {
-            if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+            if (
+                e.key === (props.controlKey || "k") &&
+                (e.metaKey || e.ctrlKey)
+            ) {
                 e.preventDefault();
                 setOpen((open) => !open);
             }
@@ -150,8 +153,8 @@ function GlobalSearch(props: GlobalSearchPropsType) {
             if (data.length) {
                 const isExist = data.some(
                     (l: SearchDataType) =>
-                        l.locationName.toLowerCase() ===
-                        item.locationName.toLowerCase()
+                        l.entityName.toLowerCase() ===
+                        item.entityName.toLowerCase()
                 );
                 if (!isExist) data.push(item);
             }
@@ -200,15 +203,25 @@ function GlobalSearch(props: GlobalSearchPropsType) {
                 variant="outlined"
                 color="black"
                 onClick={() => setOpen(true)}
-                // sx={{ backgroundColor: "secondary.main", borderColor: "#eee" }}
+                sx={{ maxWidth: "280px" }}
             >
                 <SearchIcon />
-                <Typography variant="body2" sx={{ px: { xs: 1, md: 2 } }}>
-                    {props.selectedLocation?.locationName ||
-                        "Search your location..."}
+                <Typography
+                    variant="body2"
+                    sx={{
+                        width: "150px",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap",
+                        fontSize: "14px",
+                    }}
+                >
+                    {(props.selectedEntity &&
+                        props.selectedEntity?.entityName.slice(0, 20)) ||
+                        props.inputProps.placeholder}
                 </Typography>
                 <Box sx={{ display: { xs: "none", md: "inline-block" } }}>
-                    <kbd>⌘ + k</kbd>
+                    <kbd>{`⌘+${props.controlKey || "k"}`}</kbd>
                 </Box>
             </Button>
             <Dialog
@@ -225,7 +238,8 @@ function GlobalSearch(props: GlobalSearchPropsType) {
                             <SearchIcon />
                         </SearchLabel>
                         <SearchInput
-                            placeholder="Search your location..."
+                            placeholder={props.inputProps.placeholder}
+                            type={props.inputProps.type || "text"}
                             value={searchText}
                             onChange={onSearch}
                             ref={searchInpRef}
@@ -242,6 +256,19 @@ function GlobalSearch(props: GlobalSearchPropsType) {
                     </SearchForm>
                 </header>
                 <Divider />
+                {props.selectedEntity && props.onClear && (
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "flex-end",
+                            px: 3,
+                        }}
+                    >
+                        <Button onClick={props.onClear && props.onClear}>
+                            Clear filter
+                        </Button>
+                    </Box>
+                )}
                 <DialogContent sx={{ p: 0 }}>
                     {/* Search result */}
                     {!!props.searchItemResult.length && (
@@ -251,7 +278,7 @@ function GlobalSearch(props: GlobalSearchPropsType) {
                                 bgcolor: "background.paper",
                             }}
                             component="nav"
-                            aria-labelledby="suggested-location"
+                            aria-labelledby="suggested-item"
                             subheader={
                                 <SearchHeader
                                     headerText="Search result"
@@ -264,11 +291,11 @@ function GlobalSearch(props: GlobalSearchPropsType) {
                                     <Box key={i}>
                                         <SearchItem
                                             imgUrl={
-                                                e.locationImg ||
+                                                e.entityImg ||
                                                 "https://www.rci.com/static/Resorts/Assets/3603E02L.jpg"
                                             }
-                                            name={e.locationName}
-                                            address={e.locationAddress}
+                                            name={e.entityName}
+                                            address={e.entityAddress || ""}
                                             onClick={() => onItemClick(e)}
                                         />
                                         <Divider />
@@ -298,11 +325,11 @@ function GlobalSearch(props: GlobalSearchPropsType) {
                                     <Box key={i}>
                                         <SearchItem
                                             imgUrl={
-                                                e.locationImg ||
+                                                e.entityImg ||
                                                 "https://www.rci.com/static/Resorts/Assets/3603E02L.jpg"
                                             }
-                                            name={e.locationName}
-                                            address={e.locationAddress}
+                                            name={e.entityName}
+                                            address={e.entityAddress || ""}
                                             onClick={() => onItemClick(e)}
                                         />
                                         <Divider />
@@ -317,7 +344,7 @@ function GlobalSearch(props: GlobalSearchPropsType) {
                             bgcolor: "background.paper",
                         }}
                         component="nav"
-                        aria-labelledby="recent-location"
+                        aria-labelledby="recent-item"
                         subheader={
                             <SearchHeader
                                 headerText="Recent"
@@ -330,11 +357,11 @@ function GlobalSearch(props: GlobalSearchPropsType) {
                                 <Box key={i}>
                                     <SearchItem
                                         imgUrl={
-                                            e.locationImg ||
+                                            e.entityImg ||
                                             "https://www.rci.com/static/Resorts/Assets/3603E02L.jpg"
                                         }
-                                        name={e.locationName}
-                                        address={e.locationAddress}
+                                        name={e.entityName}
+                                        address={e.entityAddress || ""}
                                         onClick={() => onItemClick(e)}
                                     />
                                     <Divider />

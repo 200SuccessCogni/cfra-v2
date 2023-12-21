@@ -89,7 +89,7 @@ function Intro1(props: any) {
                             fontWeight="bold"
                             lineHeight={0.9}
                         >
-                            CFRA
+                            Sentiment 360
                         </Typography>
                         <Typography variant="caption" gutterBottom>
                             Customer Feedback and Review Analysis
@@ -115,7 +115,7 @@ function Intro1(props: any) {
                             <FeatureCard
                                 title="Central dashboard"
                                 subtitle="Get the accurate evaluation of your property through
-                                            CFRA. You can precisely identify which service are
+                                            Sentiment 360. You can precisely identify which service are
                                             being affeected."
                             />
                             <FeatureCard
@@ -132,11 +132,12 @@ function Intro1(props: any) {
                                             action."
                             >
                                 <AvatarGroup max={6}>
+                                <Avatar alt="Trustpilot" src="/Trustpilot.png" />
+                                    <Avatar alt="Google" src="/google.png" />
                                     <Avatar
                                         alt="Tripadvisor"
                                         src="/tripadvisor.png"
                                     />
-                                    <Avatar alt="Google" src="/google.png" />
                                     <Avatar alt="Booking" src="/booking.png" />
                                     <Avatar alt="Goibio" src="/goibibo.png" />
                                     <Avatar

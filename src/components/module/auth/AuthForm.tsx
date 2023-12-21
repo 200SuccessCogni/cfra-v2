@@ -9,7 +9,7 @@ interface IAuthForm {
 }
 
 function AuthForm(props: IAuthForm) {
-    const [email, setEmail] = useState("admin@mcd.com");
+    const [email, setEmail] = useState("admin@kohler.com");
     const [password, setPassword] = useState("Admin@123");
     const [errMsg, setErrMsg] = useState("");
 

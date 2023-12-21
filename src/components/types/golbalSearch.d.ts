@@ -1,23 +1,26 @@
 export type GlobalSearchPropsType = {
-    selectedLocation: SelectedLocation;
-    recommendedItems: earchDataType[];
+    selectedEntity: SelectedEntity | null;
+    recommendedItems: SearchDataType[];
     searchItemResult: SearchDataType[];
+    inputProps: React.HTMLProps<HTMLInputElement>;
     // allLocations?: SearchDataType[];
     others?: any[];
     loading?: boolean;
+    controlKey?: string;
     onChange: (searchQuery: string) => void;
     onSelect: (searchQuery: SearchDataType) => void;
+    onClear?: () => void;
 };
 
 export type SearchDataType = {
-    locationId: string;
-    locationName: string;
-    locationAddress: string;
-    locationImg: string;
+    entityId: string;
+    entityName: string;
+    entityAddress?: string;
+    entityImg?: string;
 };
 
-export type SelectedLocation = {
-    locationId: string;
-    locationName: string;
-    locationAddress: string;
+export type SelectedEntity = {
+    entityId: string;
+    entityName: string;
+    entityAddress?: string;
 };
