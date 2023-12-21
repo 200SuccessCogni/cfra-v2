@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+import RecordRTC, {
+    RecordRTCPromisesHandler,
+    invokeSaveAsDialog,
+} from "recordrtc";
 import { MessageType } from "../types/chat";
 import styles from "./chat.module.css";
 import {
@@ -11,6 +15,8 @@ import {
     InputAdornment,
 } from "@mui/material";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
+import MicIcon from "@mui/icons-material/Mic";
+import StopIcon from "@mui/icons-material/Stop";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/system";
 import { camelCaseToTitleCase } from "../../../services/shared.service";
@@ -22,11 +28,6 @@ const ChatContainer = styled("div")({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    // background:
-    //     "url('https://www.toptal.com/designers/subtlepatterns/uploads/geometric-leaves.png')",
-    // backgroundPosition: "center",
-    // backgroundSize: "cover",
-    // backgroundRepeat: "no-repeat",
 });
 
 const ChatHeader = styled("header")({
@@ -40,30 +41,27 @@ const ChatHeader = styled("header")({
     background: "linear-gradient(-45deg, #736d6b, #9b9a9b, #949494, #212927)",
 });
 
+const initMessage = {
+    user: { fullName: "Bot", isSender: false },
+    message:
+        "Hello there! 👋 Need help to get more insights? Reach out to us right here, and we'll get back to you as soon as we can! ",
+};
+
 export default function ChatBot({
     closeHandler,
 }: {
     closeHandler: () => void;
 }) {
     const [message, setMessage] = useState("");
-    const [messages, setMessages] = useState<MessageType[]>([
-        {
-            user: { fullName: "Bot", isSender: false },
-            message:
-                "Hello there! 👋 Need help to get more insights? Reach out to us right here, and we'll get back to you as soon as we can! ",
-        },
-
-        // {
-        //     user: { fullName: "User", isSender: true },
-        //     message:
-        //         "Positive reviews for McDonald's: 1. The restaurant is clean and the staff is polite, helpful, and well-mannered. 2. The service was excellent and the staff member named Nayeed was respectful and knowledgeable, engaging in interesting conversations.",
-        // },
-    ]);
+    const [messages, setMessages] = useState<MessageType[]>([initMessage]);
     const [websckt, setWebsckt] = useState<WebSocket | null>(null);
     const ref = useChatScroll(messages);
 
+    const [isRecording, setIsRecording] = useState(false);
+    const [recorder, setRecorder] = useState<any>(null);
+
     useEffect(() => {
-        const url = `ws://3.14.42.49/ws/customdata`;
+        const url = import.meta.env.VITE_WS_URL;
         const ws = new WebSocket(url);
 
         ws.onopen = () => {
@@ -101,6 +99,52 @@ export default function ChatBot({
 
         // clear the input field.
         setMessage("");
+    };
+
+    useEffect(() => {
+        let stream: any;
+        async function startRecording() {
+            stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            console.log("PERMISSION GIVEN"); // Creating instance of RecordRTC
+            const newRecorder = new RecordRTCPromisesHandler(stream, {
+                type: "audio",
+            });
+            setRecorder(newRecorder); // Starting Recoding by calling startRecording function
+            newRecorder.startRecording();
+            console.log("RECORDING STARTED");
+        }
+        async function stopRecording() {
+            console.log("RECORDING STOPPED", recorder); // Stopping the recording by calling the stopRecording function
+            await recorder?.stopRecording();
+            console.log("CHECKING BLOB", recorder);
+            const base64: any = await recorder?.getDataURL();
+            const base64txt: any = base64
+                .toString()
+                .replace("data:audio/webm;codecs=opus;base64,", "");
+            console.log(base64txt);
+            if (websckt)
+                websckt.send(JSON.stringify({ text: "", audio: base64txt }));
+            // stream.getAudioTracks().forEach((track) => track.stop());
+        }
+        if (isRecording) {
+            startRecording();
+        } else {
+            if (recorder !== null) {
+                stopRecording();
+            }
+        }
+        return () => {
+            if (stream !== undefined) {
+                stream.getAudioTracks().forEach((track: any) => track.stop());
+            }
+        };
+    }, [isRecording]);
+
+    const handleStartRecording = () => {
+        setIsRecording(true);
+    };
+    const handleStopRecording = () => {
+        setIsRecording(false);
     };
 
     return (
@@ -178,6 +222,22 @@ export default function ChatBot({
                                             edge="end"
                                         >
                                             <SendRoundedIcon />
+                                        </IconButton>
+
+                                        <IconButton
+                                            onClick={
+                                                isRecording
+                                                    ? handleStopRecording
+                                                    : handleStartRecording
+                                            }
+                                            edge="end"
+                                            sx={{ ml: 2 }}
+                                        >
+                                            {isRecording ? (
+                                                <MicIcon />
+                                            ) : (
+                                                <StopIcon />
+                                            )}
                                         </IconButton>
                                     </InputAdornment>
                                 }
