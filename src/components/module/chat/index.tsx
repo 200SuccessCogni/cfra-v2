@@ -56,20 +56,38 @@ export default function ChatBot({
     const [messages, setMessages] = useState<MessageType[]>([initMessage]);
     const [websckt, setWebsckt] = useState<WebSocket | null>(null);
     const ref = useChatScroll(messages);
+    const localURL = "ws://localhost:8002/ws/voicechat";
 
     const [isRecording, setIsRecording] = useState(false);
     const [recorder, setRecorder] = useState<any>(null);
 
     useEffect(() => {
-        const url = import.meta.env.VITE_WS_URL;
+        // const url = import.meta.env.VITE_WS_URL;
+        const url = localURL;
         const ws = new WebSocket(url);
 
         ws.onopen = () => {
-            ws.send("Connect");
+            // ws.send("Connect");{ text: "Connect", audio: "" }
+            ws.send(JSON.stringify({ text: "Connect", audio: "" }));
         };
 
         ws.onmessage = (e) => {
             const message: any = JSON.parse(e.data);
+            if (message.transribed_user_voice) {
+                setMessages((prevMessages: MessageType[]) => [
+                    ...prevMessages,
+                    {
+                        user: { fullName: "You", isSender: true },
+                        message: message.transribed_user_voice,
+                    },
+                ]);
+
+                // Converting text to speech
+                // if ("speechSynthesis" in window) {
+                //   let msg = new SpeechSynthesisUtterance(message.message);
+                //   speechSynthesis.speak(msg);
+                // }
+            }
             setMessages((prevMessages: MessageType[]) => [
                 ...prevMessages,
                 {
@@ -95,7 +113,7 @@ export default function ChatBot({
         ]);
 
         // Send the message to the backend
-        if (websckt) websckt.send(message);
+        if (websckt) websckt.send(JSON.stringify({ text: message, audio: "" }));
 
         // clear the input field.
         setMessage("");
@@ -234,9 +252,9 @@ export default function ChatBot({
                                             sx={{ ml: 2 }}
                                         >
                                             {isRecording ? (
-                                                <MicIcon />
-                                            ) : (
                                                 <StopIcon />
+                                            ) : (
+                                                <MicIcon />
                                             )}
                                         </IconButton>
                                     </InputAdornment>
