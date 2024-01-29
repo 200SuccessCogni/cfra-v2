@@ -77,7 +77,7 @@ function Login() {
             >
                 <Box
                     sx={{
-                        background: `linear-gradient(180deg, rgba(255,255,0,0) 15%, rgba(0,0,0,0.6) 71%), url('bg-kohler.png')`,
+                        background: `linear-gradient(180deg, rgba(255,255,0,0) 15%, rgba(0,0,0,0.6) 71%), url('https://marriott-hotels.marriott.com/wp-content/uploads/sites/9/2023/04/mhrs.1238136_2500x1875.jpg')`,
                         transition: "all 0.3s ease-in",
                         backgroundPosition: "center",
                         backgroundSize: "cover",
@@ -94,9 +94,9 @@ function Login() {
                         fontWeight="normal"
                         sx={{ color: "#fff", lineHeight: 1.1 }}
                     >
-                        Kohler is your one stop destination for luxury
-                        sanitaryware, bathroom fittings, wash basin, bathtubs
-                        showers etc
+                        MARRIOTT HOTELS ELEVATES YOUR STAY AT EVERY TURN—ALWAYS
+                        GROWING WHILE KEEPING THE COMFORT OF THE OH-SO-FAMILIAR
+                        ALL AROUND THE GLOBE.
                     </Typography>
                 </Box>
                 <Box

@@ -16,7 +16,12 @@ import useApp from "./store/app.context";
 
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { getNewTheme, mcdTheme, kohlerTheme } from "./styles/theme";
+import {
+    getNewTheme,
+    mcdTheme,
+    kohlerTheme,
+    marriottTheme,
+} from "./styles/theme";
 
 // Lazy loading
 const Dashboard = lazy(() => import("./pages/Dashboard"));
@@ -46,7 +51,7 @@ function App() {
         // // Set McDonald's theme
         // setTheme(mcdTheme);
         // Set Kohler's theme
-        setTheme(kohlerTheme);
+        setTheme(marriottTheme);
     }, []);
 
     return (

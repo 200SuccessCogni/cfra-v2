@@ -117,6 +117,10 @@ export const kohlerTheme = getNewTheme({
     primary: "#2b2a28",
     secondary: "#364573",
 });
+export const marriottTheme = getNewTheme({
+    primary: "#8e001e",
+    secondary: "#2b2a28",
+});
 // defaultTheme = mcdTheme;
 
 export default defaultTheme;

@@ -254,7 +254,8 @@ function Header(props: any) {
                     }
                 />
 
-                <Box mx={2}>
+                {/* Others search entity */}
+                {/* <Box mx={2}>
                     <GlobalSearch
                         recommendedItems={recommendedProds}
                         searchItemResult={filteredProducts || []}
@@ -274,7 +275,7 @@ function Header(props: any) {
                         controlKey="q"
                         onClear={() => setSelectedProduct(null)}
                     />
-                </Box>
+                </Box> */}
                 <Box
                     sx={{
                         ml: "auto",

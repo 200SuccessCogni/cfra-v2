@@ -98,10 +98,10 @@ export default function SideNav(props: Props) {
                             // backgroundColor: "secondary.light",
                             borderRight: "1px solid #eee",
                             // backgroundSize: `${drawerWidth}px 100%`,
-                            backgroundSize: "cover",
-                            backgroundRepeat: "no-repeat",
-                            backgroundPosition: "right",
-                            background: `url("https://www.toptal.com/designers/subtlepatterns/uploads/light-grey-terrazzo.png")`,
+                            // backgroundSize: "cover",
+                            // backgroundRepeat: "no-repeat",
+                            // backgroundPosition: "right",
+                            // background: `url("https://www.toptal.com/designers/subtlepatterns/uploads/light-grey-terrazzo.png")`,
                         },
                         position: "relative",
                         display: { xs: "none", md: "block" },
@@ -125,6 +125,9 @@ export default function SideNav(props: Props) {
                                     color: "text.primary",
                                     fontWeight: "600",
                                     fontSize: "1.2rem",
+                                    lineHeight: 1,
+                                    mt: 2,
+                                    mb: 1,
                                 }}
                             >
                                 Sentiment 360 |{" "}
