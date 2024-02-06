@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import RecordRTC, {
-    RecordRTCPromisesHandler,
-    invokeSaveAsDialog,
-} from "recordrtc";
+import { useState, useEffect, useRef } from "react";
+// import RecordRTC, {
+//     RecordRTCPromisesHandler,
+//     invokeSaveAsDialog,
+// } from "recordrtc";
 import { MessageType } from "../types/chat";
 import styles from "./chat.module.css";
 import {
@@ -56,10 +56,10 @@ export default function ChatBot({
     const [messages, setMessages] = useState<MessageType[]>([initMessage]);
     const [websckt, setWebsckt] = useState<WebSocket | null>(null);
     const ref = useChatScroll(messages);
-    const localURL = "ws://localhost:8002/ws/voicechat";
-
+    const localURL = "ws://localhost:8002/ws/marriotchat";
     const [isRecording, setIsRecording] = useState(false);
-    const [recorder, setRecorder] = useState<any>(null);
+    const mediaRecorderRef = useRef<any>(null);
+    const chunks = useRef<Blob[]>([]);
 
     useEffect(() => {
         // const url = import.meta.env.VITE_WS_URL;
@@ -67,8 +67,7 @@ export default function ChatBot({
         const ws = new WebSocket(url);
 
         ws.onopen = () => {
-            // ws.send("Connect");{ text: "Connect", audio: "" }
-            ws.send(JSON.stringify({ text: "Connect", audio: "" }));
+            ws.send("Connect");
         };
 
         ws.onmessage = (e) => {
@@ -100,7 +99,18 @@ export default function ChatBot({
         setWebsckt(ws);
 
         // Cleanup
-        return () => ws.close();
+        // return () => ws.close();
+
+        // Cleanup function to stop media stream
+        return () => {
+            ws.close();
+            if (
+                mediaRecorderRef.current &&
+                mediaRecorderRef.current.state !== "inactive"
+            ) {
+                mediaRecorderRef.current.stop();
+            }
+        };
     }, []);
 
     const sendMessage = () => {
@@ -113,56 +123,85 @@ export default function ChatBot({
         ]);
 
         // Send the message to the backend
-        if (websckt) websckt.send(JSON.stringify({ text: message, audio: "" }));
+        if (websckt) websckt.send(message);
 
         // clear the input field.
         setMessage("");
     };
-
-    useEffect(() => {
-        let stream: any;
-        async function startRecording() {
-            stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-            console.log("PERMISSION GIVEN"); // Creating instance of RecordRTC
-            const newRecorder = new RecordRTCPromisesHandler(stream, {
-                type: "audio",
-            });
-            setRecorder(newRecorder); // Starting Recoding by calling startRecording function
-            newRecorder.startRecording();
-            console.log("RECORDING STARTED");
-        }
-        async function stopRecording() {
-            console.log("RECORDING STOPPED", recorder); // Stopping the recording by calling the stopRecording function
-            await recorder?.stopRecording();
-            console.log("CHECKING BLOB", recorder);
-            const base64: any = await recorder?.getDataURL();
-            const base64txt: any = base64
-                .toString()
-                .replace("data:audio/webm;codecs=opus;base64,", "");
-            console.log(base64txt);
-            if (websckt)
-                websckt.send(JSON.stringify({ text: "", audio: base64txt }));
-            // stream.getAudioTracks().forEach((track) => track.stop());
-        }
-        if (isRecording) {
-            startRecording();
-        } else {
-            if (recorder !== null) {
-                stopRecording();
-            }
-        }
-        return () => {
-            if (stream !== undefined) {
-                stream.getAudioTracks().forEach((track: any) => track.stop());
-            }
-        };
-    }, [isRecording]);
 
     const handleStartRecording = () => {
         setIsRecording(true);
     };
     const handleStopRecording = () => {
         setIsRecording(false);
+    };
+
+    /**
+     * Functions for Voice to Text Conversion via Azure OpenAI Whisper
+     */
+    const startRecording = () => {
+        console.log("Recording Started");
+        navigator.mediaDevices
+            .getUserMedia({ audio: true })
+            .then((stream) => {
+                const mediaRecorder = new MediaRecorder(stream);
+                mediaRecorderRef.current = mediaRecorder;
+                // setAudioChunks([]);
+                chunks.current = [];
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        // setAudioChunks(prevAudioChunks => [...prevAudioChunks, event.data]);
+                        chunks.current = [...chunks.current, event.data];
+                    }
+                };
+                mediaRecorder.onstop = () => {
+                    // const audioBlob = new Blob(audioChunks, { type: 'audio/wav; codecs=0'});
+                    const audioBlob = new Blob(chunks.current, {
+                        type: "audio/wav; codecs=0",
+                    });
+                    sendAudioFile(audioBlob);
+                };
+                mediaRecorder.start();
+                setIsRecording(true);
+            })
+            .catch((error) =>
+                console.error("Error accessing microphone:", error)
+            );
+    };
+
+    const stopRecording = () => {
+        console.log("Recording Stopped");
+        if (
+            mediaRecorderRef.current &&
+            mediaRecorderRef.current.state !== "inactive"
+        ) {
+            mediaRecorderRef.current.stop();
+            setIsRecording(false);
+        }
+    };
+
+    const sendAudioFile = (audioBlob: Blob) => {
+        const formData = new FormData();
+        formData.append("file", audioBlob);
+
+        fetch(`http://localhost:8002/transcribe`, {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setMessages((prevMessages: MessageType[]) => [
+                    ...prevMessages,
+                    {
+                        user: { fullName: "You", isSender: true },
+                        message: data.transcriptionText,
+                    },
+                ]);
+                if (websckt) websckt.send(data.transcriptionText);
+            })
+            .catch((error) => {
+                console.error("Error sending audio file:", error);
+            });
     };
 
     return (
@@ -245,8 +284,8 @@ export default function ChatBot({
                                         <IconButton
                                             onClick={
                                                 isRecording
-                                                    ? handleStopRecording
-                                                    : handleStartRecording
+                                                    ? stopRecording
+                                                    : startRecording
                                             }
                                             edge="end"
                                             sx={{ ml: 2 }}
