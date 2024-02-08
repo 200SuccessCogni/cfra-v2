@@ -64,7 +64,8 @@ export default function ChatBot({
 
     useEffect(() => {
         // const url = `ws://3.14.42.49/ws/customdata`
-        const url = `ws://3.133.161.182/ws/kohlerchat`;
+        // const url = `ws://3.133.161.182/ws/customdata`;
+        const url = import.meta.env.VITE_WS_URL;
         const ws = new WebSocket(url);
 
         ws.onopen = () => {
