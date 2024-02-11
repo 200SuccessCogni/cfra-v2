@@ -23,6 +23,7 @@ import { IReviewItem } from "@/interfaces/review.interface";
 import { camelCaseToTitleCase, randomColor } from "../services/shared.service";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import Divider from '@mui/material/Divider';
 
 function StatCard(props: ICountCard) {
     return (
@@ -108,6 +109,10 @@ function Dashboard() {
     const [negReview, setNegReview] = useState({ count: 0, percentage: 0 });
     const [neuReview, setNeuReview] = useState({ count: 0, percentage: 0 });
     const [mixReview, setMixReview] = useState({ count: 0, percentage: 0 });
+    const [praise, setPraise] = useState({ count: 0, percentage: 0 });
+    const [Complain, setComplain] = useState({ count: 0, percentage: 0 });
+    const [consFeed, setConsFeed] = useState({ count: 0, percentage: 0 });
+    const [experience, setExperience] = useState({ count: 0, percentage: 0 });
     const [positiveInsights, setPositiveInsights] = useState<InsightType[]>([]);
     const [negativeInsights, setNegativeInsights] = useState<InsightType[]>([]);
     const theme = useTheme();
@@ -165,6 +170,17 @@ function Dashboard() {
         setNegReview({ count: 0, percentage: 0 });
         setNeuReview({ count: 0, percentage: 0 });
         setMixReview({ count: 0, percentage: 0 });
+        setPraise({ count: 0, percentage: 0 });
+        setComplain({ count: 0, percentage: 0 });
+        setConsFeed({ count: 0, percentage: 0 });
+        setExperience({ count: 0, percentage: 0 });
+    };
+
+    const resetAllThemes = () => {
+        setPraise({ count: 0, percentage: 0 });
+        setComplain({ count: 0, percentage: 0 });
+        setConsFeed({ count: 0, percentage: 0 });
+        setExperience({ count: 0, percentage: 0 });
     };
 
     const getInsightsAndAnalytics = async (
@@ -223,6 +239,37 @@ function Dashboard() {
                                     break;
                                 default:
                                     setMixReview({ count, percentage });
+                                    break;
+                            }
+                        }
+                    );
+                }
+
+                if (res.data.themes && res.data.themes.length) {
+                    resetAllThemes();
+
+                    res.data.themes.map(
+                        ({
+                            count,
+                            percentage,
+                            _id,
+                        }: {
+                            count: number;
+                            percentage: number;
+                            _id: string;
+                        }) => {
+                            switch (_id) {
+                                case "Praise":
+                                    setPraise({ count, percentage });
+                                    break;
+                                case "Complain":
+                                    setComplain({ count, percentage });
+                                    break;
+                                case "Constructive":
+                                    setConsFeed({ count, percentage });
+                                    break;
+                                default:
+                                    setExperience({ count, percentage });
                                     break;
                             }
                         }
@@ -307,7 +354,8 @@ function Dashboard() {
             </Typography>
             <Grid container spacing={3} sx={{ mt: 0 }}>
                 <Grid item xs={12} md={7.5}>
-                    <Grid container spacing={3}>
+                <Typography variant="h7">Sentiments</Typography>
+                    <Grid container spacing={3} mb={2}>
                         <Grid item xs={6} md={3}>
                             <StatCard
                                 count={neuReview.count}
@@ -345,6 +393,51 @@ function Dashboard() {
                                 color="#00301fb3"
                                 isImproving={true}
                                 percentage={mixReview.percentage}
+                            />
+                        </Grid>
+                    </Grid>
+                    {/* <Divider mt={2}/> */}
+                    {/* Themes */}
+                    <Typography variant="h7" mt={2}>Review Themes</Typography>
+                    <Grid container spacing={3} >
+                        <Grid item xs={6} md={3}>
+                            <StatCard
+                                count={praise.count}
+                                label="Praise"
+                                backgroundColor="rgb(152, 251, 152)"
+                                color="#00301fb3"
+                                isImproving={true}
+                                percentage={praise.percentage}
+                            />
+                        </Grid>
+                        <Grid item xs={6} md={3}>
+                            <StatCard
+                                count={Complain.count}
+                                label="Complain"
+                                backgroundColor="rgb(254 178 178 / 46%)"
+                                color="#9d1414"
+                                isImproving={true}
+                                percentage={Complain.percentage}
+                            />
+                        </Grid>
+                        <Grid item xs={6} md={3}>
+                            <StatCard
+                                count={consFeed.count}
+                                label="Constructive"
+                                backgroundColor="rgb(240,230,140)"
+                                color="#fcc200"
+                                isImproving={false}
+                                percentage={consFeed.percentage}
+                            />
+                        </Grid>
+                        <Grid item xs={6} md={3}>
+                            <StatCard
+                                count={experience.count}
+                                label="Experience"
+                                backgroundColor = "rgb(100, 149, 237)"
+                                color="#00301fb3"
+                                isImproving={true}
+                                percentage={experience.percentage}
                             />
                         </Grid>
                     </Grid>
