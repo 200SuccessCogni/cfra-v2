@@ -23,7 +23,7 @@ import { IReviewItem } from "@/interfaces/review.interface";
 import { camelCaseToTitleCase, randomColor } from "../services/shared.service";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import Divider from '@mui/material/Divider';
+import Divider from "@mui/material/Divider";
 
 function StatCard(props: ICountCard) {
     return (
@@ -43,7 +43,7 @@ function StatCard(props: ICountCard) {
             }}
             // className="box-shadow"
         >
-            <Typography variant="h2" align="left" sx = {{marginTop:3}}>
+            <Typography variant="h2" align="left" sx={{ marginTop: 3 }}>
                 {props.count}
             </Typography>
             <Typography
@@ -354,7 +354,7 @@ function Dashboard() {
             </Typography>
             <Grid container spacing={3} sx={{ mt: 0 }}>
                 <Grid item xs={12} md={7.5}>
-                <Typography variant="h7">Sentiments</Typography>
+                    <Typography variant="body1">Sentiments</Typography>
                     <Grid container spacing={3} mb={2}>
                         <Grid item xs={6} md={3}>
                             <StatCard
@@ -398,8 +398,10 @@ function Dashboard() {
                     </Grid>
                     {/* <Divider mt={2}/> */}
                     {/* Themes */}
-                    <Typography variant="h7" mt={2}>Review Themes</Typography>
-                    <Grid container spacing={3} >
+                    <Typography variant="body1" mt={2}>
+                        Review Themes
+                    </Typography>
+                    <Grid container spacing={3}>
                         <Grid item xs={6} md={3}>
                             <StatCard
                                 count={praise.count}
@@ -434,7 +436,7 @@ function Dashboard() {
                             <StatCard
                                 count={experience.count}
                                 label="Experience"
-                                backgroundColor = "rgb(100, 149, 237)"
+                                backgroundColor="rgb(100, 149, 237)"
                                 color="#00301fb3"
                                 isImproving={true}
                                 percentage={experience.percentage}
