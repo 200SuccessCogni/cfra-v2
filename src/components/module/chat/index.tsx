@@ -24,6 +24,7 @@ import ChatMessage from "./ChatMessage";
 import useChatScroll from "../../../hooks/useChatScroll";
 import CircularProgress from "@mui/material/CircularProgress";
 import Spinner from "../../core/spinner/index";
+import convertTextToAudio from "./txt-to-audio";
 
 const ChatContainer = styled("div")({
     display: "flex",
@@ -73,8 +74,10 @@ export default function ChatBot({
             ws.send("Connect");
         };
 
-        ws.onmessage = (e) => {
+        ws.onmessage = async (e) => {
             setLoading(false);
+            const responseMessage: any = JSON.parse(e.data);
+
             const message: any = JSON.parse(e.data);
             if (message.transribed_user_voice) {
                 setMessages((prevMessages: MessageType[]) => [
@@ -98,6 +101,34 @@ export default function ChatBot({
                     message: message.message,
                 },
             ]);
+
+            // Only play audio for bot responses
+            if (responseMessage.sender === "bot") {
+                try {
+                    console.log("Going to call Eleven Labs");
+                    const audioData: ArrayBuffer = await convertTextToAudio(
+                        responseMessage.message
+                    );
+                    if (audioData.byteLength > 0) {
+                        // Ensure the ArrayBuffer is not empty
+                        const audioBlob = new Blob([audioData], {
+                            type: "audio/mpeg",
+                        });
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        const audio = new Audio(audioUrl);
+                        await audio.play();
+                    } else {
+                        console.error(
+                            "Received empty audio data from ElevenLabs API"
+                        );
+                    }
+                } catch (error) {
+                    console.error(
+                        "Error playing audio or fetching data:",
+                        error
+                    );
+                }
+            }
         };
 
         setWebsckt(ws);

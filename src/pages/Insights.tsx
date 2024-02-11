@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import LineChart from "../components/charts/LineChart";
 import ReviewForm from "../components/module/review/ReviewForm";
 import useApp from "../store/app.context";
@@ -607,12 +607,12 @@ function Insights() {
                                         Positive insights
                                     </Typography>
                                     {positiveInsights.map((e: InsightType) => (
-                                        <>
+                                        <Fragment key={e.label}>
                                             <Tooltip
                                                 title={`${camelCaseToTitleCase(
                                                     e.label
                                                 )} appears ${e.count} times.`}
-                                                key={e.label}
+                                                // key={e.label}
                                             >
                                                 <Chip
                                                     key={e.label}
@@ -662,7 +662,7 @@ function Insights() {
                                                     }}
                                                 />
                                             </Tooltip>
-                                        </>
+                                        </Fragment>
                                     ))}
                                 </Box>
                             </Grid>
@@ -686,12 +686,11 @@ function Insights() {
                                         Negative insights
                                     </Typography>
                                     {negativeInsights.map((e: InsightType) => (
-                                        <>
+                                        <Fragment key={e.label}>
                                             <Tooltip
                                                 title={`${camelCaseToTitleCase(
                                                     e.label
                                                 )} appears ${e.count} times.`}
-                                                key={e.label}
                                             >
                                                 <Chip
                                                     key={e.label}
@@ -741,7 +740,7 @@ function Insights() {
                                                     }}
                                                 />
                                             </Tooltip>
-                                        </>
+                                        </Fragment>
                                     ))}
                                 </Box>
                             </Grid>
