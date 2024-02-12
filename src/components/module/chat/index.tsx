@@ -60,8 +60,8 @@ export default function ChatBot({
     const [messages, setMessages] = useState<MessageType[]>([initMessage]);
     const [websckt, setWebsckt] = useState<WebSocket | null>(null);
     const ref = useChatScroll(messages);
-    // const localURL = import.meta.env.VITE_WS_URL + "/ws/marriotchat";
-    const localURL = import.meta.env.VITE_WS_URL + "/ws/customdata";
+    const localURL = import.meta.env.VITE_WS_URL + "/ws/marriottchat";
+    // const localURL = import.meta.env.VITE_WS_URL + "/ws/customdata";
     const [isRecording, setIsRecording] = useState(false);
     const mediaRecorderRef = useRef<any>(null);
     const chunks = useRef<Blob[]>([]);
