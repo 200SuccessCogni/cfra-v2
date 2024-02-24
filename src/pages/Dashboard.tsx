@@ -120,13 +120,13 @@ function Dashboard() {
         useState<InsightSourceType | null>(null);
 
     useEffect(() => {
-        console.log({ selectedLocation });
         if (
             user &&
             user?.business &&
-            user?.business?.businessId &&
+            user.business?.businessId &&
             selectedLocation
         ) {
+            console.log({ selectedLocation });
             getInsightsAndAnalytics(
                 user?.business?.businessId,
                 selectedLocation.id,
