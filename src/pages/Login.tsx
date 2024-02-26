@@ -94,9 +94,9 @@ function Login() {
                         fontWeight="normal"
                         sx={{ color: "#fff", lineHeight: 1.1 }}
                     >
-                        MARRIOTT HOTELS ELEVATES YOUR STAY AT EVERY TURN—ALWAYS
-                        GROWING WHILE KEEPING THE COMFORT OF THE OH-SO-FAMILIAR
-                        ALL AROUND THE GLOBE.
+                        Sentiment 360 - Unleashing Insights, Elevating
+                        Experiences - Your Gateway to Comprehensive Feedback
+                        Management.
                     </Typography>
                 </Box>
                 <Box
