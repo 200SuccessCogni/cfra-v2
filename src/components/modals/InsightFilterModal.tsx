@@ -56,7 +56,7 @@ function InsightFilterModal(props: IRecModal) {
     const handleFilterChange = (value: string) => {
         setFilterTxt(value);
         const newList = [...props.entities].filter((e) =>
-            e.label.toLowerCase().includes(value)
+            e.label.toLowerCase().includes(value.toLowerCase())
         );
         setList(newList);
     };

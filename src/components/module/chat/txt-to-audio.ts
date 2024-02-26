@@ -3,7 +3,7 @@
  * @param textToConvert
  * @returns
  */
-const convertTextToAudio = async (
+ const convertTextToAudio = async (
     textToConvert: string
 ): Promise<ArrayBuffer> => {
     const getCookie = (name: string) => {
@@ -25,10 +25,12 @@ const convertTextToAudio = async (
     // Fallback to the hardcoded API key if the cookie isn't set
     if (!apiKey) {
         console.warn("API key cookie not found, using the hardcoded API key.");
-        apiKey = "7e89ab832dca4aa68b4516a6d46a6970"; // Your hardcoded API key
+        // apiKey = "7e89ab832dca4aa68b4516a6d46a6970"; // Your hardcoded Old API key
+        apiKey = "dd3ce8c3c8a7f08b083e38160545ea4a"; // Your hardcoded New API key
     }
 
-    const voiceId = "KyTNWqFEzEJ6EzmveIVW"; // Example voice ID
+    // const voiceId = "KyTNWqFEzEJ6EzmveIVW"; // Old voice ID
+    const voiceId = "aiNGbGQZjBraW5vo0NTW"; // New voice ID
 
     if (!apiKey) {
         console.error("API key is not defined.");
