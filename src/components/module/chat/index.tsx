@@ -52,19 +52,13 @@ export default function ChatBot({
             message:
                 "Hello there! 👋 Need help to get more insights? Reach out to us right here, and we'll get back to you as soon as we can! ",
         },
-
-        // {
-        //     user: { fullName: "User", isSender: true },
-        //     message:
-        //         "Positive reviews for McDonald's: 1. The restaurant is clean and the staff is polite, helpful, and well-mannered. 2. The service was excellent and the staff member named Nayeed was respectful and knowledgeable, engaging in interesting conversations.",
-        // },
     ]);
     const [websckt, setWebsckt] = useState<WebSocket | null>(null);
     const ref = useChatScroll(messages);
 
     useEffect(() => {
         // const url = `ws://3.14.42.49/ws/customdata`
-        const url = `ws://3.133.161.182/ws/kohlerchat`;
+        const url = import.meta.env.VITE_WS_URL + `/ws/kohlerchat`;
         const ws = new WebSocket(url);
 
         ws.onopen = () => {

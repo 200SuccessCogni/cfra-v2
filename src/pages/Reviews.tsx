@@ -24,14 +24,11 @@ function Reviews() {
         selectedProduct,
     } = useApp();
     const [reviews, setReviews] = useState<IReviewItem[] | null>(null);
-    const [isFiltered, setIsFiltered] = useState<boolean>(false);
+
     const [limit, setLimit] = useState(10);
     const [count, setCount] = useState(0);
-
     const [paginationCount, setPaginationCount] = useState(1);
-    const [filterReviews, setFilterReviews] = useState<IReviewItem[] | null>(
-        null
-    );
+
     const [selectedReview, setSelectedReview] = useState<IReviewItem | null>(
         null
     );
@@ -40,14 +37,6 @@ function Reviews() {
     // const isSmallDevice = useMediaQuery("(max-width: 0px)");
 
     useEffect(() => {
-        setReviews(allReviews.slice(count, limit));
-        setPaginationCount(
-            allReviews.length > 10 ? Math.round(allReviews.length / 10) : 1
-        );
-    }, [allReviews]);
-
-    useEffect(() => {
-        console.log({ selectedLocation });
         if (
             user &&
             user?.business &&
@@ -62,13 +51,44 @@ function Reviews() {
         }
     }, [user, selectedLocation, selectedProduct]);
 
+    const paginateCountHandler = (reviews: any[]) => {
+        setPaginationCount(
+            reviews.length > 10 ? Math.round(reviews.length / 10) : 1
+        );
+    };
+
+    /**
+     * Get the list of all reviews
+     */
     const getAllReviews = useCallback(
-        async (businessId: string, locationId: string, productId: string) => {
+        async (
+            businessId: string,
+            locationId: string,
+            productId: string,
+            rating?: number,
+            source?: string[],
+            categories?: string[]
+        ) => {
             setLoader(true);
+            const baseURL = `/review/getall?businessId=${businessId}&locationId=${locationId}&productId=${productId}`;
+            // const url = baseURL;
+            // if (source || categories || rating) {
+            //     const sourceList =
+            //         (source &&
+            //             source.length &&
+            //             source.reduce((a, c) => `${a}, ${c}`)) ||
+            //         "";
+            //     const categoryList =
+            //         (categories &&
+            //             categories.length &&
+            //             categories.reduce((a, c) => `${a}, ${c}`)) ||
+            //         "";
+            //     url =
+            //         url +
+            //         `&rating=${rating}&category=${categoryList}`;
+            // }
             try {
-                const res = await GET(
-                    `/review/getall?businessId=${businessId}&locationId=${locationId}&productId=${productId}`
-                );
+                const res = await GET(baseURL);
                 if (res && res.status === 200) {
                     const allReviews: IReviewItem[] = res.data.data.map(
                         (e: any) => ({
@@ -76,7 +96,9 @@ function Reviews() {
                             id: e._id,
                         })
                     );
+                    setReviews(allReviews);
                     setALLReviews(allReviews);
+                    paginateCountHandler(allReviews);
                 }
             } catch (err) {
                 console.log(err);
@@ -86,12 +108,15 @@ function Reviews() {
         []
     );
 
+    /**
+     * Get the paginated review list
+     * @param pageNumber
+     */
     const onPaginate = (pageNumber: number) => {
         const newLimit = pageNumber * 10;
         const newCount = newLimit - 10;
         setLimit(newLimit);
         setCount(newCount);
-        setReviews(allReviews.slice(newCount, newLimit));
     };
 
     const onRecommend = (data: any) => {
@@ -103,8 +128,7 @@ function Reviews() {
         console.log({ filterData });
         // Resetting filter
         if (!filterData) {
-            setIsFiltered(false);
-            setFilterReviews([]);
+            setReviews([...allReviews]);
             return;
         }
 
@@ -115,7 +139,7 @@ function Reviews() {
                 Array.isArray(filterData.source) &&
                 filterData.source.length
             ) {
-                buildNewReviews = reviews.filter((e) => {
+                buildNewReviews = allReviews.filter((e) => {
                     return filterData.source.some((i: any) => {
                         return i === e.source;
                     });
@@ -124,7 +148,7 @@ function Reviews() {
 
             // filter by rating
             if (filterData.rating < 5) {
-                buildNewReviews = reviews.filter((e) => {
+                buildNewReviews = allReviews.filter((e) => {
                     if (e.rating) {
                         return e.rating <= filterData.rating;
                     } else false;
@@ -132,15 +156,16 @@ function Reviews() {
             }
 
             if (filterData?.categories?.length) {
-                buildNewReviews = reviews.filter((e) => {
+                buildNewReviews = allReviews.filter((e) => {
                     return filterData.categories.some((i: any) => {
                         return i === e.category;
                     });
                 });
             }
 
-            setIsFiltered(true);
-            setFilterReviews(buildNewReviews);
+            setReviews(buildNewReviews);
+            paginateCountHandler(buildNewReviews);
+            console.log({ buildNewReviews });
         }
     };
 
@@ -167,30 +192,41 @@ function Reviews() {
                         </Typography>
                         {reviews &&
                             !!reviews.length &&
-                            !isFiltered &&
-                            reviews.map((r: any) => (
-                                <ReviewItem
-                                    key={r.id}
-                                    date={dayjs(r.date).format("DD/MM/YYYY")}
-                                    onReply={(data) => setSelectedReview(data)}
-                                    onRecommend={(data) => onRecommend(data)}
-                                    listView={false}
-                                    {...r}
-                                />
-                            ))}
-                        {filterReviews &&
+                            reviews
+                                .slice(count, limit)
+                                .map((r: any) => (
+                                    <ReviewItem
+                                        key={r.id}
+                                        date={dayjs(r.date).format(
+                                            "DD/MM/YYYY"
+                                        )}
+                                        onReply={(data: any) =>
+                                            setSelectedReview(data)
+                                        }
+                                        onRecommend={(data: any) =>
+                                            onRecommend(data)
+                                        }
+                                        listView={false}
+                                        {...r}
+                                    />
+                                ))}
+                        {/* {filterReviews &&
                             !!filterReviews.length &&
                             !!isFiltered &&
                             filterReviews.map((r: any) => (
                                 <ReviewItem
                                     key={r.id}
                                     date={dayjs(r.date).format("DD/MM/YYYY")}
-                                    onReply={(data) => setSelectedReview(data)}
-                                    onRecommend={(data) => onRecommend(data)}
+                                    onReply={(data: any) =>
+                                        setSelectedReview(data)
+                                    }
+                                    onRecommend={(data: any) =>
+                                        onRecommend(data)
+                                    }
                                     listView={false}
                                     {...r}
                                 />
-                            ))}
+                            ))} */}
 
                         {reviews && !reviews.length && !loader && (
                             <Typography variant="h6">
@@ -220,6 +256,8 @@ function Reviews() {
                         )}
                     </Box>
                 </Grid>
+
+                {/* Review filter form */}
                 <Grid
                     item
                     xs={12}
@@ -258,6 +296,7 @@ function Reviews() {
                 </Grid>
             </Grid>
 
+            {/* Modals */}
             {selectedReview && (
                 <ReplyModal
                     title={selectedReview.title}
