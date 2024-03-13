@@ -24,6 +24,7 @@ import { camelCaseToTitleCase, randomColor } from "../services/shared.service";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import Divider from "@mui/material/Divider";
+import AnalyticsChart from "../components/module/analytics/AnalyticsChart";
 
 function StatCard(props: ICountCard) {
     return (
@@ -115,7 +116,7 @@ function Dashboard() {
     const [experience, setExperience] = useState({ count: 0, percentage: 0 });
     const [positiveInsights, setPositiveInsights] = useState<InsightType[]>([]);
     const [negativeInsights, setNegativeInsights] = useState<InsightType[]>([]);
-    const [reviewTimeSeries, setReviewTimeSeries] = useState([]);
+    const [reviewTimeSeries, setReviewTimeSeries] = useState<any>(null);
 
     const theme = useTheme();
     const [insightSources, setInsightSources] =
@@ -277,14 +278,56 @@ function Dashboard() {
                     );
                 }
 
-                // if (res.data.reviewTimeSeries && res.data.reviewTimeSeries.length) {
-                //     const data = res.data.reviewTimeSeries.map((e: any) => ({
-                //         entityName: e.entityName,
-                //         date: dayjs(e.date.split("T")),
-                //         score: Math.floor(e.sentimentScore * 10),
-                //     }));
-                //     setReviewTimeSeries(data);
-                // }
+                if (
+                    res.data.reviewTimeSeries &&
+                    res.data.reviewTimeSeries.length
+                ) {
+                    const data = res.data.reviewTimeSeries.map((e: any) => ({
+                        entityName: "Review",
+                        date: dayjs(e.date.split("T")),
+                        score: Math.floor(e.sentimentScore * 10),
+                    }));
+
+                    const dynamicColor = theme.palette.primary.main;
+                    const chartData = {
+                        type: "Fooo",
+                        data: {
+                            labels: data.map((n: any) =>
+                                dayjs(n.date).format("MMM, YYYY")
+                            ),
+                            datasets: [
+                                {
+                                    tension: 0.4,
+                                    borderColor: dynamicColor,
+                                    fill: "start",
+                                    backgroundColor: ({
+                                        chart,
+                                    }: {
+                                        chart: any;
+                                    }) => {
+                                        const bgGrd =
+                                            chart.ctx.createLinearGradient(
+                                                0,
+                                                0,
+                                                0,
+                                                theme.breakpoints.up("lg")
+                                                    ? 200
+                                                    : 120
+                                            );
+                                        // More config for your gradient
+                                        bgGrd.addColorStop(0, dynamicColor);
+                                        bgGrd.addColorStop(1, "white");
+                                        return bgGrd;
+                                    },
+                                    // backgroundColor: randomColor(),
+                                    data: data.map((l: any) => l.score),
+                                },
+                            ],
+                        },
+                    };
+
+                    setReviewTimeSeries(chartData);
+                }
 
                 if (res.data.sources) {
                     const chartData: InsightSourceType = {
@@ -453,6 +496,74 @@ function Dashboard() {
                             />
                         </Grid>
                     </Grid>
+
+                    <Box
+                        sx={{
+                            p: 2,
+                            my: 3,
+                            bgcolor: "#fff",
+                            borderRadius: "1rem",
+                        }}
+                    >
+                        {!!reviewTimeSeries && (
+                            <AnalyticsChart
+                                label={"Review time series"}
+                                data={reviewTimeSeries.data}
+                            />
+                        )}
+                        <Box textAlign="right">
+                            <Typography
+                                variant="caption"
+                                color="text.primary"
+                                gutterBottom
+                                align="right"
+                            >
+                                * Score defines how one amenity or entity is
+                                performing.
+                            </Typography>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    justifyContent: "flex-end",
+                                    flexWrap: "wrap",
+                                    width: "100%",
+                                    "& > * ": {
+                                        ml: 1,
+                                    },
+                                }}
+                            >
+                                <Typography
+                                    variant="caption"
+                                    gutterBottom
+                                    // color="error"
+                                >
+                                    ** -10 to -1 Low performer.{" "}
+                                </Typography>
+                                <Typography
+                                    variant="caption"
+                                    gutterBottom
+                                    // color="warning"
+                                >
+                                    ** 0 to 4 Satisfactory.{" "}
+                                </Typography>
+                                <Typography
+                                    variant="caption"
+                                    // sx={{ color: "blue" }}
+                                    gutterBottom
+                                >
+                                    ** 5 to 7 Good.{" "}
+                                </Typography>
+                                <Typography
+                                    variant="caption"
+                                    // color="success"
+                                    gutterBottom
+                                >
+                                    {" "}
+                                    ** 8 above - Very good.
+                                </Typography>
+                            </Box>
+                        </Box>
+                    </Box>
                     <Box
                         // className="box-shadow"
                         sx={{
