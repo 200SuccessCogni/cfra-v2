@@ -129,6 +129,9 @@ function Reviews() {
         // Resetting filter
         if (!filterData) {
             setReviews([...allReviews]);
+            paginateCountHandler([...allReviews]);
+            setLimit(10);
+            setCount(0);
             return;
         }
 
