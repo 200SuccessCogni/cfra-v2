@@ -63,7 +63,12 @@ function Header(props: any) {
     }, [productList]);
 
     useEffect(() => {
-        if (user && user.business && user.business?.businessId) {
+        if (
+            user &&
+            user.business &&
+            user.business?.businessId &&
+            !selectedLocation
+        ) {
             getAllLocations();
             // getAllProducts();
         }
@@ -130,9 +135,8 @@ function Header(props: any) {
 
     const getAllLocations = useCallback(async () => {
         try {
-            const res = await GET(
-                `/location/getAll?businessId=${user?.business?.businessId}`
-            );
+            const url = `/location/getAll?businessId=${user?.business?.businessId}`;
+            const res = await GET(url);
 
             if (
                 res &&

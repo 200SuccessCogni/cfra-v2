@@ -115,6 +115,8 @@ function Dashboard() {
     const [experience, setExperience] = useState({ count: 0, percentage: 0 });
     const [positiveInsights, setPositiveInsights] = useState<InsightType[]>([]);
     const [negativeInsights, setNegativeInsights] = useState<InsightType[]>([]);
+    const [reviewTimeSeries, setReviewTimeSeries] = useState([]);
+
     const theme = useTheme();
     const [insightSources, setInsightSources] =
         useState<InsightSourceType | null>(null);
@@ -126,7 +128,6 @@ function Dashboard() {
             user.business?.businessId &&
             selectedLocation
         ) {
-            console.log({ selectedLocation });
             getInsightsAndAnalytics(
                 user?.business?.businessId,
                 selectedLocation.id,
@@ -275,6 +276,15 @@ function Dashboard() {
                         }
                     );
                 }
+
+                // if (res.data.reviewTimeSeries && res.data.reviewTimeSeries.length) {
+                //     const data = res.data.reviewTimeSeries.map((e: any) => ({
+                //         entityName: e.entityName,
+                //         date: dayjs(e.date.split("T")),
+                //         score: Math.floor(e.sentimentScore * 10),
+                //     }));
+                //     setReviewTimeSeries(data);
+                // }
 
                 if (res.data.sources) {
                     const chartData: InsightSourceType = {
