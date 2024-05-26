@@ -319,7 +319,10 @@ function Analytics() {
         insights.forEach((e: any) => {
             analyticsData.push({
                 type: e?.label,
-                data: data.filter((d: any) => d.entityName === e?.label),
+                data: data.filter(
+                    (d: any) =>
+                        d.entityName.toLowerCase() === e?.label.toLowerCase()
+                ),
             });
         });
 

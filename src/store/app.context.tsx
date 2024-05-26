@@ -90,12 +90,12 @@ export const AppContextProvidor = (props: any) => {
     };
 
     const setResort = (data: any[]) => {
-        console.log({ data });
+        // console.log({ data });
         appDispatch({ type: "SET_RESORT", data });
     };
 
     const setProducts = (data: any[]) => {
-        console.log({ data });
+        // console.log({ data });
         appDispatch({ type: "SET_PRODUCT", data });
     };
 

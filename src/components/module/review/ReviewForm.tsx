@@ -13,7 +13,6 @@ import {
 import useApp from "../../../store/app.context"
 
 
-
 const ratingsLables = [
     { name: "Negative", isChecked: true },
     { name: "Positive", isChecked: true },
@@ -30,7 +29,7 @@ function ReviewForm(props: Iprops) {
    
     const { config } = useApp()
 
-    const sourceList = [...config.reviewSource.map(e => ({...e, isChecked: true}))];
+    const sourceList = [...config.reviewSource.map(e => ({...e, name: e.label, isChecked: true}))];
     const [rating, setRating] = useState<number | null>(5);
     const [filters, setFilters] = useState(sourceList);
     const [categories, setCategories] = useState(ratingsLables);

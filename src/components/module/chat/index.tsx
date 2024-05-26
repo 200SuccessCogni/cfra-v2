@@ -1,4 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+// import RecordRTC, {
+//     RecordRTCPromisesHandler,
+//     invokeSaveAsDialog,
+// } from "recordrtc";
 import { MessageType } from "../types/chat";
 import styles from "./chat.module.css";
 import {
@@ -11,22 +15,22 @@ import {
     InputAdornment,
 } from "@mui/material";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
+import MicIcon from "@mui/icons-material/Mic";
+import StopIcon from "@mui/icons-material/Stop";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/system";
 import { camelCaseToTitleCase } from "../../../services/shared.service";
 import ChatMessage from "./ChatMessage";
 import useChatScroll from "../../../hooks/useChatScroll";
+import CircularProgress from "@mui/material/CircularProgress";
+import Spinner from "../../core/spinner/index";
+import convertTextToAudio from "./txt-to-audio";
 
 const ChatContainer = styled("div")({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    // background:
-    //     "url('https://www.toptal.com/designers/subtlepatterns/uploads/geometric-leaves.png')",
-    // backgroundPosition: "center",
-    // backgroundSize: "cover",
-    // backgroundRepeat: "no-repeat",
 });
 
 const ChatHeader = styled("header")({
@@ -40,33 +44,57 @@ const ChatHeader = styled("header")({
     background: "linear-gradient(-45deg, #736d6b, #9b9a9b, #949494, #212927)",
 });
 
+const initMessage = {
+    user: { fullName: "Bot", isSender: false },
+    message:
+        "Hello there! 👋 Need help to get more insights? Reach out to us right here, and we'll get back to you as soon as we can! ",
+};
+
 export default function ChatBot({
     closeHandler,
 }: {
     closeHandler: () => void;
 }) {
+    const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
-    const [messages, setMessages] = useState<MessageType[]>([
-        {
-            user: { fullName: "Bot", isSender: false },
-            message:
-                "Hello there! 👋 Need help to get more insights? Reach out to us right here, and we'll get back to you as soon as we can! ",
-        },
-    ]);
+    const [messages, setMessages] = useState<MessageType[]>([initMessage]);
     const [websckt, setWebsckt] = useState<WebSocket | null>(null);
     const ref = useChatScroll(messages);
+    const localURL = import.meta.env.VITE_WS_URL + "/ws/whitbreadchat";
+    // const localURL = import.meta.env.VITE_WS_URL + "/ws/marriottchat";
+    // const localURL = import.meta.env.VITE_WS_URL + "/ws/customdata";
+    const [isRecording, setIsRecording] = useState(false);
+    const mediaRecorderRef = useRef<any>(null);
+    const chunks = useRef<Blob[]>([]);
 
     useEffect(() => {
-        // const url = `ws://3.14.42.49/ws/customdata`
-        const url = import.meta.env.VITE_WS_URL + `/ws/kohlerchat`;
+        const url = localURL;
         const ws = new WebSocket(url);
 
         ws.onopen = () => {
             ws.send("Connect");
         };
 
-        ws.onmessage = (e) => {
+        ws.onmessage = async (e) => {
+            setLoading(false);
+            const responseMessage: any = JSON.parse(e.data);
+
             const message: any = JSON.parse(e.data);
+            if (message.transribed_user_voice) {
+                setMessages((prevMessages: MessageType[]) => [
+                    ...prevMessages,
+                    {
+                        user: { fullName: "You", isSender: true },
+                        message: message.transribed_user_voice,
+                    },
+                ]);
+
+                // Converting text to speech
+                // if ("speechSynthesis" in window) {
+                //   let msg = new SpeechSynthesisUtterance(message.message);
+                //   speechSynthesis.speak(msg);
+                // }
+            }
             setMessages((prevMessages: MessageType[]) => [
                 ...prevMessages,
                 {
@@ -74,12 +102,51 @@ export default function ChatBot({
                     message: message.message,
                 },
             ]);
+
+            // Only play audio for bot responses
+            if (responseMessage.sender === "bot") {
+                try {
+                    console.log("Going to call Eleven Labs");
+                    const audioData: ArrayBuffer = await convertTextToAudio(
+                        responseMessage.message
+                    );
+                    if (audioData.byteLength > 0) {
+                        // Ensure the ArrayBuffer is not empty
+                        const audioBlob = new Blob([audioData], {
+                            type: "audio/mpeg",
+                        });
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        const audio = new Audio(audioUrl);
+                        await audio.play();
+                    } else {
+                        console.error(
+                            "Received empty audio data from ElevenLabs API"
+                        );
+                    }
+                } catch (error) {
+                    console.error(
+                        "Error playing audio or fetching data:",
+                        error
+                    );
+                }
+            }
         };
 
         setWebsckt(ws);
 
         // Cleanup
-        return () => ws.close();
+        // return () => ws.close();
+
+        // Cleanup function to stop media stream
+        return () => {
+            ws.close();
+            if (
+                mediaRecorderRef.current &&
+                mediaRecorderRef.current.state !== "inactive"
+            ) {
+                mediaRecorderRef.current.stop();
+            }
+        };
     }, []);
 
     const sendMessage = () => {
@@ -94,8 +161,86 @@ export default function ChatBot({
         // Send the message to the backend
         if (websckt) websckt.send(message);
 
+        setLoading(true);
         // clear the input field.
         setMessage("");
+    };
+
+    const handleStartRecording = () => {
+        setIsRecording(true);
+    };
+    const handleStopRecording = () => {
+        setIsRecording(false);
+    };
+
+    /**
+     * Functions for Voice to Text Conversion via Azure OpenAI Whisper
+     */
+    const startRecording = () => {
+        console.log("Recording Started");
+        navigator.mediaDevices
+            .getUserMedia({ audio: true })
+            .then((stream) => {
+                const mediaRecorder = new MediaRecorder(stream);
+                mediaRecorderRef.current = mediaRecorder;
+                // setAudioChunks([]);
+                chunks.current = [];
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        // setAudioChunks(prevAudioChunks => [...prevAudioChunks, event.data]);
+                        chunks.current = [...chunks.current, event.data];
+                    }
+                };
+                mediaRecorder.onstop = () => {
+                    // const audioBlob = new Blob(audioChunks, { type: 'audio/wav; codecs=0'});
+                    const audioBlob = new Blob(chunks.current, {
+                        type: "audio/wav; codecs=0",
+                    });
+                    sendAudioFile(audioBlob);
+                };
+                mediaRecorder.start();
+                setIsRecording(true);
+            })
+            .catch((error) =>
+                console.error("Error accessing microphone:", error)
+            );
+    };
+
+    const stopRecording = () => {
+        console.log("Recording Stopped");
+        if (
+            mediaRecorderRef.current &&
+            mediaRecorderRef.current.state !== "inactive"
+        ) {
+            mediaRecorderRef.current.stop();
+            setIsRecording(false);
+        }
+    };
+
+    const sendAudioFile = (audioBlob: Blob) => {
+        const formData = new FormData();
+        formData.append("file", audioBlob);
+        setLoading(true);
+        fetch(import.meta.env.VITE_CHAT_TRANS_URL, {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setMessages((prevMessages: MessageType[]) => [
+                    ...prevMessages,
+                    {
+                        user: { fullName: "You", isSender: true },
+                        message: data.transcriptionText,
+                    },
+                ]);
+                if (websckt) websckt.send(data.transcriptionText);
+                setLoading(false);
+            })
+            .catch((error) => {
+                setLoading(false);
+                console.error("Error sending audio file:", error);
+            });
     };
 
     return (
@@ -140,6 +285,11 @@ export default function ChatBot({
                                     );
                                 }
                             })}
+                        {loading && (
+                            <Box sx={{ display: "flex", marginTop: "auto" }}>
+                                <Spinner />
+                            </Box>
+                        )}
                     </Box>
                     <Box className={styles["input-chat-container"]}>
                         <FormControl size="small" fullWidth>
@@ -173,6 +323,37 @@ export default function ChatBot({
                                             edge="end"
                                         >
                                             <SendRoundedIcon />
+                                        </IconButton>
+
+                                        <IconButton
+                                            onClick={
+                                                isRecording
+                                                    ? stopRecording
+                                                    : startRecording
+                                            }
+                                            edge="end"
+                                            sx={{ ml: 2 }}
+                                        >
+                                            {isRecording ? (
+                                                <Box
+                                                    sx={{
+                                                        position: "relative",
+                                                    }}
+                                                >
+                                                    <CircularProgress
+                                                        size={30}
+                                                        sx={{
+                                                            position:
+                                                                "absolute",
+                                                            bottom: "10%",
+                                                            right: "-10%",
+                                                        }}
+                                                    />
+                                                    <StopIcon />
+                                                </Box>
+                                            ) : (
+                                                <MicIcon />
+                                            )}
                                         </IconButton>
                                     </InputAdornment>
                                 }

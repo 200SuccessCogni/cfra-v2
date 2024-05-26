@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import LineChart from "../components/charts/LineChart";
 import ReviewForm from "../components/module/review/ReviewForm";
 import useApp from "../store/app.context";
@@ -115,7 +115,7 @@ function Insights() {
     );
     const [positiveInsights, setPositiveInsights] = useState<InsightType[]>([]);
     const [negativeInsights, setNegativeInsights] = useState<InsightType[]>([]);
-    const [showFiler, setShowFilter] = useState(false);
+    const [showFilter, setShowFilter] = useState(false);
     const [isFilterApplied, setIsAppliedFilter] = useState(false);
 
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
@@ -377,16 +377,6 @@ function Insights() {
         return chartData;
     };
 
-    const userData1 = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "June", "July"],
-        datasets: [
-            {
-                backgroundColor: ["#51EAEA"],
-                data: [4.2, 3.7, 1.8, 5, 4.1, 2.5, 4.6],
-            },
-        ],
-    };
-
     const onPromptSearch = (query: string) => {
         console.log({ query });
     };
@@ -616,14 +606,13 @@ function Insights() {
                                     >
                                         {positiveInsights.map(
                                             (e: InsightType) => (
-                                                <>
+                                                <Fragment key={e.label}>
                                                     <Tooltip
                                                         title={`${camelCaseToTitleCase(
                                                             e.label
                                                         )} appears ${
                                                             e.count
                                                         } times.`}
-                                                        key={e.label}
                                                     >
                                                         <Chip
                                                             key={e.label}
@@ -675,7 +664,7 @@ function Insights() {
                                                             }}
                                                         />
                                                     </Tooltip>
-                                                </>
+                                                </Fragment>
                                             )
                                         )}
                                     </Box>
@@ -710,14 +699,13 @@ function Insights() {
                                     >
                                         {negativeInsights.map(
                                             (e: InsightType) => (
-                                                <>
+                                                <Fragment key={e.label}>
                                                     <Tooltip
                                                         title={`${camelCaseToTitleCase(
                                                             e.label
                                                         )} appears ${
                                                             e.count
                                                         } times.`}
-                                                        key={e.label}
                                                     >
                                                         <Chip
                                                             key={e.label}
@@ -769,7 +757,7 @@ function Insights() {
                                                             }}
                                                         />
                                                     </Tooltip>
-                                                </>
+                                                </Fragment>
                                             )
                                         )}
                                     </Box>
@@ -1145,7 +1133,7 @@ function Insights() {
                 {/* )} */}
             </Box>
             <InsightFilterModal
-                show={showFiler}
+                show={showFilter}
                 entities={insights && insights}
                 onSelect={(data: any) => {
                     setSelectedInsights(

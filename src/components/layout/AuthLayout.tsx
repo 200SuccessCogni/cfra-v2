@@ -128,6 +128,7 @@ export default function SideNav(props: Props) {
                                     fontSize: "1.2rem",
                                     lineHeight: 1,
                                     mt: 2,
+                                    mb: 1,
                                 }}
                             >
                                 Sentiment 360 |{" "}

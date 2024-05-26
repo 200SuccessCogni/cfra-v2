@@ -16,6 +16,8 @@ import useApp from "./store/app.context";
 
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import getConfig from "./config/index";
+import { CompanyNameTypes } from "./interfaces/app.interface";
 
 // Lazy loading
 const Dashboard = lazy(() => import("./pages/Dashboard"));
@@ -39,7 +41,13 @@ function withAuthInterceptor(component: ReactElement, isAuthenticated = true) {
 }
 
 function App() {
-    const { alert, setAlert, config } = useApp();
+    const { alert, setAlert, config, setConfig } = useApp();
+
+    useEffect(() => {
+        if (sessionStorage.company) {
+            setConfig(getConfig(sessionStorage.company as CompanyNameTypes));  
+        }
+    }, []);
 
     return (
         <>

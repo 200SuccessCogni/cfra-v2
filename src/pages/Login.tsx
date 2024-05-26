@@ -50,8 +50,9 @@ function Login() {
                         pmLevel: data?.permissionLevel,
                     };
                     setUser(user); 
-                    setConfig(getConfig(user.business.businessName as CompanyNameTypes));                                                             
+                    setConfig(getConfig(user.business.businessName.toLocaleLowerCase() as CompanyNameTypes));                                                             
                     localStorage.setItem("user", JSON.stringify(user));
+                    sessionStorage.setItem("company", user.business.businessName.toLocaleLowerCase())
 
                     if (localStorage.getItem("introDone")) {
                         navigate("/");
