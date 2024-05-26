@@ -15,6 +15,7 @@ import useApp from "../../store/app.context";
 import GlobalSearch from "../app/GlobalSearch";
 import { GET } from "../../services/api.service";
 import { IResort } from "../../interfaces/resort.interface";
+import { filterTypes } from "../../config/type";
 
 const drawerWidth = 260;
 
@@ -33,6 +34,7 @@ function Header(props: any) {
         user,
         selectedLocation,
         selectedProduct,
+        config
     } = useApp();
 
     // For Resorts or hotels
@@ -253,28 +255,30 @@ function Header(props: any) {
                         null
                     }
                 />
-
-                <Box mx={2}>
-                    <GlobalSearch
-                        recommendedItems={recommendedProds}
-                        searchItemResult={filteredProducts || []}
-                        onChange={onProductChange}
-                        onSelect={onProdcutChoose}
-                        inputProps={{
-                            placeholder: "All products",
-                            type: "text",
-                        }}
-                        selectedEntity={
-                            (selectedProduct && {
-                                entityId: selectedProduct.prodName,
-                                entityName: selectedProduct.prodName,
-                            }) ||
-                            null
-                        }
-                        controlKey="q"
-                        onClear={() => setSelectedProduct(null)}
-                    />
-                </Box>
+                {config.filters.includes(filterTypes.product) &&
+                    <Box mx={2}>
+                    
+                        <GlobalSearch
+                            recommendedItems={recommendedProds}
+                            searchItemResult={filteredProducts || []}
+                            onChange={onProductChange}
+                            onSelect={onProdcutChoose}
+                            inputProps={{
+                                placeholder: "All products",
+                                type: "text",
+                            }}
+                            selectedEntity={
+                                (selectedProduct && {
+                                    entityId: selectedProduct.prodName,
+                                    entityName: selectedProduct.prodName,
+                                }) ||
+                                null
+                            }
+                            controlKey="q"
+                            onClear={() => setSelectedProduct(null)}
+                        />
+                    </Box>
+                }
                 <Box
                     sx={{
                         ml: "auto",

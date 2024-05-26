@@ -1,6 +1,7 @@
-import useApp from "../../../store/app.context";
 import { useEffect, ReactElement, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
+import useApp from "../../../store/app.context";
+
 
 export function AuthGuard({
     children,
@@ -12,11 +13,11 @@ export function AuthGuard({
     useEffect(() => {
         const isIntroCompleted = localStorage.getItem("introDone");
         const user = localStorage.getItem("user");
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem("token");     
 
         if (user) {
             setUser(JSON.parse(user));
-        }
+        }  
 
         if (!isIntroCompleted && token) {
             navigate("/onboarding");
@@ -25,7 +26,7 @@ export function AuthGuard({
             navigate("/signin");
         }
     }, []);
-
+    
     /* otherwise don't return anything, will do a redirect from useEffect */
     return <>{children}</>;
 }

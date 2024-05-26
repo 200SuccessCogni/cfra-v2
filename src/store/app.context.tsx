@@ -1,13 +1,13 @@
 import { Iuser } from "../interfaces/user.interface";
-import { IAlert, IApp } from "../interfaces/app.interface";
+import { ConfigType, IAlert, IApp } from "../interfaces/app.interface";
 import { IResort } from "../interfaces/resort.interface";
 import { useContext, useReducer, createContext } from "react";
 import theme from "../styles/theme";
-import { Theme } from "@mui/material";
 import { allProds } from "../constants/app.constant";
+import { baseConfig } from "../config/index";
 
 const initAppData: IApp = {
-    theme: theme,
+    config: baseConfig,
     currentPage: "",
     loader: false,
     user: null,
@@ -22,7 +22,7 @@ const initAppData: IApp = {
     selectedLocation: null,
     selectedProduct: null,
     allReviews: [],
-    setTheme: (theme: Theme) => undefined,
+    setConfig: (config: ConfigType) => undefined,
     setSelectedDateRange: (data: any) => undefined,
     setSelectedLocation: (data: IResort) => undefined,
     setSelectedProduct: (data: any) => undefined,
@@ -53,8 +53,8 @@ const appReducer = (prevState: any, action: any) => {
         return { ...prevState, allReviews: action.data };
     } else if (action.type === "SET_ALERT") {
         return { ...prevState, alert: action.data };
-    } else if (action.type === "SET_THEME") {
-        return { ...prevState, theme: action.data };
+    } else if (action.type === "SET_CONFIG") {
+        return { ...prevState, config: action.data };
     } else return initAppData;
 };
 
@@ -63,8 +63,8 @@ const AppContext = createContext(initAppData);
 export const AppContextProvidor = (props: any) => {
     const [appState, appDispatch] = useReducer(appReducer, initAppData);
 
-    const setTheme = (data: Theme) => {
-        appDispatch({ type: "SET_THEME", data });
+    const setConfig = (data: ConfigType) => {
+        appDispatch({ type: "SET_CONFIG", data });
     };
 
     const setLoader = (data: boolean) => {
@@ -130,7 +130,7 @@ export const AppContextProvidor = (props: any) => {
                 reset,
                 setALLReviews,
                 setAlert,
-                setTheme,
+                setConfig,
             }}
         >
             {props.children}

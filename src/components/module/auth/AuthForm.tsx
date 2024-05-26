@@ -1,16 +1,18 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Box, TextField, Button, Alert, CircularProgress } from "@mui/material";
 import { validateEmail } from "../../../services/shared.service";
 
 interface IAuthForm {
     isLogin?: boolean;
     loading?: boolean;
+    emailValue: string; // Default value
+    passwordValue: string; // Default value
     onSubmit: (email: string, password: string) => void;
 }
 
 function AuthForm(props: IAuthForm) {
-    const [email, setEmail] = useState("admin@kohler.com");
-    const [password, setPassword] = useState("Admin@123");
+    const [email, setEmail] = useState(props.emailValue);
+    const [password, setPassword] = useState(props.passwordValue);
     const [errMsg, setErrMsg] = useState("");
 
     const onSubmitHandler = () => {
@@ -22,7 +24,7 @@ function AuthForm(props: IAuthForm) {
             return;
         }
 
-        setErrMsg("");
+
         props.onSubmit(email, password);
     };
 
@@ -41,7 +43,7 @@ function AuthForm(props: IAuthForm) {
                         name: "email",
                     }}
                     sx={{ mb: 2 }}
-                    onChange={(ev) => setEmail(ev.target.value)}
+                    onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setEmail(ev.target.value)}
                 />
                 <TextField
                     fullWidth
@@ -56,7 +58,7 @@ function AuthForm(props: IAuthForm) {
                     }}
                     sx={{ mb: 2 }}
                     value={password}
-                    onChange={(ev) => setPassword(ev.target.value)}
+                    onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setPassword(ev.target.value)}
                 />
 
                 <Box display="flex" justifyContent="flex-end">

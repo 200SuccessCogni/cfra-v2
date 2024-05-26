@@ -8,6 +8,7 @@ import {
     Link,
 } from "@mui/material";
 import { useState } from "react";
+import useApp from "../store/app.context";
 
 interface IFeatureCard {
     title: string;
@@ -17,7 +18,7 @@ interface IFeatureCard {
 
 function FeatureCard(props: IFeatureCard) {
     const [enabled, setEnabled] = useState(false);
-
+    // console.log(user.businessName)
     return (
         <Box
             borderRadius={2}
@@ -83,6 +84,7 @@ function FeatureCard(props: IFeatureCard) {
 }
 
 function Integrations() {
+    const { config } = useApp();
     return (
         <>
             <Typography variant="h5" fontWeight={500}>
@@ -96,21 +98,13 @@ function Integrations() {
                             title="Demo"
                             subtitle="Integrate demo API to get all reviews and take action accrodingly."
                         />
-                        <FeatureCard
-                            src="./Trustpilot.png"
-                            title="Trustpilot"
-                            subtitle="Integrate Tripadvisor to get all reviews and take action accrodingly."
-                        />
-                        <FeatureCard
-                            src="./google.png"
-                            title="Google"
-                            subtitle="Integrate Google to get all reviews and take action accrodingly."
-                        />
-                        <FeatureCard
-                            src="./facebook.png"
-                            title="Facebook"
-                            subtitle="Integrate Booking.com to get all reviews and take action accrodingly."
-                        />
+                        {config.integration.map(e => (
+                            <FeatureCard
+                                src={e.imgSrc}
+                                title={e.label}
+                                subtitle="Integrate Tripadvisor to get all reviews and take action accrodingly."
+                            />
+                        ))}
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={5}></Grid>

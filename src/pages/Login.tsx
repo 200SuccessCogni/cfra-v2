@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Typography, Link } from "@mui/material";
+
 import AuthForm from "../components/module/auth/AuthForm";
+
 import { POST } from "../services/api.service";
 import useApp from "../store/app.context";
+
 import { Iuser } from "../interfaces/user.interface";
+import { CompanyNameTypes } from "../interfaces/app.interface";
+import getConfig from "../config/index";
 
 function Login() {
-    const { setUser, setAlert } = useApp();
+    const { setUser, setAlert, setConfig, config } = useApp();
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+
+    const comnayName: CompanyNameTypes = CompanyNameTypes.kohler;
+    const defaultEmail = `admin@${comnayName}.com`;
+    const defaultPassword = 'Admin@123';
+
+    useEffect(() => {
+        setConfig(getConfig(comnayName))
+    }, []);
 
     const loginHandler = async (email: string, password: string) => {
         setLoading(true);
@@ -32,11 +45,12 @@ function Login() {
                             address: data.businessId?.address,
                             businessUrl: data.businessId?.webUrl,
                             domain: data.businessId?.domain,
-                            country: data.businessId?.originCountry,
+                            country: data.businessId?.originCountry
                         },
                         pmLevel: data?.permissionLevel,
                     };
-                    setUser(user);
+                    setUser(user); 
+                    setConfig(getConfig(user.business.businessName as CompanyNameTypes));                                                             
                     localStorage.setItem("user", JSON.stringify(user));
 
                     if (localStorage.getItem("introDone")) {
@@ -58,6 +72,7 @@ function Login() {
         setLoading(false);
     };
 
+
     return (
         <Box
             sx={{
@@ -77,7 +92,7 @@ function Login() {
             >
                 <Box
                     sx={{
-                        background: `linear-gradient(180deg, rgba(255,255,0,0) 15%, rgba(0,0,0,0.6) 71%), url('bg-kohler.png')`,
+                        background: `linear-gradient(180deg, rgba(255,255,0,0) 15%, rgba(0,0,0,0.6) 71%), url(${config.brandImg})`,
                         transition: "all 0.3s ease-in",
                         backgroundPosition: "center",
                         backgroundSize: "cover",
@@ -94,17 +109,12 @@ function Login() {
                         fontWeight="normal"
                         sx={{ color: "#fff", lineHeight: 1.1 }}
                     >
-                        Kohler is your one stop destination for luxury
-                        sanitaryware, bathroom fittings, wash basin, bathtubs
-                        showers etc
+                        {config.brandTitle}
                     </Typography>
                 </Box>
                 <Box
                     sx={{
                         background: "#eee",
-                        // margin: { xs: 0, md: "2rem" },
-                        // borderRadius: { xs: 0, md: "1rem" },
-                        // maxWidth: { xs: "100%", md: "60%" },
                         p: 5,
                         display: "flex",
                         justifyContent: "space-between",
@@ -143,6 +153,8 @@ function Login() {
                             isLogin={true}
                             loading={loading}
                             onSubmit={loginHandler}
+                            emailValue={defaultEmail}
+                            passwordValue={defaultPassword}
                         />
                     </Box>
 

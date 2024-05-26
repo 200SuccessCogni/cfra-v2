@@ -1,9 +1,10 @@
-import { Theme } from "@mui/material";
+import { CompanyWiseConfigType } from "../config/type";
 import { IResort } from "./resort.interface";
 import { Iuser } from "./user.interface";
 
+
 export interface IApp {
-    theme: Theme;
+    config: ConfigType;
     currentPage: string;
     loader: boolean;
     user: Iuser | null;
@@ -23,7 +24,7 @@ export interface IApp {
     setProducts: (data: any) => undefined;
     setALLReviews: (data: any[]) => undefined;
     setAlert: (data: IAlert) => undefined;
-    setTheme: (data: Theme) => undefined;
+    setConfig: (data: ConfigType) => undefined;
 }
 
 export interface INotification {
@@ -36,4 +37,17 @@ export interface IAlert {
     show: boolean;
     title: string;
     message: string;
+}
+
+export interface ConfigType extends CompanyWiseConfigType {
+    others?: any;
+} 
+
+export enum CompanyNameTypes {
+    marriott = "marriott",
+    pji = "pji", // Papa Johns
+    mcd = "mcd", // mcd
+    kohler = "kohler",
+    mccain = "mccain",
+    whitbread = 'whitebread'
 }

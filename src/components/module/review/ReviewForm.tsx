@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     FormControl,
     FormControlLabel,
@@ -10,19 +10,9 @@ import {
     Box,
     Divider,
 } from "@mui/material";
+import useApp from "../../../store/app.context"
 
-const sourceList = [
-    { name: "Local", isChecked: true, value: "local" },
-    { name: "Google", isChecked: true, value: "google" },
-    { name: "Facebook", isChecked: true, value: "facebook" },
-    { name: "Trustpilot", isChecked: true, value: "trustpilot" },
-    // { name: "Zomato", isChecked: true, value: "zomato" },
-    { name: "Amazon", isChecked: true, value: "amazon" },
-    // { name: "Booking.com", isChecked: true, value: "booking" },
-    // { name: "MakeMyTrip", isChecked: true, value: "make myt rip" },
-    // { name: "Trivago", isChecked: true, value: "trivago" },
-    // { name: "Go Ibibo", isChecked: true, value: "go ibibo" },
-];
+
 
 const ratingsLables = [
     { name: "Negative", isChecked: true },
@@ -37,6 +27,10 @@ interface Iprops {
 }
 
 function ReviewForm(props: Iprops) {
+   
+    const { config } = useApp()
+
+    const sourceList = [...config.reviewSource.map(e => ({...e, isChecked: true}))];
     const [rating, setRating] = useState<number | null>(5);
     const [filters, setFilters] = useState(sourceList);
     const [categories, setCategories] = useState(ratingsLables);

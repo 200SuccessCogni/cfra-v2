@@ -16,7 +16,6 @@ import useApp from "./store/app.context";
 
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { getNewTheme, mcdTheme, kohlerTheme } from "./styles/theme";
 
 // Lazy loading
 const Dashboard = lazy(() => import("./pages/Dashboard"));
@@ -40,18 +39,11 @@ function withAuthInterceptor(component: ReactElement, isAuthenticated = true) {
 }
 
 function App() {
-    const { alert, setAlert, theme, setTheme } = useApp();
-
-    useEffect(() => {
-        // // Set McDonald's theme
-        // setTheme(mcdTheme);
-        // Set Kohler's theme
-        setTheme(kohlerTheme);
-    }, []);
+    const { alert, setAlert, config } = useApp();
 
     return (
         <>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={config.theme}>
                 <CssBaseline />
                 <Router>
                     <Suspense fallback={layoutWrapper(<p>Loading...</p>)}>
