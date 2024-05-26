@@ -80,6 +80,7 @@ export default function SideNav(props: Props) {
     const logout = () => {
         localStorage.setItem("token", "");
         localStorage.setItem("user", "");
+        sessionStorage.removeItem("company");
         navigate("/signin");
     };
 

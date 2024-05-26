@@ -50,7 +50,7 @@ function Login() {
                         pmLevel: data?.permissionLevel,
                     };
                     setUser(user); 
-                    setConfig(getConfig(user.business.businessName.toLocaleLowerCase() as CompanyNameTypes));                                                             
+                    setConfig(getConfig(user.business.businessName.toLocaleLowerCase().split(' ')[0] as CompanyNameTypes));                                                             
                     localStorage.setItem("user", JSON.stringify(user));
                     sessionStorage.setItem("company", user.business.businessName.toLocaleLowerCase())
 
