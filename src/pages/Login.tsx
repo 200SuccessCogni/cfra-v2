@@ -16,7 +16,7 @@ function Login() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    const comnayName: CompanyNameTypes = CompanyNameTypes.kohler;
+    const comnayName: CompanyNameTypes = CompanyNameTypes.mccain;
     const defaultEmail = `admin@${comnayName}.com`;
     const defaultPassword = 'Admin@123';
 
@@ -169,6 +169,7 @@ function Login() {
                         <Link
                             component="button"
                             variant="body2"
+                            color="secondary"
                             onClick={() => {
                                 navigate("/signup");
                             }}

@@ -1,5 +1,5 @@
-import { LinearProgressWithLabelProps } from "@/components/types/linearProgressWithLabel";
 import { Grid, LinearProgress, Typography } from "@mui/material";
+import { LinearProgressWithLabelProps } from "../../types/linearProgressWithLabel";
 
 export default function LinearProgressWithLabel(
     props: LinearProgressWithLabelProps

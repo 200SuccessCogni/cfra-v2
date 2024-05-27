@@ -1,5 +1,5 @@
 import { marriottTheme } from "../../styles/theme";
-import { hotelReviewSource, socialReviewSource } from "../reviewSource";
+import { hotelReviewSource, socialReviewSource } from "../../constants/reviewSource.constant";
 import { CompanyWiseConfigType, filterTypes } from "../type";
 import { baseConfig } from "./baseConfig";
 

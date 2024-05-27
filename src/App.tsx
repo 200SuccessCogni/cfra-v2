@@ -45,7 +45,7 @@ function App() {
 
     useEffect(() => {
         if (sessionStorage.company) {
-            setConfig(getConfig(sessionStorage.company as CompanyNameTypes));  
+            setConfig(getConfig(sessionStorage.company.toLowerCase().split(" ")[0] as CompanyNameTypes));  
         }
     }, []);
 

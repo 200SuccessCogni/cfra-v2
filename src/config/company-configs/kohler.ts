@@ -1,5 +1,5 @@
 import { kohlerTheme } from "../../styles/theme";
-import { ecommerceReviewSource, socialReviewSource } from "../reviewSource";
+import { ecommerceReviewSource, socialReviewSource } from "../../constants/reviewSource.constant";
 import { CompanyWiseConfigType, filterTypes } from "../type";
 import { baseConfig } from "./baseConfig";
 

@@ -98,10 +98,10 @@ function Integrations() {
                             title="Demo"
                             subtitle="Integrate demo API to get all reviews and take action accrodingly."
                         />
-                        {config.integration.map(e => (
+                        {!!config.integration.length && config.integration.map(e => (
                             <FeatureCard
-                                src={e.imgSrc}
-                                title={e.label}
+                                src={e.imgSrc || ''}
+                                title={e.label || ''}
                                 subtitle="Integrate Tripadvisor to get all reviews and take action accrodingly."
                             />
                         ))}

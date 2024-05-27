@@ -70,6 +70,8 @@ function Signup() {
                         isLogin={false}
                         loading={loading}
                         onSubmit={signupHandler}
+                        emailValue={""}
+                        passwordValue={""}
                     />
                 </Box>
 

@@ -4,11 +4,12 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import { IReplyModal } from "@/interfaces/modal.interface";
+import LinearProgress from "@mui/material/LinearProgress";
 import { Typography, TextField, Box, Rating, Grid } from "@mui/material";
+
+import { IReplyModal } from "../../interfaces/modal.interface";
 import { POST } from "../../services/api.service";
 import useApp from "../../store/app.context";
-import LinearProgress from "@mui/material/LinearProgress";
 import ReadMore from "../core/readmore";
 
 export default function ReplyModal(props: IReplyModal) {
