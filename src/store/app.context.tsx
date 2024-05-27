@@ -3,7 +3,7 @@ import { ConfigType, IAlert, IApp } from "../interfaces/app.interface";
 import { IResort } from "../interfaces/resort.interface";
 import { useContext, useReducer, createContext } from "react";
 import theme from "../styles/theme";
-import { allProds } from "../constants/app.constant";
+import { mccainProducts } from "../constants/app.constant";
 import { baseConfig } from "../config/index";
 
 const initAppData: IApp = {
@@ -17,7 +17,7 @@ const initAppData: IApp = {
         show: false,
     },
     resortList: [],
-    productList: [...allProds],
+    productList: [...mccainProducts],
     selectedDateRange: null,
     selectedLocation: null,
     selectedProduct: null,

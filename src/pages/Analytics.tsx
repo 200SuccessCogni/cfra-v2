@@ -1,35 +1,17 @@
 import { useEffect, useState } from "react";
-import LineChart from "../components/charts/LineChart";
 import ReviewForm from "../components/module/review/ReviewForm";
 import useApp from "../store/app.context";
 import { GET, POST } from "../services/api.service";
-import { alpha, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import {
     Box,
     Grid,
-    Typography,
-    Container,
-    Fab,
-    Tooltip,
-    Chip,
-    Button,
-    Popover,
+    Typography
 } from "@mui/material";
-import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
-import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
-import TrendingDownIcon from "@mui/icons-material/TrendingDown";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { camelCaseToTitleCase, randomColor } from "../services/shared.service";
-import OverviewCard from "../components/module/analytics/OverviewCard";
 import OverallScore from "../components/module/analytics/OverallScore";
 import AnalyticsChart from "../components/module/analytics/AnalyticsChart";
 import dayjs from "dayjs";
 import AppPrompt from "../components/app/AppPrompt";
-import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
-import PlaceIcon from "@mui/icons-material/Place";
-import InsightFilterModal from "../components/modals/InsightFilterModal";
-import ChatBot from "../components/module/chat";
-import ChatRoundedIcon from "@mui/icons-material/ChatRounded";
 import axios from "axios";
 
 const initChartDataSet = [
@@ -104,7 +86,6 @@ function Analytics() {
     const [insights, setInsights] = useState<InsightType[]>([]);
     const { setLoader, user, selectedLocation, selectedProduct } = useApp();
     const [chartsData, setChartsData] = useState<any[]>();
-    const [appliedDateSet, setAppliedDateSet] = useState(initChartDataSet);
     const [showFullPrompt, setShowFullPrompt] = useState(false);
     const [lowPerfAment, setLowPerfAment] = useState<PerfAmentType | null>(
         null
@@ -119,13 +100,6 @@ function Analytics() {
 
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
-    const openChatBot = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const closeChatBot = () => {
-        setAnchorEl(null);
-    };
 
     useEffect(() => {
         if (
@@ -156,14 +130,6 @@ function Analytics() {
         setInsights([]);
         setPositiveInsights([]);
         setNegativeInsights([]);
-    };
-
-    const handleDelete = (index: number) => {
-        setAppliedDateSet(
-            appliedDateSet.filter(
-                (e) => e.label !== appliedDateSet[index].label
-            )
-        );
     };
 
     const categoriesInsights = (insightsData: InsightType[]) => {

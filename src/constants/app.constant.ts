@@ -5,6 +5,7 @@ export const sidebarImgs = [
     },
 ];
 
+// Kohler's products
 export const allProds = [
     "Kitchen Faucet",
     "Kitchen Sink, Toilet, Bidet",
@@ -27,4 +28,48 @@ export const allProds = [
     "Sink faucet, Toilet",
     "Hydro Jetting",
     "BathTub",
+];
+
+export const mccainProducts = [
+    "Frozen Pizza",
+    "Cheese and Bacon Pizza Pockets",
+    "Frozen Chippies",
+    "Herb & Parmesan SCHNITZEL with Farm Picked Vegetables",
+    "Anzsc biscuit",
+    "Pizza dough balls",
+    "Pizza Pocket",
+    "Pizza",
+    "Frozen Pizza",
+    "MCCAIN DEEP 'N DELICIOUS CHOCOLATE",
+    "MCCAIN TASTI TATERS",
+    "MCCAIN ONION RINGS",
+    "MCCAIN DEEP 'N DELICIOUS VANILLA CAKE",
+    "MCCAIN HASHBROWNS",
+    "MCCAIN SWEET POTATO PLANK CUT FRIES",
+    "MCCAIN SPICY WEDGES",
+    "French fries",
+    "Mcains Lasagne",
+    "Chips",
+    "Potato Products",
+    "Working's",
+    "McCain Ash Browns",
+    "McCain Foods",
+    "Customer Service",
+    "Pizza",
+    "McCain's food",
+    "Roasted garlic wedges",
+    "Onion Chips",
+    "Roast tatties",
+    "McCain stir fry",
+    "lamb cutlet meal",
+    "Vegetables",
+    "Onions",
+    "Chilli Cheese Fries",
+    "Frozen Products",
+    "Beans",
+    "Frozen Beans",
+    "Fries",
+    "Stri Fry Veggies",
+    "McCain Dishruption challenge",
+    "McCain Group"
 ];
