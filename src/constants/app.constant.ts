@@ -73,3 +73,16 @@ export const mccainProducts = [
     "McCain Dishruption challenge",
     "McCain Group"
 ];
+
+export const pjiProducts = [
+    "AI Supreme Delight",
+    "Pixel Perfect Pepperoni",
+    "Cyborg BBQ Chicken",
+    "Binary Basil Pesto",
+    "Neural Network Neapolitan",
+    "Algorithmic Alfredo",
+    "Quantum Quattro Formaggi",
+    "Virtual Veggie Extravaganza",
+    "Machine Learning Margherita",
+    "Robotic Ranch Revolution",
+]

@@ -9,6 +9,7 @@ export const mcdConfig: CompanyWiseConfigType = {
     reviewSource: [...baseConfig.reviewSource, ...hotelReviewSource, ...socialReviewSource],
     integration: [...hotelReviewSource, ...socialReviewSource],
     theme: mcdTheme,
+    brandImg: 'mcd.png',
     business: {
         businessId: "1289112891",
         businessName: "MCD",
