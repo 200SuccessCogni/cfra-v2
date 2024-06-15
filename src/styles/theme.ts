@@ -116,6 +116,7 @@ export const mcdTheme = getNewTheme({ primary: "#ffbc0d", secondary: "#000" });
 export const mcCainTheme = getNewTheme({ primary: "#f8b700", secondary: "#e81e31" });
 export const kohlerTheme = getNewTheme({ primary: "#2b2a28", secondary: "#364573" });
 export const marriottTheme = getNewTheme({ primary: "#8e001e", secondary: "#2b2a28" });
+export const pjiTheme = getNewTheme({ primary: "#148f6a", secondary: "#ab131b" });
 // defaultTheme = mcdTheme;
 
 export default defaultTheme;
