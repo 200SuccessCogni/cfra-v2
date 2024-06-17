@@ -5,11 +5,13 @@ import { mcdConfig } from "./company-configs/mcd";
 import { whitBreadConfig } from "./company-configs/whitBread";
 import { mcCainConfig } from "./company-configs/mcCain";
 import { pjiConfig } from "./company-configs/pji";
+import { baseConfig } from "./company-configs/baseConfig";
 export { baseConfig } from "./company-configs/baseConfig";
 import { CompanyWiseConfigType } from "./type";
 
 
 export default function getConfig(company: CompanyNameTypes): CompanyWiseConfigType {
+    console.log(company)
     if(company === CompanyNameTypes.marriott) {
         return marriotConfig;
     } else if(company === CompanyNameTypes.pji) {

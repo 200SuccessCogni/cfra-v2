@@ -51,9 +51,9 @@ function Login() {
                         pmLevel: data?.permissionLevel,
                     };
                     setUser(user); 
-                    setConfig(getConfig(user.business.businessName.toLocaleLowerCase().split(' ')[0] as CompanyNameTypes));                                                             
+                    setConfig(getConfig(user.email.split('@')[1].split('.')[0] as CompanyNameTypes));                                                             
                     localStorage.setItem("user", JSON.stringify(user));
-                    sessionStorage.setItem("company", user.business.businessName.toLocaleLowerCase())
+                    sessionStorage.setItem("company", user.email.split('@')[1].split('.')[0].toLocaleLowerCase())
 
                     if (localStorage.getItem("introDone")) {
                         navigate("/");
